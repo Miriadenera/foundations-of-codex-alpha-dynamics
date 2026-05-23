@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use or reference this work, please cite it as below."
+title: "Foundations of Codex Alpha Dynamics: A Variational Derivation of an Informational Extension of Einstein Field Equations"
+authors:
+  - family-names: "Cadelano"
+    given-names: "Davide"
+    orcid: "https://orcid.org/0009-0008-2253-7008"
+version: "1.0"
+date-released: "2026-05-23"
+doi: "10.5281/zenodo.20355167"
+url: "https://doi.org/10.5281/zenodo.20355167"
+repository-code: "https://github.com/Miriadenera/foundations-of-codex-alpha-dynamics"
+license: "CC-BY-4.0"
+abstract: "This manuscript presents a minimal variational formulation of the dynamical core of the Codex Alpha theoretical framework. It derives an informational extension of Einstein field equations from an explicit action principle involving the spacetime metric, a scalar coherence field, ordinary matter fields, and a coherence-weighted Schwinger functional."
+keywords:
+  - "Codex Alpha"
+  - "Telascura"
+  - "Informational Gravity"
+  - "Einstein Field Equations"
+  - "General Relativity"
+  - "Variational Principle"
+  - "Scalar-Tensor Gravity"
+  - "Coherence Field"
+  - "Schwinger Functional"
+  - "Quantum Gravity"
+  - "Theoretical Physics"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Cadelano"
+      given-names: "Davide"
+      orcid: "https://orcid.org/0009-0008-2253-7008"
+  title: "Foundations of Codex Alpha Dynamics: A Variational Derivation of an Informational Extension of Einstein Field Equations"
+  year: 2026
+  doi: "10.5281/zenodo.20355167"
+  url: "https://doi.org/10.5281/zenodo.20355167"
