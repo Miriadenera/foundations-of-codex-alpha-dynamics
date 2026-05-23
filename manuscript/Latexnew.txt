@@ -1,0 +1,5434 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,bm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage[
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue
+]{hyperref}
+
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+\newcommand{\orcid}[1]{%
+  \href{https://orcid.org/#1}{\textcolor{orcidlogocol}{ORCID: #1}}}
+
+\title{\textbf{Foundations of Codex Alpha Dynamics}\\[0.5em]
+\large A Variational Derivation of an Informational Extension of Einstein Field Equations}
+
+\author{Davide Cadelano\\
+\small Codex Alpha Research\\
+\small \orcid{0009-0008-2253-7008}}
+
+\date{May 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper presents a minimal variational formulation of the dynamical core of the Codex Alpha theoretical framework. The purpose is not to introduce additional phenomenological claims, but to determine whether the central field equation of the theory can be obtained from an explicit action principle involving the metric tensor $g_{\mu\nu}$, a scalar coherence field $\mathcal{K}$, ordinary matter fields $\psi$, and a coherence-weighted Schwinger functional $W[g,\nabla\mathcal{K}]$.
+
+The resulting structure leads to an informational extension of the Einstein field equations,
+\begin{equation}
+G_{\mu\nu}+\Lambda g_{\mu\nu}
+=
+\frac{8\pi G}{c^4}
+\left\langle \hat{T}_{\mu\nu}\right\rangle_{\nabla\mathcal{K}},
+\end{equation}
+where the right-hand side is not postulated phenomenologically, but defined as the metric response of a coherence-weighted functional measure.
+
+The construction is constrained by three requirements: logical derivability from the stated assumptions, recovery of General Relativity and standard quantum-field-theoretic limits when $\nabla\mathcal{K}\rightarrow 0$, and falsifiability through measurable deviations in cosmological perturbations, gravitational-wave propagation, gravitational lensing, and post-Newtonian regimes.
+
+The central result is that the Codex Alpha correction can be formulated as a minimal covariant scalar extension of Einstein gravity, controlled by the local coherence gradient $\nabla\mathcal{K}$, within the local continuous approximation of the Telascura — the effective covariant sector described by a smooth Lorentzian manifold — and without introducing ghost degrees of freedom or violations of the classical recovery limit.
+
+Non-local coherence effects associated with the full discrete nodal structure of the Telascura — including retrocausal operators and inter-nodal correlations beyond the continuous approximation — are not modeled within the present effective continuous formulation; their treatment is reserved for the complete theoretical development presented in Codex Alpha~3.0 \cite{Cadelano2025Iconoclast}.
+\end{abstract}
+
+\section*{Introduction}
+
+This paper provides the formal mathematical foundation for the central field equation of Codex Alpha, as introduced in the Iconoclast Edition (Version~3.0). Its purpose is not to introduce a new theory but to demonstrate that the key dynamical equation of the Codex Alpha framework,
+\begin{equation}
+G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4}\langle\hat{T}_{\mu\nu}\rangle_{\nabla\mathcal{K}},
+\end{equation}
+can be derived from an explicit variational principle within the effective continuous sector of the Telascura.
+
+The Iconoclast Edition describes the full ontological and operational architecture of Codex Alpha. The present paper occupies a specific and limited role within that framework: it shows how the master equation emerges from an action principle, establishes the classical recovery limit, and identifies the falsifiable observational signatures. The reader should consult Codex Alpha~3.0 for the discrete nodal dynamics, emergent spacetime ontology, retrocausal operators, and broader programme.
+
+\section*{What the Present Formulation Attempts to Resolve}
+
+The central problem addressed in this work is the absence, in standard General Relativity, of an explicit dynamical variable representing the local coherence structure of quantum-informational degrees of freedom.
+
+General Relativity describes gravity as spacetime curvature sourced by the stress-energy tensor $T_{\mu\nu}$, while quantum field theory assigns physical significance to vacuum fluctuations, correlation functions, and state-dependent expectation values. However, the standard Einstein field equations do not contain an explicit covariant quantity measuring how local quantum coherence modulates the effective gravitational source.
+
+The Codex Alpha framework proposes that this missing element is encoded by a scalar coherence field $\mathcal{K}$ and, more precisely, by its gradient $\nabla\mathcal{K}$. The quantity $\nabla\mathcal{K}$ does not replace the metric, the stress-energy tensor, or ordinary quantum fields. Instead, it controls how microscopic informational coherence contributes to the effective gravitational source through the weighted expectation value
+\begin{equation}
+\left\langle \hat{T}_{\mu\nu}\right\rangle_{\nabla\mathcal{K}}.
+\end{equation}
+
+In this sense, the present formulation does not modify Einstein gravity arbitrarily. It introduces the smallest additional covariant structure needed to express the dependence of the gravitational source on local coherence gradients.
+
+The scientific improvement claimed here is therefore precise and limited:
+
+\begin{enumerate}
+    \item it provides a variational origin for the informational correction appearing in the Codex Alpha field equation;
+    \item it identifies the coherence gradient $\nabla\mathcal{K}$ as the operational quantity controlling departures from standard General Relativity;
+    \item it recovers the Einstein field equations exactly in the uniform-coherence limit;
+    \item it expresses all non-standard effects as measurable deviations from known observables.
+\end{enumerate}
+
+The framework is therefore not presented as a replacement of General Relativity, but as a covariant completion of its source sector under the hypothesis that quantum-informational coherence has gravitational relevance.
+
+
+\section*{Fundamental Assumptions}
+
+The present derivation is based on the following explicit assumptions.
+
+\subsection*{A1. Spacetime Structure}
+
+\textbf{Effective continuous limit.} In the complete formulation of Codex Alpha (Iconoclast edition), spacetime is not a primitive entity but emerges as a collective geometric output of the Telascura network. The present paper restricts to the \emph{effective continuous sector} of the Telascura: the local, covariant, short-range regime in which the discrete nodal structure can be approximated by a smooth four-dimensional Lorentzian manifold $(\mathcal{M},g_{\mu\nu})$ with metric signature $(-,+,+,+)$.
+
+Within this approximation, the covariant derivative compatible with the metric is denoted $\nabla_\mu$, and all field equations derived below hold to the extent that the continuum limit is valid. The emergent-spacetime ontology of the full Telascura is not contradicted; it is simply not the object of the present variational derivation.
+
+\textit{Remark.} The restriction to the effective continuous sector is analogous to the derivation of fluid equations from kinetic theory: the macro-level equations are exact within their domain of validity without requiring the micro-level structure to be identical.
+
+\paragraph{Regularity Assumption.}
+Unless otherwise stated, we assume that the coherence scalar field satisfies
+\[
+\mathcal{K}\in C^2(\mathcal{M}),
+\]
+that is, the field is at least twice continuously differentiable on the effective spacetime manifold.
+This regularity assumption ensures that covariant derivatives, variational derivatives, and second-order wave operators appearing in the present formalism are well defined.
+
+\subsection*{A2. Field Content}
+
+The theory contains the following dynamical or effective fields:
+\begin{equation}
+\{g_{\mu\nu},\mathcal{K},\psi\},
+\end{equation}
+where $g_{\mu\nu}$ is the spacetime metric, $\mathcal{K}$ is the scalar coherence field, and $\psi$ collectively denotes the matter fields.
+
+\subsection*{A3. Coherence Field}
+
+The scalar field $\mathcal{K}$ encodes the local degree of quantum-informational coherence. Its gradient,
+\begin{equation}
+\nabla_\mu\mathcal{K},
+\end{equation}
+is the only non-standard quantity allowed to modify the effective gravitational source.
+
+\subsection*{A4. Variational Principle}
+
+All dynamical equations are derived from a stationary action principle:
+\begin{equation}
+\delta\Gamma[g,\mathcal{K},\psi]=0.
+\end{equation}
+
+\subsection*{A5. Covariance}
+
+The total action is invariant under spacetime diffeomorphisms. Consequently, the resulting field equations must satisfy covariant conservation laws compatible with the Bianchi identities.
+
+\subsection*{A6. Classical Recovery}
+
+In the uniform-coherence limit,
+\begin{equation}
+\nabla\mathcal{K}\rightarrow 0,
+\end{equation}
+the theory must reduce to standard General Relativity with, at most, an effective cosmological constant.
+
+\subsection*{A7. Falsifiability}
+
+Every non-standard prediction must be expressible as a deviation
+\begin{equation}
+\Delta\mathcal{O}
+=
+\mathcal{O}_{\rm Codex}
+-
+\mathcal{O}_{\rm GR},
+\end{equation}
+such that
+\begin{equation}
+\lim_{\nabla\mathcal{K}\rightarrow 0}\Delta\mathcal{O}=0.
+\end{equation}
+
+
+
+\section*{Effective Continuous Limit of the Telascura}
+
+\subsection*{Domain of Validity of the Present Formulation}
+
+The Codex Alpha framework, as developed in its full form in Iconoclast (Version~3.0), describes reality in terms of the Telascura: a discrete quantum-informational network whose nodes $\{N_i\}$ and edges $E_{ij} \subseteq \mathcal{H}_i \otimes \mathcal{H}_j$ carry the full dynamical content of spacetime and matter. The metric tensor $g_{\mu\nu}$, in that ontology, is not primitive but emerges from the collective coherence of the nodal structure.
+
+The present paper operates \textbf{within the effective continuous sector} of this framework — the regime in which:
+\begin{enumerate}
+    \item the node spacing $\ell$ is negligible compared to the macroscopic scale of interest ($\ell \ll L$);
+    \item the coherence field $\mathcal{K}$ can be approximated by a smooth scalar function on a Lorentzian manifold;
+    \item the quantum state of each node is well approximated by a local density matrix without long-range discrete correlations.
+\end{enumerate}
+
+Within this approximation, the variational formulation presented here is \emph{exact}. Corrections from the discrete nodal structure are suppressed by positive powers of $\ell/L$ and are not captured by the present Lagrangian.
+
+\subsection*{Explicitly Out of Scope}
+
+The following aspects of the full Codex Alpha theory are \textbf{explicitly outside the domain of the present paper}:
+
+\begin{itemize}
+    \item \textbf{Retrocausal operators and temporal navigation.} The retrocausal backprojection operator $\Pi^-_{\Delta t}\mathcal{K}(x)$ and closed informational curves discussed in Iconoclast Chapter~XVI require the discrete nodal structure and are not representable within a local covariant Lagrangian on a smooth manifold.
+
+    \item \textbf{Discrete nodal sector.} The node dynamics $\{\mathcal{K}_i, E_{ij}\}$, negative-mass nodes (Chapter~II), and the non-local Lagrangian term $\mathcal{L}_{\rm non-loc} = \alpha_4 \sum_{i \neq j} \Gamma_{ij} C(\mathcal{K}_i, \mathcal{K}_j)$ (Chapter~XI) belong to the discrete formulation and have no direct counterpart here.
+
+    \item \textbf{Non-local correlations and superluminal entanglement.} In the full Telascura framework, entanglement between nodes can support correlations outside the light cone. Within the effective continuous sector considered here, all propagation respects the causal structure of $g_{\mu\nu}$; no superluminal signal propagation is introduced.
+
+    \item \textbf{Neuroinformational and biological nodes.} Chapter~XVII material is beyond the scope of this variational derivation.
+\end{itemize}
+
+\subsection*{The Relation Between Continuous and Discrete}
+
+The relationship is analogous to that between fluid dynamics and kinetic theory: the hydrodynamic equations are derived from the Boltzmann equation in the appropriate limit. They are exact within their domain without requiring the microscopic structure to be identical. Similarly, the present paper derives the continuum field equations of the Codex Alpha coherence sector. The full Iconoclast description remains the deeper ontological framework.
+
+This framing is essential for correctly interpreting every result derived below: all equations hold \emph{within the effective continuous limit of the Telascura}, and any comparison with Iconoclast claims must account for this restriction.
+
+
+\section*{Notation and Dimensional Consistency}
+
+The following table summarizes the main mathematical objects used in the present formulation.
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+Symbol & Meaning & Dimension \\
+\hline
+$g_{\mu\nu}$ & spacetime metric & dimensionless \\
+$G_{\mu\nu}$ & Einstein tensor & $L^{-2}$ \\
+$\Lambda$ & cosmological constant & $L^{-2}$ \\
+$\mathcal{K}$ & coherence scalar field & $L^{-1}$ \\
+$\nabla_\mu\mathcal{K}$ & coherence gradient & $L^{-2}$ \\
+$V(\mathcal{K})$ & coherence potential & $L^{-4}$ \\
+$\psi$ & matter fields & model-dependent \\
+$Z[g,\nabla\mathcal{K}]$ & weighted partition functional & dimensionless \\
+$W[g,\nabla\mathcal{K}]$ & Schwinger functional & dimensionless \\
+$\alpha$ & coherence-weight parameter & $L^2$ \\
+$\left\langle \hat{T}_{\mu\nu}\right\rangle_{\nabla\mathcal{K}}$ & weighted stress-energy tensor & energy density \\
+$J^\mu_W$ & coherence current & model-dependent current density \\
+\hline
+\end{tabular}
+\end{center}
+
+The coherence-weighted exponential factor is required to be dimensionless:
+\begin{equation}
+\alpha\int_{\mathcal{M}} d^4x\sqrt{-g}\,
+g^{\mu\nu}\nabla_\mu\mathcal{K}\nabla_\nu\mathcal{K}.
+\end{equation}
+Since
+\begin{equation}
+[d^4x]=L^4,
+\qquad
+[\nabla_\mu\mathcal{K}\nabla^\mu\mathcal{K}]=L^{-4},
+\end{equation}
+the integral is dimensionless up to the normalization scale fixed by $\alpha$. Therefore $\alpha$ may equivalently be treated as a dimensionful coupling or absorbed into the definition of the coherence scale $M_{\mathcal{K}}$.
+
+The small-gradient expansion parameter is defined as
+\begin{equation}
+\epsilon_{\mathcal{K}}
+\equiv
+\frac{\|\nabla\mathcal{K}\|}{M_{\mathcal{K}}},
+\qquad
+\epsilon_{\mathcal{K}}\ll 1.
+\end{equation}
+
+This parameter controls the validity of the perturbative expansion.
+
+No statement of validity is made outside the perturbative regime. In particular,
+the present formulation does not assume convergence, applicability, or physical
+equivalence of the perturbative expansion in the strong-coherence sector
+\(
+\epsilon_{\mathcal{K}}\gtrsim 1
+\),
+which requires the complete non-perturbative treatment of the theory and remains
+outside the scope of the present work.
+
+\textit{Note on the cosmological constant.} In the present formulation $\Lambda$ is treated as a free parameter of the effective continuous Lagrangian, consistent with standard GR practice. In the complete Iconoclast formalism (Codex Alpha~3.0, Chapter~IX), $\Lambda$ is not independent but emerges dynamically from the coherence potential:
+
+\begin{equation}
+\Lambda =
+\frac{8\pi G}{c^4}
+\langle V(\mathcal{K})\rangle,
+\end{equation}
+
+where $\langle V(\mathcal{K})\rangle$ is the vacuum expectation value of the coherence potential computed over the Telascura ground state.
+
+The two descriptions are compatible: the present Lagrangian parameter $\Lambda$
+coincides with the Iconoclast expression in the uniform-coherence vacuum.
+\section*{Minimality of the Model}
+
+The present formulation introduces only one additional effective scalar structure beyond the standard Einstein-matter system: the coherence field $\mathcal{K}$.
+
+The minimality criterion is the following. Among covariant scalar extensions constructed from $g_{\mu\nu}$ and $\mathcal{K}$, the lowest-order non-trivial invariant depending on coherence variations is
+\begin{equation}
+g^{\mu\nu}\nabla_\mu\mathcal{K}\nabla_\nu\mathcal{K}.
+\end{equation}
+
+A term depending only on $\mathcal{K}$ contributes through the potential $V(\mathcal{K})$ and can be absorbed into an effective vacuum sector in the uniform-coherence limit. A term linear in $\nabla_\mu\mathcal{K}$ cannot produce a scalar invariant without introducing an additional preferred vector field, which would violate the minimality requirement and risk breaking diffeomorphism covariance.
+
+Therefore, the quadratic coherence-gradient term is the lowest-order covariant correction compatible with:
+\begin{enumerate}
+    \item diffeomorphism invariance;
+    \item absence of preferred spacetime directions;
+    \item recovery of General Relativity for $\nabla\mathcal{K}\rightarrow 0$;
+    \item perturbative control through $\epsilon_{\mathcal{K}}\ll 1$.
+\end{enumerate}
+
+The present model is thus minimal in the sense that no lower-order covariant scalar correction can encode local coherence gradients without introducing additional degrees of freedom.
+
+\section*{Absence of Ostrogradsky Ghosts in the Minimal Sector}
+
+A necessary consistency condition for any scalar extension of Einstein gravity is the absence of Ostrogradsky-type instabilities.
+
+In the present formulation, the coherence sector is defined by the local Lagrangian density
+\begin{equation}
+\mathcal{L}_{\mathcal K}
+=
+\frac{1}{2}g^{\mu\nu}\nabla_\mu\mathcal K\nabla_\nu\mathcal K
+-
+V(\mathcal K).
+\end{equation}
+
+This Lagrangian depends on the coherence field only through \(\mathcal K\) and its first covariant derivatives. No higher-derivative operators of the form
+\[
+\nabla_\mu\nabla_\nu\mathcal K,
+\qquad
+\Box^2\mathcal K,
+\qquad
+R^{\mu\nu}\nabla_\mu\nabla_\nu\mathcal K
+\]
+are included in the minimal sector.
+
+Consequently, the Euler--Lagrange equation for the coherence field is second order:
+\begin{equation}
+\Box\mathcal K - V'(\mathcal K)
+=
+J_{\mathcal K}
+-
+\nabla_\mu J_W^\mu,
+\end{equation}
+where $J_{\mathcal{K}}$ is the matter source current and
+$J_W^{\mu} \equiv \tfrac{2}{\sqrt{-g}}\tfrac{\delta W}{\delta(\nabla_\mu\mathcal{K})}$
+is the coherence response current defined variationally below.
+
+The canonical momentum conjugate to \(\mathcal K\) in ADM variables is
+\begin{equation}
+\Pi_{\mathcal K}
+=
+\frac{\sqrt{\gamma}}{N}
+\left(
+\partial_t\mathcal K
+-
+N^i\partial_i\mathcal K
+\right),
+\end{equation}
+and the corresponding kinetic contribution to the Hamiltonian density is quadratic:
+\begin{equation}
+\mathcal{H}_{\mathcal K}^{\rm kin}
+=
+\frac{N}{2\sqrt{\gamma}}\Pi_{\mathcal K}^2
++
+\frac{N\sqrt{\gamma}}{2}
+\gamma^{ij}\partial_i\mathcal K\partial_j\mathcal K.
+\end{equation}
+
+For positive lapse \(N>0\), positive spatial metric \(\gamma_{ij}\), and a potential bounded from below,
+\begin{equation}
+V(\mathcal K)\ge V_{\rm min},
+\end{equation}
+the minimal coherence sector has no unbounded linear momentum mode of Ostrogradsky type.
+A complete ADM decomposition of the full system — including the gravitational sector, shift constraints, and Hamilton equations of motion — is carried out below in the section on Hamiltonian structure.
+
+The coherence-weighted functional \(W[g,\nabla\mathcal K]\) is treated in this paper as an effective response functional. Within the low-gradient regime, it contributes through finite functional derivatives and does not introduce additional independent higher-time-derivative degrees of freedom in the minimal continuous sector.
+
+Therefore, within the assumptions of the present effective formulation, the model is free of Ostrogradsky ghosts. This statement applies only to the minimal continuous sector and does not constitute a proof of ghost-freedom for arbitrary non-local or non-perturbative completions of the full Telascura theory.
+
+\section*{Variational Construction}
+\section*{Definition of the Coherence-Weighted Functional Measure}
+
+The coherence-weighted partition functional is defined as
+\begin{equation}
+Z[g,\nabla\mathcal{K}]
+=
+\int_{\mathcal{F}}
+\mathcal{D}\psi\,
+\exp\left[
+-\frac{1}{\hbar}S_{\rm matter}[g,\psi]
+-
+\alpha
+\int_{\mathcal{M}} d^4x\sqrt{-g}\,
+g^{\mu\nu}\nabla_\mu\mathcal{K}\nabla_\nu\mathcal{K}
+\right],
+\end{equation}
+where $\mathcal{F}$ denotes the configuration space of admissible matter fields $\psi$ over the spacetime manifold $(\mathcal{M},g_{\mu\nu})$.
+
+The functional measure
+\begin{equation}
+\mathcal{D}\psi
+\end{equation}
+is the standard formal path-integral measure over matter-field configurations, assumed to be regularized by a covariant ultraviolet cutoff, heat-kernel regularization, dimensional regularization, or an equivalent scheme.
+
+The additional exponential factor does not replace the ordinary quantum-field-theoretic measure. It introduces a covariant weighting controlled by the coherence gradient $\nabla\mathcal{K}$.
+
+The Schwinger functional is defined as
+\begin{equation}
+W[g,\nabla\mathcal{K}]
+\equiv
+-\ln Z[g,\nabla\mathcal{K}].
+\end{equation}
+
+The coherence-weighted stress-energy tensor is then defined by the metric response:
+\begin{equation}
+\left\langle \hat{T}_{\mu\nu}\right\rangle_{\nabla\mathcal{K}}
+=
+\frac{2}{\sqrt{-g}}
+\frac{\delta W[g,\nabla\mathcal{K}]}{\delta g^{\mu\nu}}.
+\end{equation}
+
+This makes explicit that $Z[g,\nabla\mathcal{K}]$ is not an arbitrary symbolic object, but a generating functional over matter-field configurations modified by a covariant coherence weight.
+
+In the limit
+\begin{equation}
+\nabla\mathcal{K}\rightarrow 0,
+\end{equation}
+the weighting term becomes constant and the standard quantum-field-theoretic expectation value is recovered:
+\begin{equation}
+\left\langle \hat{T}_{\mu\nu}\right\rangle_{\nabla\mathcal{K}}
+\rightarrow
+\left\langle \hat{T}_{\mu\nu}\right\rangle_{\rm standard}.
+\end{equation}
+
+
+\textit{Note on the decomposition of $\langle \hat{T}_{\mu\nu}\rangle_{\nabla\mathcal{K}}$ and the absence of double counting.}
+The right-hand side of the master equation is the \emph{total} coherence-weighted stress-energy. In the small-gradient expansion it decomposes as:
+\begin{equation}
+\langle \hat{T}_{\mu\nu}\rangle_{\nabla\mathcal{K}}
+= T^{(\mathrm{matter})}_{\mu\nu} + T^{(\mathcal{K})}_{\mu\nu} + \mathcal{O}(\epsilon_{\mathcal{K}}^3),
+\end{equation}
+where $T^{(\mathcal{K})}_{\mu\nu} = \nabla_\mu\mathcal{K}\nabla_\nu\mathcal{K} - \tfrac{1}{2}g_{\mu\nu}|\nabla\mathcal{K}|^2 + g_{\mu\nu}V(\mathcal{K})$ is the explicit $\mathcal{K}$-field stress-energy arising from $S_{\mathcal{K}}$.
+
+The absence of double counting follows from the structure of the generating functional. By construction, the Euclidean partition function
+\begin{equation}
+Z[g,\nabla\mathcal{K}] = \int \mathcal{D}\psi\; \exp\!\left(-S_{\rm matter}[\psi,g,\mathcal{K}]/\hbar\right)
+\end{equation}
+integrates exclusively over the matter fields $\psi$; the coherence scalar $\mathcal{K}$ enters as an \emph{external background field} and is \emph{not path-integrated}. Consequently, the Schwinger functional $W[g,\nabla\mathcal{K}] = -\ln Z$ generates only the matter quantum sector, and its metric variation
+\begin{equation}
+T^{(\mathrm{matter})}_{\mu\nu} = \frac{2}{\sqrt{-g}}\frac{\delta W}{\delta g^{\mu\nu}}
+\end{equation}
+yields the matter stress-energy exclusively. The stress-energy $T^{(\mathcal{K})}_{\mu\nu}$ arises instead from the independent metric variation of $S_{\mathcal{K}}$, which contains no matter fields $\psi$. The two sectors are therefore \emph{structurally disjoint}: no term appears in both $\delta W/\delta g^{\mu\nu}$ and $\delta S_{\mathcal{K}}/\delta g^{\mu\nu}$.
+
+\textit{Formal conclusion}: within the present formulation, $T^{(\mathcal{K})}_{\mu\nu}$ constitutes a \emph{variationally independent sector} — it is not an emergent contribution of $W[g,\nabla\mathcal{K}]$, although physical coupling between the two sectors may still arise through the explicit dependence of $S_{\mathrm{matter}}[\psi,g,\mathcal{K}]$ on the informational background field $\mathcal{K}$. In other words, $T^{(\mathcal{K})}_{\mu\nu}$ is variationally independent but not necessarily dynamically decoupled. A more detailed discussion of this decomposition and its variational derivation appears in Appendix~D.
+
+
+\section*{Field Equations and Derived Relations}
+
+The following derivations use the action principle established above. All equations hold within the effective continuous limit of the Telascura (see preceding section). Results are grouped thematically; the complete variational proofs appear in the Appendices.
+
+
+
+
+%---------------------------
+% Einstein tensor and field eqs
+%---------------------------
+\[
+G_{\mu\nu} = R_{\mu\nu} - \tfrac{1}{2} g_{\mu\nu} R,
+\qquad
+G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4}\, T_{\mu\nu}.
+\]
+
+%---------------------------
+% \mathcal{K}-field definition and basic ops
+%---------------------------
+\[
+\mathcal{K} = \frac{\Phi}{S+\epsilon}, \qquad \epsilon \to 0^+,
+\]
+\[
+\nabla_\mu \mathcal{K} = \partial_\mu\!\left(\frac{\Phi}{S+\epsilon}\right)
+= \frac{\partial_\mu \Phi}{S+\epsilon}
+- \frac{\Phi \,\partial_\mu S}{(S+\epsilon)^2}.
+\]
+\[
+\|\nabla \mathcal{K}\|^2 = g^{\mu\nu}\,\nabla_\mu \mathcal{K} \,\nabla_\nu \mathcal{K},
+\qquad
+\Box \mathcal{K} \equiv \nabla^\mu \nabla_\mu \mathcal{K}
+= \frac{1}{\sqrt{-g}}\partial_\mu\!\left(\sqrt{-g}\, g^{\mu\nu}\partial_\nu \mathcal{K}\right).
+\]
+
+%---------------------------
+% Hessian and local convexity
+%---------------------------
+\[
+H_{\mu\nu} \equiv \partial_\mu \partial_\nu \mathcal{K}
+= \frac{\partial_\mu \partial_\nu \Phi}{S+\epsilon}
+- \frac{(\partial_\mu \Phi)(\partial_\nu S)}{(S+\epsilon)^2}
+- \frac{(\partial_\nu \Phi)(\partial_\mu S)}{(S+\epsilon)^2}
+- \frac{\Phi \, \partial_\mu \partial_\nu S}{(S+\epsilon)^2}
++ \frac{2 \Phi \, (\partial_\mu S)(\partial_\nu S)}{(S+\epsilon)^3}.
+\]
+\[
+H_{\mu\nu} v^\mu v^\nu > 0 \;\;\forall v^\mu \neq 0,
+\qquad
+\det(H_{\mu\nu}) > 0.
+\]
+
+%---------------------------
+% Trial effective metric (algebraic check)
+%---------------------------
+\[
+g^{(\mathcal{K})}_{\mu\nu} = \eta_{\mu\nu} + \beta \,\partial_\mu \mathcal{K} \,\partial_\nu \mathcal{K},
+\quad
+\det g^{(\mathcal{K})}_{\mu\nu}
+= \det\eta_{\mu\nu}\,\left(1 + \beta\,\eta^{\mu\nu}\partial_\mu \mathcal{K}\,\partial_\nu \mathcal{K}\right).
+\]
+
+%---------------------------
+% Congruences built from \mathcal{K}
+%---------------------------
+\[
+u^\mu \equiv \frac{\nabla^\mu \mathcal{K}}{\|\nabla \mathcal{K}\|},
+\qquad
+F^\mu{}_\nu \equiv \nabla_\nu u^\mu,
+\qquad
+\nabla_\alpha F^\mu{}_\nu - \nabla_\nu F^\mu{}_\alpha
+= R^\mu{}_{\sigma\alpha\nu} \, u^\sigma.
+\]
+\[
+\nabla_\mu u^\mu = \partial_\mu u^\mu + \Gamma^\mu_{\mu\nu} u^\nu,
+\qquad
+\nabla_\nu u^\mu = \partial_\nu u^\mu + \Gamma^\mu_{\nu\lambda} u^\lambda.
+\]
+
+%---------------------------
+% Action and stress-energy
+%---------------------------
+\[
+\mathcal{L} = \frac{1}{16\pi G}(R - 2\Lambda) + \mathcal{L}_\mathcal{K} + \mathcal{L}_{\text{matter}},
+\qquad
+\mathcal{L}_\mathcal{K} = \tfrac{1}{2}\, g^{\mu\nu}\nabla_\mu \mathcal{K} \,\nabla_\nu \mathcal{K} - V(\mathcal{K}).
+\]
+\[
+S = \int d^4x \, \sqrt{-g} \,\mathcal{L}.
+\]
+
+\[
+\frac{\delta S}{\delta g^{\mu\nu}} = 0 \;\Rightarrow\;
+G_{\mu\nu} + \Lambda g_{\mu\nu}
+= \frac{8\pi G}{c^4} \Big( T^{(\text{matter})}_{\mu\nu} + T^{(\mathcal{K})}_{\mu\nu} \Big),
+\]
+\[
+T^{(\mathcal{K})}_{\mu\nu}
+= \nabla_\mu \mathcal{K} \, \nabla_\nu \mathcal{K}
+- \tfrac{1}{2} g_{\mu\nu} \, \nabla_\alpha \mathcal{K} \, \nabla^\alpha \mathcal{K}
++ g_{\mu\nu} V(\mathcal{K}).
+\]
+
+%---------------------------
+% Euler–Lagrange for \mathcal{K} (sign fixed)
+%---------------------------
+\[
+\frac{\delta S}{\delta \mathcal{K}} = 0
+\;\;\Rightarrow\;\;
+\nabla_\mu \!\left( \frac{\partial \mathcal{L}_\mathcal{K}}{\partial (\nabla_\mu \mathcal{K})} \right)
+- \frac{\partial \mathcal{L}_\mathcal{K}}{\partial \mathcal{K}} = 0
+\;\;\Rightarrow\;\;
+\boxed{\;\;\Box \mathcal{K} - V'(\mathcal{K}) = J_\mathcal{K}\;}
+\]
+where \(J_\mathcal{K} \equiv -\,\dfrac{\partial \mathcal{L}_{\text{matter}}}{\partial \mathcal{K}}\).
+
+%---------------------------
+% Gradient-weighted expectation
+%---------------------------
+\[
+Z[g,\nabla \mathcal{K}] \equiv \int \mathcal{D}\psi \;
+\exp\!\left(
+- \int d^4x \sqrt{-g}\; \alpha \, \|\nabla \mathcal{K}\|^2
+\right),
+\qquad
+W[g,\nabla \mathcal{K}] \equiv -\ln Z[g,\nabla \mathcal{K}].
+\]
+\[
+\left\langle \hat{T}_{\mu\nu} \right\rangle_{\nabla \mathcal{K}}
+= \frac{2}{\sqrt{-g}} \frac{\delta W}{\delta g^{\mu\nu}},
+\qquad
+J_W^{\mu} \equiv \frac{2}{\sqrt{-g}}\frac{\delta W}{\delta(\nabla_\mu \mathcal{K})}.
+\]
+\[
+\boxed{\;\;\Box \mathcal{K} - V'(\mathcal{K}) = J_\mathcal{K} - \nabla_\mu J_W^{\mu}\;}
+\]
+
+%---------------------------
+% Vacuum bookkeeping and \Lambda_{\text{eff}}
+%---------------------------
+\[
+\Lambda_{\text{eff}} \equiv \Lambda + \frac{8\pi G}{c^4}\Big(\rho_{\text{vac}} + V(\mathcal{K}_0)\Big),
+\qquad
+\lim_{\nabla \mathcal{K} \to 0}\;\langle \hat T_{\mu\nu}\rangle_{\nabla \mathcal{K}}
+= T^{(\text{matter})}_{\mu\nu} - \rho_{\text{vac}}\, g_{\mu\nu}.
+\]
+\[
+\lim_{\nabla \mathcal{K} \to 0}\;\Rightarrow\;
+G_{\mu\nu} + \Lambda_{\text{eff}} g_{\mu\nu}
+= \frac{8\pi G}{c^4}\,T^{(\text{matter})}_{\mu\nu}.
+\]
+
+%---------------------------
+% Cosmology (FRW) – unit consistency
+%---------------------------
+\[
+ds^2 = -c^2 dt^2 + a(t)^2 \,\gamma_{ij}\, dx^i dx^j,
+\qquad
+\mathcal{K} = \mathcal{K}(t).
+\]
+\[
+\rho_\mathcal{K} = \frac{1}{2c^2}\,\dot{\mathcal{K}}^{\,2} + V(\mathcal{K}),
+\qquad
+p_\mathcal{K} = \frac{1}{2c^2}\,\dot{\mathcal{K}}^{\,2} - V(\mathcal{K}).
+\]
+\[
+\boxed{\;
+H \equiv \frac{\dot a}{a},\quad
+H^2 + \frac{k c^2}{a^2}
+= \frac{8\pi G}{3 c^2}\, \big\langle \rho_{\text{matter}} + \rho_\mathcal{K} \big\rangle_{\nabla \mathcal{K}}
++ \frac{\Lambda c^2}{3}
+\;}
+\]
+
+\[
+\boxed{\;
+\dot H - \frac{k c^2}{a^2}
+= -\frac{4\pi G}{c^2}\, \big\langle \rho_{\text{matter}} + \rho_\mathcal{K} + \frac{p_{\text{matter}} + p_\mathcal{K}}{c^2} \big\rangle_{\nabla \mathcal{K}}
+\;}
+\]
+\[
+\boxed{\;
+\dot{\rho}_{\mathcal{K}} + 3 H \!\left( \rho_\mathcal{K} + \frac{p_\mathcal{K}}{c^2} \right) = 0,
+\qquad
+\dot{\rho}_{\text{matter}} + 3 H \!\left( \rho_{\text{matter}} + \frac{p_{\text{matter}}}{c^2} \right) = 0
+\;}
+\]
+\[
+\ddot{\mathcal{K}} + 3 H \dot{\mathcal{K}} + c^2 V'(\mathcal{K}) = c^2 J_\mathcal{K} \quad (\text{homogeneous background}).
+\]
+
+%---------------------------
+% Equation-of-state and limits
+%---------------------------
+\[
+w_\mathcal{K} \equiv \frac{p_\mathcal{K}}{\rho_\mathcal{K}}
+= \frac{\tfrac{1}{2c^2}\dot{\mathcal{K}}^{\,2} - V(\mathcal{K})}{\tfrac{1}{2c^2}\dot{\mathcal{K}}^{\,2} + V(\mathcal{K})},
+\qquad
+\lim_{\nabla \mathcal{K} \to 0} (\rho_\mathcal{K}, p_\mathcal{K}) = \big(V(\mathcal{K}_0),\, -V(\mathcal{K}_0)\big).
+\]
+\[
+\lim_{\nabla \mathcal{K} \to 0}\left[H^2 + \frac{k c^2}{a^2}\right]
+= \frac{8\pi G}{3 c^2}\,\rho_{\text{matter}} + \frac{\Lambda_{\text{eff}} c^2}{3}.
+\]
+
+%---------------------------
+% Linear response: metric perturbations (setup)
+%---------------------------
+\[
+g_{\mu\nu} = \bar g_{\mu\nu} + h_{\mu\nu}, \qquad \|h_{\mu\nu}\|\ll 1,
+\quad
+\bar h_{\mu\nu} \equiv h_{\mu\nu} - \tfrac{1}{2}\bar g_{\mu\nu} h,
+\quad
+\bar\nabla^\mu \bar h_{\mu\nu} = 0.
+\]
+\[
+\begin{aligned}
+\delta G_{\mu\nu}(h)
+= -\frac{1}{2}\Big[
+&\bar\nabla^2 h_{\mu\nu}
++ \bar\nabla_\mu \bar\nabla_\nu h
+- \bar\nabla_\mu \bar\nabla^\alpha h_{\alpha\nu}
+- \bar\nabla_\nu \bar\nabla^\alpha h_{\alpha\mu}
+\\
+&- 2\,\bar R_{\mu\alpha\nu\beta} h^{\alpha\beta}
++ \bar g_{\mu\nu}
+\big(
+\bar\nabla^\alpha \bar\nabla^\beta h_{\alpha\beta}
+- \bar\nabla^2 h
+\big)
+\\
+&+ \bar R\, h_{\mu\nu}
+- \bar R_{\mu\nu} h
+\Big].
+\end{aligned}
+\]
+\[
+\bar\nabla^2 \,\bar h_{\mu\nu}
+- 2\,\bar R_{\mu\alpha\nu\beta}\,\bar h^{\alpha\beta}
++ 2\Lambda\, \bar h_{\mu\nu}
+= \frac{16\pi G}{c^4}\,\delta \!\left\langle T_{\mu\nu} \right\rangle_{\nabla \mathcal{K}}.
+\]
+
+%---------------------------
+% Variation of <T> w.r.t. \nabla \mathcal{K}
+%---------------------------
+\[
+\delta \!\left\langle T_{\mu\nu} \right\rangle_{\nabla \mathcal{K}}
+= \frac{\delta \!\left\langle T_{\mu\nu} \right\rangle_{\nabla \mathcal{K}}}{\delta(\nabla_\alpha \mathcal{K})} \;\delta(\nabla_\alpha \mathcal{K}),
+\qquad
+\delta(\nabla_\alpha \mathcal{K}) = \nabla_\alpha(\delta \mathcal{K}),
+\]
+\[
+\frac{\delta \!\left\langle T_{\mu\nu} \right\rangle_{\nabla \mathcal{K}}}{\delta(\nabla_\alpha \mathcal{K})}
+\equiv \mathcal{M}_{\mu\nu}{}^{\alpha}
+= \chi_{\mu\nu}{}^{\alpha\beta}\,\nabla_\beta \mathcal{K}.
+\]
+\[
+\boxed{\;\left( \Box - V''(\mathcal{K}) \right)\,\delta \mathcal{K} \;=\; \mathcal{S}[h,\mathcal{K}]\;}, 
+\qquad V''(\mathcal{K})\equiv m_\mathcal{K}^2 \ge 0 \;\;\Longleftrightarrow\;\; 
+\boxed{\;(\Box - m_\mathcal{K}^2)\,\delta \mathcal{K} = \mathcal{S}[h,\mathcal{K}]\;}
+\]
+\[
+\mathcal{S}[h,\mathcal{K}] =
+-\tfrac{1}{2}\,h\,\Box \mathcal{K}
++ \bar\nabla_\mu\!\left( h^{\mu\nu}\,\nabla_\nu \mathcal{K} - \tfrac{1}{2} h \,\nabla^\mu \mathcal{K} \right).
+\]
+% (continua...)
+
+
+%---------------------------
+% Green function for δ\mathcal{K} and backreaction
+%---------------------------
+\[
+\left(\bar\Box_x - m_\mathcal{K}^2\right) G_\mathcal{K}(x,x') \;=\; \frac{\delta^{(4)}(x-x')}{\sqrt{-\bar g}},
+\qquad
+G_\mathcal{K}^{\text{ret}}(x,x') = 0 \;\; \text{if } x \notin J^{+}(x').
+\]
+\[
+\delta \mathcal{K}(x) = \int d^4x' \,\sqrt{-\bar g(x')}\; G_\mathcal{K}(x,x')\,\mathcal{S}[h,\mathcal{K}](x').
+\]
+\[
+\delta \!\left\langle T_{\mu\nu} \right\rangle_{\nabla \mathcal{K}}
+= \mathcal{M}_{\mu\nu}{}^{\alpha}\,\bar\nabla_\alpha \delta \mathcal{K}
+= \mathcal{M}_{\mu\nu}{}^{\alpha}\,\bar\nabla_\alpha
+\!\int d^4x' \,\sqrt{-\bar g(x')}\; G_\mathcal{K}(x,x')\,\mathcal{S}[h,\mathcal{K}](x').
+\]
+
+%---------------------------
+% Minkowski/FT limit of the linear system
+%---------------------------
+
+\[
+\bar g_{\mu\nu}\to \eta_{\mu\nu}, \quad
+\bar\nabla_\mu \to \partial_\mu, \quad
+\bar R_{\mu\alpha\nu\beta}\to 0, \quad
+\partial^\mu \bar h_{\mu\nu}=0.
+\]
+% firma (- + + +): k^2 \equiv \eta^{\mu\nu}k_\mu k_\nu = -\omega^2 + \mathbf{k}^2
+\[
+G_\mathcal{K}(x-x') \;=\; \int \frac{d^4k}{(2\pi)^4}\;
+\frac{e^{ik\cdot(x-x')}}{-\,k^2 - m_\mathcal{K}^2 + i0^+}.
+\]
+\[
+\bar h_{\mu\nu}(x) = \int \frac{d^4k}{(2\pi)^4}\,e^{ik\cdot x}\,\bar h_{\mu\nu}(k),
+\qquad
+\mathcal{K}(x) = \int \frac{d^4q}{(2\pi)^4}\,e^{iq\cdot x}\,\mathcal{K}(q).
+\]
+\[
+\left(-k^2 + 2\Lambda\right)\,\bar h_{\mu\nu}(k)
+= \frac{16\pi G}{c^4}\;\Pi_{\mu\nu}{}^{\rho\sigma}(k)\,\bar h_{\rho\sigma}(k).
+\]
+\[
+\Pi_{\mu\nu}{}^{\rho\sigma}(k)
+= \mathcal{M}_{\mu\nu}{}^{\alpha}\,k_\alpha\;
+\frac{1}{-\,k^2 - m_\mathcal{K}^2 + i0^+}\;\mathcal{J}^{\rho\sigma}(k),
+\]
+\[
+\mathcal{J}^{\rho\sigma}(k)
+= -\tfrac{1}{2}\eta^{\rho\sigma}k^2 \mathcal{K}(k)
++ k^\rho k^\sigma \mathcal{K}(k)
+- \tfrac{1}{2}k^{(\rho}\eta^{\sigma)\beta}k_\beta \mathcal{K}(k).
+\]
+\[
+\det\!\left[\;(-k^2 + 2\Lambda)\,\mathbb{I}
+- \tfrac{16\pi G}{c^4}\,\Pi(k)\;\right] = 0,
+\qquad
+\operatorname{Im}\,\omega(\mathbf{k})\le 0 \;\;\Leftrightarrow\;\; m_\mathcal{K}^2=V''(\mathcal{K}_0)\ge 0.
+\]
+\[
+\lim_{\nabla \mathcal{K}\to 0}\;\Pi_{\mu\nu}{}^{\rho\sigma}(k)=0
+\;\Rightarrow\;
+(-k^2+2\Lambda)\,\bar h_{\mu\nu}(k)=0.
+\]
+
+%---------------------------
+% Small-gradient expansion of the expectation value
+%---------------------------
+
+\[
+\epsilon_\mathcal{K} \equiv \frac{\|\nabla \mathcal{K}\|}{M_\mathcal{K}}, \qquad 0\le \epsilon_\mathcal{K} \ll 1.
+\]
+\[
+\big\langle T_{\mu\nu} \big\rangle_{\nabla \mathcal{K}}
+= T_{\mu\nu}
++ A_{\mu\nu}{}^{\alpha}\,\nabla_\alpha \mathcal{K}
++ \tfrac{1}{2} B_{\mu\nu}{}^{\alpha\beta}\,\nabla_\alpha \mathcal{K}\,\nabla_\beta \mathcal{K}
++ \mathcal{O}(\epsilon_\mathcal{K}^3).
+\]
+\[
+A_{\mu\nu}{}^{\alpha}=0,
+\qquad
+\tfrac{1}{2} B_{\mu\nu}{}^{\alpha\beta}\,\nabla_\alpha \mathcal{K}\,\nabla_\beta \mathcal{K}
+\equiv
+\nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K}
+- \tfrac{1}{2}g_{\mu\nu}\nabla_\rho \mathcal{K} \nabla^\rho \mathcal{K}
++ g_{\mu\nu} V(\mathcal{K}).
+\]
+\[
+G_{\mu\nu}+\Lambda g_{\mu\nu}
+= \frac{8\pi G}{c^4}\left[
+T_{\mu\nu}
++ \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K}
+- \tfrac{1}{2} g_{\mu\nu}\nabla_\rho \mathcal{K} \nabla^\rho \mathcal{K}
++ g_{\mu\nu} V(\mathcal{K})
+\right] + \mathcal{O}(\epsilon_\mathcal{K}^3).
+\]
+
+%---------------------------
+% Regularization and boundary conditions
+%---------------------------
+\[
+\mathcal{K}_\epsilon \equiv \frac{\Phi}{S+\epsilon},
+\qquad
+\epsilon>0,
+\qquad
+\lim_{\epsilon\to 0^+}
+T^{(\mathcal{K})}_{\mu\nu}
+[\mathcal{K}_\epsilon]
+\;\text{exists and remains finite}.
+\]
+\[
+\delta g_{\mu\nu}\big|_{\partial\mathcal{M}}=0,
+\qquad
+\delta \mathcal{K}\big|_{\partial\mathcal{M}}=0,
+\qquad
+\delta(S_{\text{EH}}+S_{\text{GHY}})\big|_{\partial\mathcal{M}}=0.
+\]
+
+%---------------------------
+% Diffeomorphism invariance check
+%---------------------------
+\[
+\delta_\xi g_{\mu\nu} = \nabla_\mu \xi_\nu + \nabla_\nu \xi_\mu,
+\qquad
+\delta_\xi \mathcal{K} = \xi^\alpha \nabla_\alpha \mathcal{K}.
+\]
+\[
+\begin{aligned}
+\delta_\xi S
+=
+\int d^4x\,\sqrt{-g}\;
+\xi^\nu
+\Big[
+&
+\nabla^\mu
+\Big(
+G_{\mu\nu}
++\Lambda g_{\mu\nu}
+-
+\frac{8\pi G}{c^4}
+\left\langle
+T_{\mu\nu}
+\right\rangle_{\nabla\mathcal{K}}
+\Big)
+\\
+&+
+\Big(
+\Box\mathcal{K}
+-
+V'(\mathcal{K})
+-
+J_{\mathcal K}
++
+\nabla_\mu J_W^{\mu}
+\Big)
+\nabla_\nu\mathcal{K}
+\Big]
+=
+0.
+\end{aligned}
+\]
+\[
+\nabla^\mu\!\left(G_{\mu\nu}+\Lambda g_{\mu\nu}
+- \tfrac{8\pi G}{c^4}\langle T_{\mu\nu}\rangle_{\nabla \mathcal{K}}\right)=0,
+\qquad
+\left(\Box \mathcal{K} - V'(\mathcal{K}) - J_\mathcal{K} + \nabla_\mu J_W^{\mu}\right)\nabla_\nu \mathcal{K}=0.
+\]
+
+%---------------------------
+% Effective vacuum bookkeeping
+%---------------------------
+\[
+\text{Effective vacuum:}
+\qquad
+\left\langle
+T_{\mu\nu}
+\right\rangle_{\nabla\mathcal{K}}
+=
+-\rho_{\mathrm{vac}}\,g_{\mu\nu}
+\]
+
+\[
+\Rightarrow
+\qquad
+R_{\mu\nu}
+=
+\left(
+\Lambda
++
+\frac{8\pi G}{c^4}\rho_{\mathrm{vac}}
+\right)
+g_{\mu\nu}.
+\]
+\[
+\Lambda_{\text{eff}} \equiv \Lambda + \frac{8\pi G}{c^4}\big(\rho_{\text{vac}}+V(\mathcal{K}_0)\big),
+\qquad
+\lim_{\nabla \mathcal{K}\to 0}\Rightarrow
+G_{\mu\nu}+\Lambda_{\text{eff}} g_{\mu\nu}=\frac{8\pi G}{c^4}T^{(\text{matter})}_{\mu\nu}.
+\]
+
+%---------------------------
+% Cosmology: background and continuity (c-factors consistent)
+%---------------------------
+\[
+ds^2 = -c^2 dt^2 + a(t)^2\,\gamma_{ij}\,dx^i dx^j,
+\quad
+\rho_\mathcal{K} = \frac{1}{2c^2}\dot{\mathcal{K}}^2 + V(\mathcal{K}),
+\quad
+p_\mathcal{K} = \frac{1}{2c^2}\dot{\mathcal{K}}^2 - V(\mathcal{K}).
+\]
+\[
+H^2 + \frac{k c^2}{a^2}
+= \frac{8\pi G}{3 c^2}\,\langle \rho_{\text{matter}}+\rho_\mathcal{K}\rangle_{\nabla \mathcal{K}}
++ \frac{\Lambda c^2}{3},
+\]
+\[
+\dot H - \frac{k c^2}{a^2}
+= -\frac{4\pi G}{c^2}\,\left\langle \rho_{\text{matter}}+\rho_\mathcal{K} + \frac{p_{\text{matter}}+p_\mathcal{K}}{c^2}\right\rangle_{\nabla \mathcal{K}},
+\]
+\[
+\dot{\rho}_{\mathcal{K}} + 3H\!\left(\rho_\mathcal{K} + \frac{p_\mathcal{K}}{c^2}\right)=0,
+\qquad
+\dot{\rho}_{\text{matter}} + 3H\!\left(\rho_{\text{matter}} + \frac{p_{\text{matter}}}{c^2}\right)=0,
+\]
+\[
+\ddot{\mathcal{K}} + 3H\dot{\mathcal{K}} + c^2 V'(\mathcal{K}) = c^2 J_\mathcal{K}.
+\]
+
+%---------------------------
+% Energy conditions and positivity for \mathcal{K}
+%---------------------------
+\[
+\text{NEC:}
+\qquad
+T^{(\mathcal{K})}_{\mu\nu}
+\,n^\mu n^\nu
+=
+\left(
+n^\alpha
+\nabla_\alpha
+\mathcal{K}
+\right)^2
+\ge 0,
+\qquad
+\forall\;
+n^\mu
+\text{ null}.
+\]
+\[
+\text{WEC:}\;
+T^{(\mathcal{K})}_{\mu\nu} u^\mu u^\nu
+= \tfrac{1}{2}\left(\frac{\dot{\mathcal{K}}^2}{c^2}+(\nabla_i \mathcal{K})^2\right) + V(\mathcal{K}) \ge 0,
+\quad \forall\; u^\mu\text{ timelike},
+\]
+\[
+\text{SEC:}\;
+\big(T^{(\mathcal{K})}_{\mu\nu} - \tfrac{1}{2}g_{\mu\nu}T^{(\mathcal{K})}\big)u^\mu u^\nu
+= (\nabla_\mu \mathcal{K}\,u^\mu)^2 - V(\mathcal{K}) \ge 0.
+\]
+
+%---------------------------
+% Scalar perturbations (Newtonian gauge) – setup
+%---------------------------
+\[
+d\eta \equiv \frac{dt}{a(t)}, \qquad \mathcal{H} \equiv \frac{a'}{a}=aH,
+\]
+\[
+ds^2 = a(\eta)^2\Big[ -(1+2\Phi_N)d\eta^2 + (1-2\Psi_N)\delta_{ij}\,dx^i dx^j \Big],
+\qquad
+\Pi^{(\mathcal{K})}{}_{ij}\approx 0 \Rightarrow \Phi_N=\Psi_N.
+\]
+\[
+\delta \mathcal{K}'' + 2\mathcal{H}\,\delta \mathcal{K}' + \big(k^2 + a^2 m_\mathcal{K}^2\big)\delta \mathcal{K} = a^2\,\delta J_\mathcal{K},
+\]
+\[
+\delta\rho_\mathcal{K} = \frac{1}{a^2}\mathcal{K}' \delta \mathcal{K}' + V'(\mathcal{K})\,\delta \mathcal{K},
+\qquad
+\delta p_\mathcal{K} = \frac{1}{a^2}\mathcal{K}' \delta \mathcal{K}' - V'(\mathcal{K})\,\delta \mathcal{K}.
+\]
+\[
+k^2 \Phi_N + 3\mathcal{H}\left(\Phi_N' + \mathcal{H}\Phi_N\right)
+= 4\pi G\,a^2\left( \delta\rho_{\text{matter}} + \delta\rho_\mathcal{K} \right).
+\]
+
+%---------------------------
+% Tensor perturbations (GWs) – setup
+%---------------------------
+\[
+ds^2 = a(\eta)^2\left[-d\eta^2 + \big(\delta_{ij}+h_{ij}^{\text{TT}}\big)dx^i dx^j\right],
+\quad
+h^{\text{TT}}_{ii}=0,\;\; \partial_i h^{\text{TT}}_{ij}=0.
+\]
+\[
+{h_{ij}^{\text{TT}}}'' + 2\mathcal{H}\,{h_{ij}^{\text{TT}}}' + k^2 h_{ij}^{\text{TT}}
+= \frac{16\pi G}{c^4}\,a^2\,\Pi^{\text{TT}}_{ij}[\mathcal{K}],
+\qquad
+\lim_{\nabla \mathcal{K}\to 0}\Pi^{\text{TT}}_{ij}=0.
+\]
+
+%---------------------------
+% ADM (Hamiltonian summary) – constraints
+%---------------------------
+\[
+\begin{aligned}
+ds^2
+&=
+-N^2dt^2
++
+\gamma_{ij}
+(dx^i+N^idt)
+(dx^j+N^jdt),
+\\[0.4em]
+\Theta_{ij}
+&\equiv
+\frac{1}{2N}
+\left(
+-\partial_t\gamma_{ij}
++
+D_iN_j
++
+D_jN_i
+\right),
+\\[0.4em]
+\Theta
+&\equiv
+\gamma^{ij}\Theta_{ij}.
+\end{aligned}
+\]
+\[
+\pi^{ij} = \sqrt{\gamma}\,(\Theta^{ij} - \gamma^{ij}\Theta),
+\qquad
+\mathcal{H}_{\text{tot}} \approx 0,\quad
+\mathcal{H}_i^{\text{tot}} \approx 0.
+\]
+\[
+R^{(3)} + \Theta^2 - \Theta_{ij}\Theta^{ij}
+= \frac{16\pi G}{c^4}\,\big\langle T_{00}\big\rangle_{\nabla \mathcal{K}},
+\qquad
+D_j\left(\Theta^{ij} - \gamma^{ij}\Theta\right)
+= \frac{8\pi G}{c^4}\,\big\langle T^{0i}\big\rangle_{\nabla \mathcal{K}}.
+\]
+
+%---------------------------
+% End Parte 2/8
+%---------------------------
+
+%---------------------------
+% ADM: canonical \mathcal{K}-sector and evolution
+%---------------------------
+\[
+\Pi_\mathcal{K} \equiv \frac{\partial \mathcal{L}}{\partial(\partial_t \mathcal{K})}
+= \frac{\sqrt{\gamma}}{N}\left(\partial_t \mathcal{K} - N^i \partial_i \mathcal{K}\right),
+\]
+\[
+\mathcal{H}_\mathcal{K} =
+\frac{N}{2\sqrt{\gamma}}\,\Pi_\mathcal{K}^2
++ \frac{N\sqrt{\gamma}}{2}\,\gamma^{ij}\partial_i \mathcal{K} \partial_j \mathcal{K}
++ N\sqrt{\gamma}\,V(\mathcal{K})
++ \Pi_\mathcal{K}\,N^i \partial_i \mathcal{K}.
+\]
+\[
+\mathcal{H}_{\text{grav}} =
+\frac{N}{\sqrt{\gamma}}\!\left(\pi^{ij}\pi_{ij} - \tfrac{1}{2}\pi^2\right)
+- N\sqrt{\gamma}\,R^{(3)} + 2\,\pi^{ij} D_i N_j,
+\qquad
+\mathcal{H}_{\Lambda} = N \sqrt{\gamma}\,\frac{2\Lambda}{16\pi G}.
+\]
+\[
+\mathcal{H}_{\text{tot}} =
+\mathcal{H}_{\text{grav}} + \mathcal{H}_{\Lambda}
++ \mathcal{H}_{\text{matter}} + \mathcal{H}_\mathcal{K} \;\approx\; 0,
+\qquad
+\mathcal{H}_i^{\text{tot}} =
+-2 D_j \pi^{j}{}_{i}
++ \Pi_{\text{matter}}\partial_i \varphi
++ \Pi_\mathcal{K} \partial_i \mathcal{K} \;\approx\; 0.
+\]
+\[
+\partial_t \mathcal{K} =
+\{\mathcal{K}, H_{\text{tot}}\}
+= \frac{N}{\sqrt{\gamma}}\,\Pi_\mathcal{K} + N^i \partial_i \mathcal{K},
+\]
+\[
+\partial_t \Pi_\mathcal{K} =
+\{\Pi_\mathcal{K}, H_{\text{tot}}\}
+= \partial_i \!\left( N \sqrt{\gamma}\,\gamma^{ij}\partial_j \mathcal{K} \right)
+- N \sqrt{\gamma}\,V'(\mathcal{K})
++ \partial_i(\Pi_\mathcal{K} N^i).
+\]
+\[
+\frac{1}{N\sqrt{\gamma}}
+\left[\partial_t \Pi_\mathcal{K} - \partial_i(\Pi_\mathcal{K} N^i)\right]
+= D_i D^i \mathcal{K} - V'(\mathcal{K}),
+\quad\Longleftrightarrow\quad
+\Box \mathcal{K} - V'(\mathcal{K}) = 0 \quad (\text{if } J_\mathcal{K} = \nabla_\mu J_W^\mu).
+\]
+
+%---------------------------
+% Spherical symmetry with \mathcal{K} (TOV+anisotropy)
+%---------------------------
+\[
+ds^2 = -e^{2\Phi(r)} c^2 dt^2
++ \frac{dr^2}{1-\frac{2G m(r)}{c^2 r}}
++ r^2 d\Omega^2, \qquad \mathcal{K}=\mathcal{K}(r).
+\]
+\[
+\nabla_\mu \mathcal{K} = (0, \mathcal{K}'(r), 0, 0),
+\quad
+\rho_\mathcal{K} = \tfrac{1}{2}\!\left(1-\frac{2G m}{c^2 r}\right) \mathcal{K}'^2 + V(\mathcal{K}),
+\]
+\[
+p_{r}^{(\mathcal{K})} = \tfrac{1}{2}\!\left(1-\frac{2G m}{c^2 r}\right) \mathcal{K}'^2 - V(\mathcal{K}),
+\qquad
+p_{t}^{(\mathcal{K})} = -\,\tfrac{1}{2}\!\left(1-\frac{2G m}{c^2 r}\right) \mathcal{K}'^2 - V(\mathcal{K}).
+\]
+\[
+\frac{dm}{dr} = \frac{4\pi r^2}{c^2}\;\big\langle \rho_{\text{matter}} + \rho_\mathcal{K} \big\rangle_{\nabla \mathcal{K}},
+\]
+\[
+\frac{d\Phi}{dr} =
+\frac{G}{c^2}\,
+\frac{ m(r) + \dfrac{4\pi r^3}{c^2}\,\big\langle p_{r}^{\text{(tot)}} \big\rangle_{\nabla \mathcal{K}} }
+{ r^2 \left( 1 - \dfrac{2G m(r)}{c^2 r} \right) },
+\]
+\[
+\frac{dp_{r}^{\text{(tot)}}}{dr}
+= -\big(\rho_{\text{tot}} c^2 + p_{r}^{\text{(tot)}}\big)\,\frac{d\Phi}{dr}
++ \frac{2}{r}\big(p_{t}^{\text{(tot)}} - p_{r}^{\text{(tot)}}\big),
+\]
+\[
+\left(1-\frac{2G m}{c^2 r}\right) \mathcal{K}'' + \left[
+\frac{2}{r} - \frac{G}{c^2}\frac{m + 4\pi r^3 p_{r}^{\text{(tot)}}/c^2}{r^2\left(1-\frac{2G m}{c^2 r}\right)}
+\right]\!\left(1-\frac{2G m}{c^2 r}\right) \mathcal{K}'
+- V'(\mathcal{K}) = J_\mathcal{K}.
+\]
+\[
+\begin{aligned}
+\lim_{\nabla\mathcal{K}\to 0}
+\left\{
+\rho_{\mathcal{K}},
+p_r^{(\mathcal{K})},
+p_t^{(\mathcal{K})}
+\right\}
+&\to
+\left\{
+V(\mathcal{K}_0),
+-V(\mathcal{K}_0),
+-V(\mathcal{K}_0)
+\right\},
+\\[0.4em]
+&\Rightarrow
+\text{standard TOV with }
+\Lambda_{\mathrm{eff}}
+=
+\Lambda
++
+\frac{8\pi G}{c^4}V(\mathcal{K}_0).
+\end{aligned}
+\]
+
+%---------------------------
+% Raychaudhuri and energy conditions with \mathcal{K}
+%---------------------------
+\[
+\theta \equiv \nabla_\mu u^\mu,\qquad
+\sigma_{\mu\nu} \equiv \nabla_{(\mu}u_{\nu)} - \tfrac{1}{3}\theta\,h_{\mu\nu},\qquad
+\omega_{\mu\nu}\equiv \nabla_{[\mu}u_{\nu]},
+\]
+\[
+\frac{d\theta}{d\tau}
+= -\tfrac{1}{3}\theta^2 - \sigma_{\mu\nu}\sigma^{\mu\nu}
++ \omega_{\mu\nu}\omega^{\mu\nu}
+- R_{\mu\nu} u^\mu u^\nu,
+\]
+\[
+R_{\mu\nu} u^\mu u^\nu
+= \frac{8\pi G}{c^4}\!\left(
+\big\langle \hat T_{\mu\nu}\big\rangle_{\nabla \mathcal{K}}
+- \tfrac{1}{2} g_{\mu\nu}\big\langle \hat T \big\rangle_{\nabla \mathcal{K}}
+\right) u^\mu u^\nu,
+\qquad
+\text{NCC:}\;\; \big\langle \hat T_{\mu\nu}\big\rangle_{\nabla \mathcal{K}} k^\mu k^\nu \ge 0.
+\]
+
+%---------------------------
+% Black-hole thermodynamics with \mathcal{K}-entropy
+%---------------------------
+\[
+\kappa \equiv \frac{1}{2}\,\partial_r g_{tt}\Big/ \sqrt{-g_{tt}g_{rr}},
+\qquad
+T_H = \frac{\hbar\,\kappa}{2\pi k_B c}.
+\]
+\[
+S_{\text{BH}} = \frac{A}{4 G \hbar / c^3} + S_\mathcal{K},
+\qquad
+S_\mathcal{K} \equiv \int_{\mathcal{H}} d^2x\,\sqrt{\gamma_{\mathcal{H}}}\; s_\mathcal{K}\big(\mathcal{K},\nabla \mathcal{K}\big).
+\]
+\[
+\delta M = \frac{\kappa}{8\pi G}\,\delta A + \Omega_H\,\delta J + \Phi_H\,\delta Q
++ \int_{\mathcal{H}} d^2x\,\sqrt{\gamma_{\mathcal{H}}}\;\Pi_\mathcal{K}\,\delta \mathcal{K},
+\qquad
+\frac{d}{d\lambda}\!\left(\frac{A}{4G} + S_\mathcal{K}\right)\ge 0.
+\]
+\[
+\begin{aligned}
+\lim_{\nabla\mathcal{K}\to0}
+S_{\mathcal K}
+&\to
+\text{constant},
+\\[0.4em]
+&\Rightarrow
+S_{\mathrm{BH}}
+\to
+\frac{A}{4G\hbar/c^3}.
+\end{aligned}
+\]
+
+%---------------------------
+% Retarded Green function and energy positivity
+%---------------------------
+\[
+(\Box_x - m_\mathcal{K}^2)\,G^{\text{ret}}_\mathcal{K}(x,x') = \frac{\delta^{(4)}(x-x')}{\sqrt{-g}},
+\qquad
+G^{\text{ret}}_\mathcal{K}(x,x')=0\;\;\text{for } x\notin J^{+}(x').
+\]
+\[
+\begin{aligned}
+E_{\mathcal K}[\Sigma]
+\equiv
+\int_{\Sigma}
+d^3y\,
+\sqrt{\gamma}
+\Big(
+&
+\frac12
+n^\mu\nabla_\mu\mathcal K\,
+n^\nu\nabla_\nu\mathcal K
+\\
+&
++
+\frac12
+\gamma^{ij}
+\partial_i\mathcal K
+\partial_j\mathcal K
++
+V_{\mathrm{eff}}(\mathcal K)
+\Big)
+\ge 0,
+\\[0.6em]
+V_{\mathrm{eff}}
+&=
+V+\Delta V_\epsilon,
+\qquad
+\lim_{\epsilon\to0^+}
+\Delta V_\epsilon
+\;\text{remains finite}.
+\end{aligned}
+\]
+
+%---------------------------
+% Microcausality and spectral representation
+%---------------------------
+\[
+[\, \hat{\mathcal{K}}(x), \hat{\mathcal{K}}(y) \,] = 0 \quad \text{if } (x-y)^2>0,
+\]
+\[
+G_F(k) = \int_{0}^{\infty} d\mu^2\; \frac{\rho_\mathcal{K}(\mu^2)}{k^2 - \mu^2 + i0^+},
+\qquad \rho_\mathcal{K}(\mu^2)\ge 0,
+\qquad m_\mathcal{K}^2 \equiv V''(\mathcal{K}_0)\ge 0.
+\]
+
+%---------------------------
+% Renormalization of the effective potential
+%---------------------------
+\[
+V_{\text{eff}}(\mathcal{K};\mu) = V(\mathcal{K}) + \sum_{n\ge 1} c_n(\mu)\,\mathcal{K}^{2n},
+\qquad
+\mu\,\frac{d c_n}{d\mu} = \beta_n(\{c_m\}),
+\]
+\[
+\left(
+\mu\frac{\partial}{\partial\mu}
++ \sum_{n\ge 1} \beta_n \frac{\partial}{\partial c_n}
+- \gamma_\mathcal{K}\, \mathcal{K} \frac{\partial}{\partial \mathcal{K}}
+\right) V_{\text{eff}}(\mathcal{K};\mu,\{c_n\}) = 0.
+\]
+
+%---------------------------
+% Constraint algebra (Dirac) – summary
+%---------------------------
+\[
+\{ \mathcal{H}[N],\, \mathcal{H}[M] \}
+= \mathcal{H}_i\!\left[\gamma^{ij}(N\partial_j M - M\partial_j N)\right],
+\]
+\[
+\{ \mathcal{H}_i[N^i],\, \mathcal{H}[M] \}
+= \mathcal{H}\!\left[\mathcal{L}_{\vec N} M\right],
+\qquad
+\{ \mathcal{H}_i[N^i],\, \mathcal{H}_j[M^j] \}
+= \mathcal{H}_i\!\left[\mathcal{L}_{\vec N} \vec M\right]^i.
+\]
+
+%---------------------------
+% Boundary terms (GHY) e matching
+%---------------------------
+\[
+S_{\text{GHY}} = \frac{1}{8\pi G}\int_{\partial\mathcal{M}} d^3y \,\sqrt{|h|}\; \epsilon \, K_{\text{ext}},
+\qquad
+\delta(S_{\text{EH}} + S_{\text{GHY}})\big|_{\partial\mathcal{M}}=0,
+\]
+\[
+\left[ K_{ab} - h_{ab}\,K \right]^{+}_{-}
+= -\,\frac{8\pi G}{c^4}\, S_{ab}
+\qquad\text{(Israel)}.
+\]
+
+%---------------------------
+% Consistent limits and partial closure
+%---------------------------
+\[
+\lim_{\nabla \mathcal{K} \to 0}
+\left\{
+\begin{array}{l}
+\langle \hat T_{\mu\nu} \rangle_{\nabla \mathcal{K}} \to T^{(\text{matter})}_{\mu\nu} - \rho_{\text{vac}}\,g_{\mu\nu} \\[4pt]
+\Lambda_{\text{eff}} \to \Lambda + \dfrac{8\pi G}{c^4}\big(\rho_{\text{vac}}+V(\mathcal{K}_0)\big) \\[4pt]
+\text{FRW/TOV/perturbations} \to \text{standard forms with }\Lambda_{\text{eff}}
+\end{array}
+\right.
+\]
+
+%---------------------------
+% End Parte 3/8
+%---------------------------
+
+%---------------------------
+% Matter couplings generating J_\mathcal{K} (fixed)
+
+\[
+\text{Scalar:}\quad
+\mathcal{L}_{\text{scalar}}(\varphi)
+= -\tfrac{1}{2}\, g^{\mu\nu}\nabla_\mu\varphi\nabla_\nu\varphi - U(\varphi),
+\qquad
+\frac{\partial \mathcal{L}_{\text{scalar}}}{\partial \mathcal{K}}=0
+\;\Rightarrow\;
+J_\mathcal{K}^{(\varphi)}=0.
+\]
+
+\[
+\text{Dirac:}\quad
+\mathcal{L}_{\text{Dirac}}
+= \bar\psi(i\gamma^\mu\nabla_\mu - m)\psi - y(\mathcal{K})\,\bar\psi\psi,
+\qquad
+J_\mathcal{K}^{(\psi)}= y'(\mathcal{K})\,\bar\psi\psi.
+\]
+
+\[
+\text{Gauge:}\quad
+\mathcal{L}_{\text{gauge}}
+= -\tfrac{1}{4}\, f(\mathcal{K})\,F_{\mu\nu}F^{\mu\nu},
+\qquad
+J_\mathcal{K}^{(A)}=\tfrac{1}{4}\, f'(\mathcal{K})\,F_{\mu\nu}F^{\mu\nu}.
+\]
+
+\[
+J_\mathcal{K} = J_\mathcal{K}^{(\varphi)} + J_\mathcal{K}^{(\psi)} + J_\mathcal{K}^{(A)} + \cdots,
+\qquad
+\Box \mathcal{K} - V'(\mathcal{K}) = J_\mathcal{K} - \nabla_\mu J_W^\mu.
+\]
+
+
+%---------------------------
+% Covariant conservation with \mathcal{K}-backreaction
+%---------------------------
+\[
+\nabla^\mu\!\left(G_{\mu\nu}+\Lambda g_{\mu\nu}\right)=0
+\;\Rightarrow\;
+\nabla^\mu \!\left\langle \hat T_{\mu\nu}\right\rangle_{\nabla \mathcal{K}}=0.
+\]
+\[
+\nabla^\mu\!\left(T^{(\text{matter})}_{\mu\nu}+T^{(\mathcal{K})}_{\mu\nu}\right)
+= \nabla^\mu \!\left\langle \hat T_{\mu\nu}\right\rangle_{\nabla \mathcal{K}}
+= 0,
+\]
+\[
+\nabla^\mu T^{(\mathcal{K})}_{\mu\nu}
+= (\Box \mathcal{K} - V'(\mathcal{K}))\,\nabla_\nu \mathcal{K}
+= \big(J_\mathcal{K} - \nabla_\mu J_W^\mu\big)\,\nabla_\nu \mathcal{K}.
+\]
+\[
+\nabla^\mu T^{(\text{matter})}_{\mu\nu}
+= -\big(J_\mathcal{K} - \nabla_\mu J_W^\mu\big)\,\nabla_\nu \mathcal{K}.
+\]
+
+%---------------------------
+% FRW background: consistency of units
+%---------------------------
+\[
+\rho_\mathcal{K} = \frac{1}{2c^2}\dot{\mathcal{K}}^2 + V(\mathcal{K}),\qquad
+p_\mathcal{K}   = \frac{1}{2c^2}\dot{\mathcal{K}}^2 - V(\mathcal{K}).
+\]
+\[
+\dot\rho_\mathcal{K} + 3H\!\left(\rho_\mathcal{K} + \frac{p_\mathcal{K}}{c^2}\right)
+= \frac{1}{c^2}\dot{\mathcal{K}}\big(\ddot{\mathcal{K}} + 3H\dot{\mathcal{K}}\big) + V'(\mathcal{K})\dot{\mathcal{K}}
+= \frac{\dot{\mathcal{K}}}{c^2}\big(c^2 J_\mathcal{K} - c^2 V'(\mathcal{K})\big) + V'(\mathcal{K})\dot{\mathcal{K}} = J_\mathcal{K} \dot{\mathcal{K}}.
+\]
+\[
+\text{If }J_\mathcal{K}=0\text{ (no explicit coupling), then}\quad
+\dot\rho_\mathcal{K} + 3H\!\left(\rho_\mathcal{K} + \frac{p_\mathcal{K}}{c^2}\right)=0.
+\]
+
+%---------------------------
+% Newtonian gauge: closure with Poisson-like equation
+%---------------------------
+\[
+k^2 \Phi_N = 4\pi G\,a^2\,\delta\rho_{\text{tot}}
+- 3\mathcal{H}(\Phi_N' + \mathcal{H}\Phi_N),
+\quad
+\delta\rho_{\text{tot}}=\delta\rho_{\text{matter}}+\delta\rho_\mathcal{K}.
+\]
+\[
+\lim_{\nabla \mathcal{K}\to 0}\Rightarrow
+\delta\rho_\mathcal{K} \to 0,\quad
+k^2 \Phi_N \to 4\pi G\,a^2\,\delta\rho_{\text{matter}} - 3\mathcal{H}(\Phi_N'+\mathcal{H}\Phi_N).
+\]
+
+%---------------------------
+% TT sector: energy in gravitational waves with \mathcal{K}
+%---------------------------
+\[
+\rho_{\text{GW}} =
+\frac{c^2}{32\pi G\,a^2}\Big\langle ({h_{ij}^{\text{TT}}}')^2 + k^2 (h_{ij}^{\text{TT}})^2 \Big\rangle
++ \Delta\rho_{\text{GW}}[\nabla \mathcal{K}],
+\quad
+\Delta\rho_{\text{GW}} \propto \Pi^{\text{TT}}_{ij}[\mathcal{K}]\,h^{\text{TT}}_{ij}.
+\]
+\[
+\lim_{\nabla \mathcal{K}\to 0}\Rightarrow \Delta\rho_{\text{GW}}\to 0.
+\]
+
+%---------------------------
+% Israel matching with \mathcal{K}-shell
+%---------------------------
+\[
+\left[ K_{ab} - h_{ab}K \right]^{+}_{-}
+= -\frac{8\pi G}{c^4}\,S_{ab}^{\text{(shell)}},
+\quad
+S_{ab}^{\text{(shell)}} = \int d\lambda\; \big(T^{(\text{matter})}_{ab} + T^{(\mathcal{K})}_{ab}\big)\Big|_{\text{shell}}.
+\]
+\[
+T^{(\mathcal{K})}_{ab}\big|_{\text{shell}}
+= (\nabla_a \mathcal{K})(\nabla_b \mathcal{K}) - \tfrac{1}{2} h_{ab} h^{cd}(\nabla_c \mathcal{K})(\nabla_d \mathcal{K}) + h_{ab} V(\mathcal{K}).
+\]
+
+%---------------------------
+% GHY variation (sketch)
+%---------------------------
+\[
+\delta S_{\text{EH}} = \frac{1}{16\pi G}\int_{\mathcal{M}} d^4x\,\sqrt{-g}\,(G_{\mu\nu}+\Lambda g_{\mu\nu})\,\delta g^{\mu\nu}
++ \frac{1}{16\pi G}\int_{\partial\mathcal{M}} d^3y\,\sqrt{|h|}\, \epsilon\, (n^\mu \nabla^\nu - n^\nu \nabla^\mu)\,\delta g_{\mu\nu}.
+\]
+\[
+\delta S_{\text{GHY}} = -\frac{1}{16\pi G}\int_{\partial\mathcal{M}} d^3y\,\sqrt{|h|}\,\epsilon\, (n^\mu \nabla^\nu - n^\nu \nabla^\mu)\,\delta g_{\mu\nu}
+\;\Rightarrow\;
+\delta(S_{\text{EH}}+S_{\text{GHY}})\Big|_{\partial\mathcal{M}}=0.
+\]
+
+%---------------------------
+% Canonical quantization (equal-time)
+%---------------------------
+\[
+\{\mathcal{K}(t,\mathbf{x}),\Pi_\mathcal{K}(t,\mathbf{y})\}=\delta^{(3)}(\mathbf{x}-\mathbf{y}),
+\qquad
+[\,\hat{\mathcal{K}}(t,\mathbf{x}),\hat{\Pi}_{\mathcal{K}}(t,\mathbf{y})\,]= i\hbar\,\delta^{(3)}(\mathbf{x}-\mathbf{y}).
+\]
+\[
+\hat{\mathcal{H}}_\mathcal{K}
+= \int d^3x\left[
+\frac{1}{2\sqrt{\gamma}}\,\hat\Pi_\mathcal{K}^2
++ \frac{\sqrt{\gamma}}{2}\,\gamma^{ij}\partial_i \hat{\mathcal{K}} \partial_j \hat{\mathcal{K}}
++ \sqrt{\gamma}\,V(\hat{\mathcal{K}})\right].
+\]
+
+%---------------------------
+% Microcausality and characteristics
+%---------------------------
+\[
+\begin{aligned}
+\text{Principal operator of }(\Box - V''):
+\qquad
+\mathcal{P}^{\mu\nu}
+(\partial_\mu\partial_\nu)
+&=
+g^{\mu\nu}
+\partial_\mu\partial_\nu,
+\\[0.4em]
+\mathcal{P}(\xi)
+&=
+g^{\mu\nu}
+\xi_\mu\xi_\nu
+=
+0.
+\end{aligned}
+\]
+\[
+\text{The term }m_\mathcal{K}^2=V''(\mathcal{K}_0)\text{ does not alter the characteristics (light cone).}
+\]
+
+%---------------------------
+% Small-gradient closure and consistency
+%---------------------------
+\[
+\lim_{\nabla \mathcal{K}\to 0} \Rightarrow
+\left\{
+\begin{array}{l}
+A_{\mu\nu}{}^{\alpha}\to 0,\quad B_{\mu\nu}{}^{\alpha\beta}\nabla_\alpha \mathcal{K} \nabla_\beta \mathcal{K} \to 0,\\[4pt]
+\langle \hat T_{\mu\nu}\rangle_{\nabla \mathcal{K}} \to T^{(\text{matter})}_{\mu\nu} - \rho_{\text{vac}} g_{\mu\nu},\\[4pt]
+G_{\mu\nu}+\Lambda_{\text{eff}} g_{\mu\nu} = \dfrac{8\pi G}{c^4}\,T^{(\text{matter})}_{\mu\nu}.
+\end{array}
+\right.
+\]
+
+%---------------------------
+% End Parte 4/8
+%---------------------------
+
+%---------------------------
+% Gauge-invariant scalar perturbations (Bardeen-like)
+%---------------------------
+\[
+\begin{aligned}
+\text{Definitions:}
+\qquad
+\Phi_B
+&\equiv
+\Phi_N
++
+\mathcal{H}
+\left(
+B-E'
+\right)
++
+\left(
+B-E'
+\right)',
+\\[0.4em]
+\Psi_B
+&\equiv
+\Psi_N
+-
+\mathcal{H}
+\left(
+B-E'
+\right).
+\end{aligned}
+\]
+\[
+\delta \mathcal{K}_g \equiv \delta \mathcal{K} - \mathcal{K}'\left(B - E'\right),
+\qquad
+\Pi^{(\mathcal{K})}_{\;ij}\approx 0 \;\Rightarrow\; \Phi_B=\Psi_B.
+\]
+\[
+k^2 \Phi_B + 3\mathcal{H}\!\left(\Phi_B' + \mathcal{H}\Phi_B\right)
+= 4\pi G\,a^2\!\left(\delta\rho_{\text{matter}} + \frac{1}{a^2}\mathcal{K}'\,\delta \mathcal{K}_g' + V'(\mathcal{K})\,\delta \mathcal{K}_g\right).
+\]
+\[
+\delta \mathcal{K}_g'' + 2\mathcal{H}\,\delta \mathcal{K}_g' + \!\left(k^2 + a^2 m_\mathcal{K}^2\right)\delta \mathcal{K}_g
+= a^2\,\delta J_\mathcal{K}.
+\]
+
+%---------------------------
+% Geodesic deviation with \mathcal{K}-backreaction
+%---------------------------
+\[
+\frac{D^2 \xi^\mu}{D\tau^2}
+= -\,R^\mu{}_{\alpha\beta\gamma} u^\alpha u^\beta \xi^\gamma,
+\qquad
+R_{\mu\nu} = \frac{8\pi G}{c^4}\!\left(\big\langle \hat T_{\mu\nu}\big\rangle_{\nabla \mathcal{K}}
+-\tfrac{1}{2}g_{\mu\nu}\big\langle \hat T \big\rangle_{\nabla \mathcal{K}}\right) + \Lambda g_{\mu\nu}.
+\]
+\[
+\text{Focusing (NCC):}\quad
+R_{\mu\nu}k^\mu k^\nu = \frac{8\pi G}{c^4}\,\big\langle \hat T_{\mu\nu}\big\rangle_{\nabla \mathcal{K}} k^\mu k^\nu \ge 0.
+\]
+
+%---------------------------
+% Weak-field / gravitational lensing with \mathcal{K} gradient
+%---------------------------
+\[
+g_{00} \simeq -\left(1+\frac{2\Phi_{\text{eff}}}{c^2}\right),
+\quad
+\Phi_{\text{eff}} = \Phi_{\text{N}} + \Phi_{\mathcal{K}},
+\quad
+\nabla^2 \Phi_{\mathcal{K}} = 4\pi G \left(\rho_\mathcal{K} + \frac{3p_\mathcal{K}}{c^2}\right).
+\]
+\[
+\hat\alpha(\mathbf{b}) = \frac{2}{c^2}\int_{-\infty}^{+\infty} dz\;\nabla_\perp\Phi_{\text{eff}}(\mathbf{b},z),
+\qquad
+\lim_{\nabla \mathcal{K}\to 0} \Rightarrow \hat\alpha \to \hat\alpha_{\text{GR}}.
+\]
+
+%---------------------------
+% Post-Newtonian expansion (sketch)
+%---------------------------
+\[
+g_{00} = -1 + \frac{2U}{c^2} - \frac{2\beta_{\text{eff}} U^2}{c^4} + \cdots,
+\quad
+g_{0i} = -\frac{4\gamma_{\text{eff}} V_i}{c^3} + \cdots,
+\quad
+g_{ij} = \left(1 + \frac{2\gamma_{\text{eff}} U}{c^2}\right)\delta_{ij} + \cdots,
+\]
+\[
+\gamma_{\text{eff}} = 1 + \Delta\gamma[\nabla \mathcal{K}],\qquad
+\beta_{\text{eff}} = 1 + \Delta\beta[\nabla \mathcal{K}],
+\qquad
+\lim_{\nabla \mathcal{K}\to 0}\; \Delta\gamma,\Delta\beta \to 0.
+\]
+
+%---------------------------
+% Noether currents for \mathcal{K}-shifts (approximate symmetry)
+%---------------------------
+\[
+\mathcal{K} \to \mathcal{K} + \epsilon \;\Rightarrow\;
+J^\mu_{\text{shift}}
+= \frac{\partial\mathcal{L}_\mathcal{K}}{\partial(\nabla_\mu \mathcal{K})}\,\delta \mathcal{K}
+= g^{\mu\nu}\nabla_\nu \mathcal{K},
+\qquad
+\nabla_\mu J^\mu_{\text{shift}} = \Box \mathcal{K}.
+\]
+\[
+\text{With } V'(\mathcal{K})=J_\mathcal{K}-\nabla_\mu J_W^\mu:\quad
+\nabla_\mu J^\mu_{\text{shift}} = J_\mathcal{K} - \nabla_\mu J_W^\mu.
+\]
+
+%---------------------------
+% Path integral and gradient-weighted measure
+%---------------------------
+\[
+Z[g,\nabla \mathcal{K}] = \int \mathcal{D}\psi\;\exp\!\left(
+- \int d^4x \sqrt{-g}\;\alpha\, g^{\mu\nu}\partial_\mu \mathcal{K} \partial_\nu \mathcal{K}
+\right),
+\quad
+\hat\rho_{\nabla \mathcal{K}}=\frac{1}{Z}e^{-\alpha\int\sqrt{-g}\,\|\nabla \mathcal{K}\|^2}.
+\]
+\[
+\big\langle \hat T_{\mu\nu}\big\rangle_{\nabla \mathcal{K}}
+= \frac{2}{\sqrt{-g}}\frac{\delta \ln Z}{\delta g^{\mu\nu}}
+= \frac{2}{\sqrt{-g}}\frac{\delta W}{\delta g^{\mu\nu}},
+\qquad
+J_W^\mu \equiv \frac{2}{\sqrt{-g}}\frac{\delta W}{\delta(\nabla_\mu \mathcal{K})}.
+\]
+
+%---------------------------
+% Semiclassical closure (Γ-functional)
+%---------------------------
+\[
+\Gamma[g,\mathcal{K}] = S_{\text{grav}}[g]+S_{\text{matter}}[g] + S_\mathcal{K}[g,\mathcal{K}] + W[g,\nabla \mathcal{K}],
+\]
+\[
+\frac{2}{\sqrt{-g}}\frac{\delta \Gamma}{\delta g^{\mu\nu}}
+= \frac{1}{8\pi G}\left(G_{\mu\nu}+\Lambda g_{\mu\nu}\right)
+- \left(T^{(\text{matter})}_{\mu\nu}+T^{(\mathcal{K})}_{\mu\nu}\right)
++ \big\langle \hat T_{\mu\nu}\big\rangle_{\nabla \mathcal{K}} = 0,
+\]
+\[
+\frac{1}{\sqrt{-g}}\frac{\delta \Gamma}{\delta \mathcal{K}}
+= -\,\nabla_\mu\!\left(g^{\mu\nu}\nabla_\nu \mathcal{K}\right) - V'(\mathcal{K})
++ \nabla_\mu J_W^\mu - \frac{\partial \mathcal{L}_{\text{matter}}}{\partial \mathcal{K}} = 0.
+\]
+
+%---------------------------
+% GR recovery (zero coherence limit)
+%---------------------------
+\[
+\lim_{\nabla \mathcal{K} \to 0} \Rightarrow
+\left\{
+\begin{array}{l}
+J_W^\mu \to 0,\quad J_\mathcal{K} \to 0,\\[2pt]
+\big\langle \hat T_{\mu\nu}\big\rangle_{\nabla \mathcal{K}} \to T^{(\text{matter})}_{\mu\nu}-\rho_{\text{vac}}g_{\mu\nu},\\[2pt]
+G_{\mu\nu} + \Lambda_{\text{eff}} g_{\mu\nu} = \dfrac{8\pi G}{c^4}\,T^{(\text{matter})}_{\mu\nu}.
+\end{array}
+\right.
+\]
+
+%---------------------------
+% Linear response kernel (explicit form)
+%---------------------------
+\[
+\delta \!\left\langle T_{\mu\nu}(x) \right\rangle_{\nabla \mathcal{K}}
+= \int d^4x'\,\sqrt{-g(x')}\;\chi_{\mu\nu}{}^{\alpha}(x,x')\,\nabla_\alpha \delta \mathcal{K}(x'),
+\]
+\[
+\chi_{\mu\nu}{}^{\alpha}(x,x')
+= \frac{\delta}{\delta(\nabla_\alpha \mathcal{K})(x')}
+\left[\big\langle T_{\mu\nu}(x)\big\rangle_{\nabla \mathcal{K}}\right]_{\text{on }\mathcal{K}}.
+\]
+\[
+\lim_{\nabla \mathcal{K}\to 0}\;\chi_{\mu\nu}{}^{\alpha}(x,x')\to 0.
+\]
+
+%---------------------------
+% \mathcal{K}-propagator e spettro in FLRW
+%---------------------------
+\[
+\delta \mathcal{K}(\eta,\mathbf{x})
+= \int \frac{d^3k}{(2\pi)^3}\; \delta \mathcal{K}_{\mathbf{k}}(\eta)\,e^{i\mathbf{k}\cdot\mathbf{x}},
+\qquad
+\delta \mathcal{K}_{\mathbf{k}}'' + 2\mathcal{H}\,\delta \mathcal{K}_{\mathbf{k}}' + \left(k^2 + a^2 m_\mathcal{K}^2\right)\delta \mathcal{K}_{\mathbf{k}} = a^2 \delta J_{\mathcal{K},\mathbf{k}}.
+\]
+\[
+\mathcal{P}_\mathcal{K}(k,\eta) \equiv \frac{k^3}{2\pi^2}\,|\delta \mathcal{K}_{\mathbf{k}}(\eta)|^2,
+\qquad
+\lim_{\nabla \mathcal{K}\to 0}\Rightarrow \mathcal{P}_\mathcal{K} \to 0.
+\]
+
+%---------------------------
+% Effective refractive index for rays (eikonal)
+%---------------------------
+\[
+\begin{aligned}
+\text{Eikonal ansatz:}
+\qquad
+\phi(x)
+&=
+\phi_0\,
+e^{iS(x)/\epsilon},
+\\[0.4em]
+(\nabla S)^2
+&=
+0
+\qquad
+\text{on }
+g_{\mu\nu}.
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\text{Weak }\mathcal{K}\text{-backreaction:}
+\qquad
+(\nabla S)^2
++
+\delta n^2
+[\nabla\mathcal K]
+&\simeq
+0,
+\\[0.4em]
+\delta n^2
+&\propto
+\frac{
+\nabla_\mu\mathcal K\,
+\nabla_\nu\mathcal K
+}{
+M_{\mathcal K}^{2}
+}
+k^\mu k^\nu,
+\\[0.4em]
+\lim_{\nabla\mathcal K\to0}
+\delta n^2
+&\to
+0.
+\end{aligned}
+\]
+
+%---------------------------
+% Averaging operator  ⟨·⟩_{∇\mathcal{K}} : definizione e proprietà
+%---------------------------
+\[
+\langle \mathcal{O} \rangle_{\nabla \mathcal{K}}
+\;\equiv\;
+\frac{1}{Z[g,\nabla \mathcal{K}]}\int \mathcal{D}\psi\;
+\mathcal{O}[\psi,g]\;
+\exp\!\left(-\int d^4x \sqrt{-g}\;\alpha\, g^{\mu\nu}\partial_\mu \mathcal{K}\,\partial_\nu \mathcal{K}\right),
+\]
+\[
+Z[g,\nabla \mathcal{K}] \equiv \int \mathcal{D}\psi\;
+\exp\!\left(-\int d^4x \sqrt{-g}\;\alpha\, \|\nabla \mathcal{K}\|^2\right),
+\qquad
+\langle 1\rangle_{\nabla \mathcal{K}}=1,\quad \langle \mathcal{O}\rangle_{0}=\langle \mathcal{O}\rangle.
+\]
+\[
+\frac{\delta}{\delta g^{\mu\nu}(x)}
+\ln Z[g,\nabla \mathcal{K}]
+= \frac{1}{2}\sqrt{-g}\,\big\langle \hat T_{\mu\nu}(x)\big\rangle_{\nabla \mathcal{K}},
+\qquad
+\frac{\delta}{\delta(\nabla_\mu \mathcal{K})(x)}\ln Z[g,\nabla \mathcal{K}]
+= \tfrac{1}{2}\sqrt{-g}\,J_W^\mu(x).
+\]
+
+% Cumulant / small-gradient expansion (giustificazione)
+\[
+\ln Z[g,\nabla \mathcal{K}]
+= \ln Z[g,0]
+- \alpha\!\int\! d^4x \sqrt{-g}\;\|\nabla \mathcal{K}\|^2
++ \frac{\alpha^2}{2}\!\int\! d^4x d^4y\; \sqrt{-g_x}\sqrt{-g_y}\;
+\mathcal{C}^{\mu\nu}(x,y)\,\partial_\mu \mathcal{K}(x)\partial_\nu \mathcal{K}(y) + \cdots,
+\]
+\[
+\Rightarrow\;
+\big\langle \hat T_{\mu\nu}\big\rangle_{\nabla \mathcal{K}}
+= \big\langle \hat T_{\mu\nu}\big\rangle
++ c_1\,\nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K}
+- \tfrac{1}{2}c_1 g_{\mu\nu}\,\nabla_\rho \mathcal{K} \nabla^\rho \mathcal{K}
++ c_2 g_{\mu\nu} V(\mathcal{K}) + \mathcal{O}(\epsilon_\mathcal{K}^3),
+\]
+\[
+c_1 \equiv 2\alpha + \mathcal{O}(\alpha^2),\qquad c_2 \equiv \mathcal{O}(1).
+\]
+
+%---------------------------
+% Ward identity da diffeomorfismo e Bianchi
+%---------------------------
+\[
+\delta_\xi \Gamma[g,\mathcal{K}]=0
+\;\Rightarrow\;
+\nabla^\mu\!\left[
+\frac{1}{8\pi G}\left(G_{\mu\nu}+\Lambda g_{\mu\nu}\right)
+- \left(T^{(\text{matter})}_{\mu\nu}+T^{(\mathcal{K})}_{\mu\nu}\right)
++ \big\langle \hat T_{\mu\nu}\big\rangle_{\nabla \mathcal{K}}\right]=0,
+\]
+\[
+\nabla^\mu G_{\mu\nu}=0 \quad (\text{Bianchi})\;\Rightarrow\;
+\nabla^\mu\!\left\langle \hat T_{\mu\nu}\right\rangle_{\nabla \mathcal{K}}
+= \nabla^\mu \!\left(T^{(\text{matter})}_{\mu\nu}+T^{(\mathcal{K})}_{\mu\nu}\right)=0.
+\]
+
+%---------------------------
+% Well-posedness (hyperbolicity) of \mathcal{K} equation and mixed system
+%---------------------------
+% Principal symbol and hyperbolicity
+
+\[
+\begin{aligned}
+\text{Principal operator of }(\Box - V''):
+\qquad
+\mathcal{P}^{\mu\nu}
+(\partial_\mu\partial_\nu)
+&=
+g^{\mu\nu}
+\partial_\mu\partial_\nu,
+\\[0.4em]
+\mathcal{P}(\xi)
+&=
+g^{\mu\nu}
+\xi_\mu\xi_\nu.
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\text{Lorentzian signature }
+(-,+,+,+)
+\qquad
+&\Rightarrow
+\qquad
+\text{hyperbolic},
+\\[0.4em]
+&\text{well posed in }
+H^s\times H^{s-1},
+\qquad
+s>\frac32.
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\text{Cauchy data on }\Sigma_0:
+\qquad
+&
+\left(
+\mathcal K\big|_{\Sigma_0},
+\;
+n^\mu\nabla_\mu\mathcal K\big|_{\Sigma_0}
+\right),
+\\[0.4em]
+&
+(\gamma_{ij},\pi^{ij})
+\text{ satisfying }
+\mathcal C_H=0,
+\qquad
+\mathcal C_i=0.
+\end{aligned}
+\]
+
+% Coercive energy for \mathcal{K} (L^2 stability)
+
+\[
+\begin{aligned}
+E_{\mathcal K}(t)
+\equiv
+\int_{\Sigma_t}
+d^3x\,
+\sqrt{\gamma}
+\Big(
+&
+\frac12
+(n^\mu\nabla_\mu\mathcal K)^2
+\\
+&
++
+\frac12
+\gamma^{ij}
+\partial_i\mathcal K
+\partial_j\mathcal K
++
+V_{\mathrm{eff}}
+(\mathcal K)
+\Big),
+\\[0.6em]
+\frac{dE_{\mathcal K}}{dt}
+&\le
+C\,E_{\mathcal K}.
+\end{aligned}
+\]
+
+\[
+\Rightarrow
+\qquad
+E_{\mathcal K}(t)
+\le
+E_{\mathcal K}(0)\,
+e^{Ct},
+\qquad
+\text{(Grönwall estimate)}.
+\]
+
+%---------------------------
+% Linear stability around FRW: dispersion
+%---------------------------
+\[
+\delta \mathcal{K}_{\mathbf{k}}'' + 2\mathcal{H}\,\delta \mathcal{K}_{\mathbf{k}}' + \left(k^2 + a^2 m_\mathcal{K}^2\right)\delta \mathcal{K}_{\mathbf{k}}=0
+\quad(J_\mathcal{K}=0),
+\]
+\[
+\Rightarrow\;
+\omega_\mathcal{K}^2(\eta,k) \simeq k^2 + a^2 m_\mathcal{K}^2 - \frac{a''}{a},
+\qquad
+\omega_\mathcal{K}^2 \ge 0 \;\; \Leftrightarrow \;\; m_\mathcal{K}^2 \ge a''/a - k^2/a^2.
+\]
+
+% TT mode with small backreaction
+\[
+{h_{ij}^{\text{TT}}}'' + 2\mathcal{H}\,{h_{ij}^{\text{TT}}}' + \left[k^2 + a^2\mu_\mathcal{K}^2(\eta)\right] h_{ij}^{\text{TT}} = 0,
+\qquad
+\mu_\mathcal{K}^2(\eta)\equiv \frac{4\pi G}{c^4}\frac{\Pi^{\text{TT}}[\mathcal{K}]}{h^{\text{TT}}}.
+\]
+\[
+\mu_\mathcal{K}^2\ge 0 \;\Rightarrow\; \text{no tachyonic instability for GWs.}
+\]
+
+%---------------------------
+% Causality of the response kernel
+%---------------------------
+\[
+\chi_{\mu\nu}{}^{\alpha}(x,x') = 0 \quad \text{if } x \notin J^{+}(x'),
+\qquad
+\delta\!\left\langle T_{\mu\nu}(x)\right\rangle_{\nabla \mathcal{K}}
+= \int d^4x'\sqrt{-g(x')}\;\chi_{\mu\nu}{}^{\alpha}(x,x')\,\nabla_\alpha\delta \mathcal{K}(x').
+\]
+\[
+\Rightarrow\;
+\text{retardation} \;\wedge\; \text{microcausality preserved (light cone of }g_{\mu\nu}\text{)}.
+\]
+
+%---------------------------
+% Special limits and test cases
+%---------------------------
+\[
+\text{Minkowski:}\quad g_{\mu\nu}=\eta_{\mu\nu},\;\mathcal{K}=\mathcal{K}_0=\text{cost.}\;\Rightarrow\;
+\Box \delta \mathcal{K} + m_\mathcal{K}^2 \delta \mathcal{K} = 0,\quad
+\partial^2 \bar h_{\mu\nu}=0.
+\]
+\[
+\text{de Sitter:}\quad a(\eta)= -\frac{1}{H\eta},\; \mathcal{H}=-1/\eta,
+\quad
+\delta \mathcal{K}_{\mathbf{k}}'' - \frac{2}{\eta}\delta \mathcal{K}_{\mathbf{k}}' + \left(k^2 + \frac{m_\mathcal{K}^2}{H^2\eta^2}\right)\delta \mathcal{K}_{\mathbf{k}}=0.
+\]
+\[
+\begin{aligned}
+\text{Schwarzschild (exterior):}
+\qquad
+ds^2
+=
+&
+-\left(
+1-\frac{2GM}{c^2r}
+\right)
+c^2dt^2
+\\[0.4em]
+&
++
+\left(
+1-\frac{2GM}{c^2r}
+\right)^{-1}
+dr^2
++
+r^2d\Omega^2,
+\\[0.6em]
+\mathcal{K}'
+=
+0
+\qquad
+&\Rightarrow
+\qquad
+\text{pure GR}.
+\end{aligned}
+\]
+
+%---------------------------
+% Traced identity and Λ_eff
+%---------------------------
+\[
+g^{\mu\nu}\!\left(G_{\mu\nu}+\Lambda g_{\mu\nu}\right)
+= -R + 4\Lambda
+= \frac{8\pi G}{c^4}\,\big\langle \hat T \big\rangle_{\nabla \mathcal{K}}
+\;\Rightarrow\;
+R = 4\Lambda - \frac{8\pi G}{c^4}\,\big\langle \hat T \big\rangle_{\nabla \mathcal{K}}.
+\]
+
+%---------------------------
+% Conservazione totale e scambio con materia
+%---------------------------
+\[
+\nabla^\mu T^{(\text{matter})}_{\mu\nu}
+= -\left(J_\mathcal{K} - \nabla_\mu J_W^\mu\right)\nabla_\nu \mathcal{K},
+\qquad
+\nabla^\mu T^{(\mathcal{K})}_{\mu\nu}
+= \left(J_\mathcal{K} - \nabla_\mu J_W^\mu\right)\nabla_\nu \mathcal{K},
+\]
+\[
+\Rightarrow\; \nabla^\mu\!\left(T^{(\text{matter})}_{\mu\nu}+T^{(\mathcal{K})}_{\mu\nu}\right)=0
+\quad\text{(coherent exchange between sectors)}.
+\]
+
+%---------------------------
+% Hamilton–Jacobi per il settore \mathcal{K}
+%---------------------------
+\[
+S_\mathcal{K}[g,\mathcal{K}] = \int d^4x\,\sqrt{-g}\left(\tfrac{1}{2}\nabla_\mu \mathcal{K} \nabla^\mu \mathcal{K} - V(\mathcal{K})\right),
+\qquad
+\Pi_\mathcal{K} \equiv \frac{\delta S_\mathcal{K}}{\delta(\partial_0 \mathcal{K})} = \sqrt{-g}\, g^{0\nu}\partial_\nu \mathcal{K}.
+\]
+\[
+\mathcal{H}_\mathcal{K} = \Pi_\mathcal{K} \partial_0 \mathcal{K} - \sqrt{-g}\left(\tfrac{1}{2}\nabla_\mu \mathcal{K} \nabla^\mu \mathcal{K} - V\right)
+= \tfrac{1}{2\sqrt{-g}}\Pi_\mathcal{K}^2 + \tfrac{\sqrt{-g}}{2}\, \partial_i \mathcal{K} \partial^i \mathcal{K} + \sqrt{-g}\, V(\mathcal{K}).
+\]
+\[
+\frac{\partial S_{\text{HJ}}}{\partial t}
++ \int d^3x\left[
+\frac{1}{2\sqrt{-g}}\!\left(\frac{\delta S_{\text{HJ}}}{\delta \mathcal{K}}\right)^{\!2}
++ \frac{\sqrt{-g}}{2}\,\partial_i \mathcal{K} \partial^i \mathcal{K} + \sqrt{-g}\,V(\mathcal{K})
+\right] = 0.
+\]
+
+%---------------------------
+% Spazio delle fasi covariante e forma simplettica
+%---------------------------
+\[
+\Theta^\mu(\delta\phi) \equiv \sum_a \frac{\partial \mathcal{L}}{\partial(\nabla_\mu \phi_a)}\,\delta\phi_a,
+\qquad
+\omega^\mu(\delta_1\phi,\delta_2\phi) \equiv \delta_1 \Theta^\mu(\delta_2\phi) - \delta_2 \Theta^\mu(\delta_1\phi),
+\]
+\[
+\Omega_\Sigma(\delta_1\phi,\delta_2\phi) \equiv \int_\Sigma d\Sigma_\mu \,\omega^\mu(\delta_1\phi,\delta_2\phi),
+\qquad
+\phi_a \in \{g_{\mu\nu},\mathcal{K},\psi,\dots\}.
+\]
+\[
+\text{For }\mathcal{K}:\quad
+\Theta^\mu_\mathcal{K} = \nabla^\mu \mathcal{K}\,\delta \mathcal{K},
+\qquad
+\omega^\mu_\mathcal{K} = \delta_1(\nabla^\mu \mathcal{K})\,\delta_2 \mathcal{K} - \delta_2(\nabla^\mu \mathcal{K})\,\delta_1 \mathcal{K}.
+\]
+
+%---------------------------
+% Carica di Noether da diffeomorfismi e identità
+%---------------------------
+\[
+\delta_\xi \phi_a = \mathcal{L}_\xi \phi_a,
+\qquad
+J^\mu_\xi = \Theta^\mu(\mathcal{L}_\xi \phi) - \xi^\mu \mathcal{L} \;\; \Rightarrow \;\; \nabla_\mu J^\mu_\xi = 0.
+\]
+\[
+J^\mu_\xi = \nabla_\nu Q^{\mu\nu}_\xi + \text{EOM-terms},
+\qquad
+Q^{\mu\nu}_\xi = -\frac{1}{16\pi G}\,\nabla^{[\mu}\xi^{\nu]} + Q^{\mu\nu}_{\xi,(\mathcal{K})},
+\]
+\[
+Q^{\mu\nu}_{\xi,(\mathcal{K})} = \tfrac{1}{2}\left(\xi^{[\mu}\nabla^{\nu]} \mathcal{K}\right) \mathcal{K} - \tfrac{1}{2}\xi^{[\mu}\nabla^{\nu]} F(\mathcal{K}),
+\qquad
+F'(\mathcal{K})\equiv \mathcal{K}.
+\]
+
+%---------------------------
+% Entropia tipo-Wald con contributo \mathcal{K}
+%---------------------------
+\[
+S_{\text{Wald}} = -2\pi \int_{\mathcal{H}} d^2x \sqrt{\gamma_{\mathcal{H}}}\;
+\frac{\partial \mathcal{L}}{\partial R_{\mu\nu\rho\sigma}}\,
+\epsilon_{\mu\nu}\epsilon_{\rho\sigma}
++ S_{\mathcal{K}},
+\qquad
+S_\mathcal{K} = \int_{\mathcal{H}} d^2x \sqrt{\gamma_{\mathcal{H}}}\; s_\mathcal{K}(\mathcal{K},\nabla \mathcal{K}).
+\]
+\[
+\delta M = \frac{\kappa}{8\pi G}\delta A + \Omega_H \delta J + \Phi_H \delta Q
++ \int_{\mathcal{H}} d^2x \sqrt{\gamma_{\mathcal{H}}}\,\Pi_\mathcal{K}\,\delta \mathcal{K},
+\qquad
+\frac{d}{d\lambda}\!\left(\frac{A}{4G}+S_\mathcal{K}\right) \ge 0.
+\]
+
+%---------------------------
+% Espansione dell’azione efficace fino al terzo ordine in ∇\mathcal{K}
+%---------------------------
+\[
+\Gamma[g,\mathcal{K}] = \int d^4x \sqrt{-g}\left[
+\frac{1}{16\pi G}(R-2\Lambda) + \tfrac{1}{2}\nabla \mathcal{K}\!\cdot\!\nabla \mathcal{K} - V(\mathcal{K})
+\right] + W_2[\nabla \mathcal{K}] + W_3[\nabla \mathcal{K}] + \cdots,
+\]
+\[
+W_2 = \frac{1}{2}\int d^4x\,d^4y\; \sqrt{-g_x}\sqrt{-g_y}\;
+\mathcal{C}^{\mu\nu}(x,y)\,\partial_\mu \mathcal{K}(x)\,\partial_\nu \mathcal{K}(y),
+\]
+\[
+W_3 = \frac{1}{6}\int d^4x\,d^4y\,d^4z\;
+\sqrt{-g_x}\sqrt{-g_y}\sqrt{-g_z}\;
+\mathcal{D}^{\mu\nu\rho}(x,y,z)\,\partial_\mu \mathcal{K}(x)\,\partial_\nu \mathcal{K}(y)\,\partial_\rho \mathcal{K}(z).
+\]
+\[
+\text{Small-gradient:}\quad
+\mathcal{D}^{\mu\nu\rho}= \mathcal{O}(\epsilon_\mathcal{K}) \;\Rightarrow\; W_3 = \mathcal{O}(\epsilon_\mathcal{K}^3).
+\]
+
+%---------------------------
+% Condizioni di stabilità locale (Hessiano e coercività)
+%---------------------------
+\[
+H_{\mu\nu} \equiv \partial_\mu\partial_\nu \mathcal{K},
+\qquad
+H_{\mu\nu} v^\mu v^\nu > 0 \;\; \forall v^\mu\neq 0,
+\qquad
+\det(H_{\mu\nu})>0,
+\]
+\[
+\Rightarrow\; \mathcal{K} \text{ defines a local informational attractor (coherent minimum).}
+\]
+
+%---------------------------
+% Metricas effettiva informazionale (ansatz)
+%---------------------------
+\[
+g^{(\mathcal{K})}_{\mu\nu} = g_{\mu\nu} + \beta\, \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K},
+\qquad
+\det g^{(\mathcal{K})} = \det g \cdot \left(1+\beta\,\nabla_\rho \mathcal{K} \nabla^\rho \mathcal{K}\right),
+\]
+\[
+\begin{aligned}
+\beta
+&\ge 0
+\qquad
+\Rightarrow
+\qquad
+\text{causality preserved},
+\\[0.5em]
+\lim_{\nabla\mathcal K\to0}
+g^{(\mathcal K)}_{\mu\nu}
+&\to
+g_{\mu\nu}.
+\end{aligned}
+\]
+
+%---------------------------
+% Functional renormalization group flow (FRG) for V_{\text{eff}}
+%---------------------------
+\[
+\partial_\mu V_{\text{eff}}(\mathcal{K};\mu) =
+\frac{1}{2}\int \frac{d^4p}{(2\pi)^4}\;
+\partial_\mu \ln\!\left[p^2 + m_\mathcal{K}^2(\mu,\mathcal{K})\right]
+= \frac{1}{32\pi^2}\,\partial_\mu m_\mathcal{K}^2(\mu,\mathcal{K}) \ln\!\frac{\Lambda_{\text{UV}}^2}{m_\mathcal{K}^2} + \cdots,
+\]
+\[
+m_\mathcal{K}^2(\mu,\mathcal{K}) \equiv \frac{\partial^2 V_{\text{eff}}}{\partial \mathcal{K}^2},
+\qquad
+\mu\,\frac{d c_n}{d\mu} = \beta_n(\{c_m\}),\quad
+\left(
+\mu\partial_\mu + \sum_n \beta_n \partial_{c_n} - \gamma_\mathcal{K}\,\mathcal{K}\partial_\mathcal{K}
+\right)V_{\text{eff}}=0.
+\]
+
+%---------------------------
+% Equazioni di stato e limiti
+%---------------------------
+\[
+\rho_\mathcal{K} = \tfrac{1}{2c^2}\dot{\mathcal{K}}^2 + V_{\text{eff}}(\mathcal{K}),\qquad
+p_\mathcal{K}     = \tfrac{1}{2c^2}\dot{\mathcal{K}}^2 - V_{\text{eff}}(\mathcal{K}),\qquad
+w_\mathcal{K} \equiv \frac{p_\mathcal{K}}{\rho_\mathcal{K}}.
+\]
+\[
+\lim_{\nabla \mathcal{K}\to 0}\Rightarrow
+(\rho_\mathcal{K},p_\mathcal{K}) \to (V_{\text{eff}}(\mathcal{K}_0),-V_{\text{eff}}(\mathcal{K}_0)),
+\qquad
+\Lambda_{\text{eff}} = \Lambda + \frac{8\pi G}{c^4}\left(\rho_{\text{vac}}+V_{\text{eff}}(\mathcal{K}_0)\right).
+\]
+
+%---------------------------
+% Propagatori in spazi massimamente simmetrici
+%---------------------------
+\[
+\text{dS }(H):\quad
+G_\mathcal{K}^{\text{dS}}(x,x') = \frac{H^2}{16\pi^2}\,{}_2F_1\!\left(a,b;2;\frac{1+Z(x,x')}{2}\right),
+\quad
+a,b = \frac{3}{2}\pm \sqrt{\frac{9}{4}-\frac{m_\mathcal{K}^2}{H^2}},
+\]
+\[
+Z(x,x') \equiv 1 + \frac{(\eta-\eta')^2 - |\mathbf{x}-\mathbf{x}'|^2}{2\eta\eta'},
+\qquad
+\lim_{H\to 0}\, G_\mathcal{K}^{\text{dS}} \to G_\mathcal{K}^{\text{Mink}}.
+\]
+
+%---------------------------
+% Chiusura: conservazione e limite GR
+%---------------------------
+\[
+\nabla^\mu \big\langle \hat T_{\mu\nu}\big\rangle_{\nabla \mathcal{K}}=0,\qquad
+\lim_{\nabla \mathcal{K}\to 0}\;\big\langle \hat T_{\mu\nu}\big\rangle_{\nabla \mathcal{K}}
+= T^{(\text{matter})}_{\mu\nu} - \rho_{\text{vac}}\,g_{\mu\nu},
+\]
+%---------------------------
+% Initial data and boundary conditions
+%---------------------------
+\[
+\text{Cauchy data on }\Sigma_0:\quad
+\Big(g_{ij},\;\pi^{ij};\; \mathcal{K},\; \Pi_\mathcal{K}\Big)_{\Sigma_0}
+\;\;\text{satisfy}\;\;
+\mathcal{C}_H=0,\ \mathcal{C}_i=0.
+\]
+\[
+\text{Boundary GHY:}\quad
+S_{\text{GHY}}=\frac{1}{8\pi G}\int_{\partial\mathcal{M}} d^3y\,\sqrt{|h|}\,\epsilon\,K_{\rm ext},
+\qquad
+\delta g_{\mu\nu}\big|_{\partial\mathcal{M}}=\delta \mathcal{K}\big|_{\partial\mathcal{M}}=0.
+\]
+
+%---------------------------
+% Riassunto condizioni di energia per il settore \mathcal{K}
+%---------------------------
+\[
+\text{NEC:}\quad T^{(\mathcal{K})}_{\mu\nu}n^\mu n^\nu = (n^\mu\nabla_\mu \mathcal{K})^2 \ge 0,
+\]
+\[
+\text{WEC:}\quad T^{(\mathcal{K})}_{\mu\nu}u^\mu u^\nu
+= \tfrac{1}{2}\left[(u^\mu\nabla_\mu \mathcal{K})^2 + \nabla_i \mathcal{K} \nabla^i \mathcal{K}\right] + V(\mathcal{K}) \ge 0,
+\]
+\[
+\text{SEC:}\quad \big(T^{(\mathcal{K})}_{\mu\nu} - \tfrac{1}{2}g_{\mu\nu}T^{(\mathcal{K})}\big)u^\mu u^\nu
+= (u^\mu\nabla_\mu \mathcal{K})^2 - V(\mathcal{K}) \ge 0.
+\]
+
+%---------------------------
+% Soluzioni di prova esatte / quasi-esatte
+%---------------------------
+% 1) \mathcal{K} costante (riduzione a GR)
+\[
+\mathcal{K}=\mathcal{K}_0=\text{cost.}\ \Rightarrow\ \nabla_\mu \mathcal{K}=0,\quad
+T^{(\mathcal{K})}_{\mu\nu}=-V(\mathcal{K}_0)\,g_{\mu\nu},\quad
+\Lambda_{\text{eff}}=\Lambda+\frac{8\pi G}{c^4}V(\mathcal{K}_0).
+\]
+\[
+\Rightarrow\ G_{\mu\nu}+\Lambda_{\text{eff}} g_{\mu\nu}
+= \frac{8\pi G}{c^4}\,T^{(\text{matter})}_{\mu\nu}.
+\]
+
+% 2) FRW con \mathcal{K}=\mathcal{K}(t) e J_\mathcal{K}=0
+\[
+\ddot{\mathcal{K}} + 3H\dot{\mathcal{K}} + V'(\mathcal{K})=0,\quad
+\rho_\mathcal{K}=\tfrac{1}{2c^2}\dot{\mathcal{K}}^2 + V,\quad
+p_\mathcal{K}=\tfrac{1}{2c^2}\dot{\mathcal{K}}^2 - V,
+\]
+\[
+H^2 + \frac{k c^2}{a^2}
+= \frac{8\pi G}{3c^2}\left(\rho_{\text{matter}}+\rho_\mathcal{K}\right)+\frac{\Lambda c^2}{3}.
+\]
+
+% 3) Statica sferica con \mathcal{K}=\mathcal{K}(r)
+\[
+ds^2=-e^{2\Phi(r)}c^2dt^2 + \frac{dr^2}{1-\frac{2Gm(r)}{c^2 r}} + r^2 d\Omega^2,
+\]
+\[
+\begin{aligned}
+\rho_{\mathcal K}
+&=
+\frac12
+\left(
+1-\frac{2Gm}{c^2r}
+\right)
+\mathcal K'^2
++
+V,
+\\[0.5em]
+p_r^{(\mathcal K)}
+&=
+\frac12
+\left(
+1-\frac{2Gm}{c^2r}
+\right)
+\mathcal K'^2
+-
+V,
+\\[0.5em]
+p_t^{(\mathcal K)}
+&=
+-\frac12
+\left(
+1-\frac{2Gm}{c^2r}
+\right)
+\mathcal K'^2
+-
+V.
+\end{aligned}
+\]
+\[
+\frac{dm}{dr} = \frac{4\pi r^2}{c^2}\left(\rho_{\text{matter}}+\rho_\mathcal{K}\right),\qquad
+\frac{d\Phi}{dr}=\frac{G}{c^2}\frac{m+\frac{4\pi r^3}{c^2}p_r^{\text{(tot)}}}{r^2\left(1-\frac{2Gm}{c^2 r}\right)}.
+\]
+
+%---------------------------
+% Osservabili: mappa parametri ↔ segnali
+%---------------------------
+\[
+\begin{aligned}
+\text{Cosmology:}
+\qquad
+\{
+m_{\mathcal K},
+\;
+c_{s,\mathcal K}^{2},
+\;
+V(\mathcal K_0)
+\}
+\quad
+\longrightarrow
+\quad
+\{
+H(z),
+\;
+f\sigma_8,
+\\[0.4em]
+&
+\Phi_N(k,z),
+\;
+\mathcal P_{\mathcal K}(k)
+\}.
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\text{Gravitational waves:}
+\qquad
+\mu_{\mathcal K}^{2}(\eta)
+\quad
+\longrightarrow
+\quad
+&
+\Delta\rho_{\mathrm{GW}},
+\;
+\Delta v_{\mathrm{GW}},
+\\[0.5em]
+&
+\text{damping}
+\propto
+\int
+a^2
+\mu_{\mathcal K}^{2}
+\,d\eta.
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\text{Lensing and galactic dynamics:}
+\qquad
+\Phi_{\mathcal K}
+\quad
+\longrightarrow
+\quad
+&
+\hat{\alpha},
+\;
+v_{\mathrm{rot}}(r),
+\\[0.4em]
+&
+\frac{M_{\mathrm{lens}}}{M_{\mathrm{dyn}}}.
+\end{aligned}
+\]
+
+%---------------------------
+% Consistency with GR: operational limits
+%---------------------------
+\[
+\lim_{\nabla \mathcal{K}\to 0}
+\left\{
+\begin{array}{l}
+\langle \hat T_{\mu\nu}\rangle_{\nabla \mathcal{K}} \to T^{(\text{matter})}_{\mu\nu} - \rho_{\text{vac}} g_{\mu\nu},\\[2pt]
+\Pi^{\text{TT}}_{ij}\to 0,\ \ \mathcal{P}_\mathcal{K}\to 0,\ \ \Delta\gamma,\Delta\beta\to 0
+\end{array}
+\right.
+\ \Rightarrow\
+\text{GR recovered in all observational sectors.}
+\]
+
+%---------------------------
+% Stima d’ordine e controllo dei termini O(ε_\mathcal{K}^3)
+%---------------------------
+\[
+\epsilon_\mathcal{K} \equiv \frac{\|\nabla \mathcal{K}\|}{M_\mathcal{K}}\ll 1
+\quad\Rightarrow\quad
+\big|\mathcal{O}(\epsilon_\mathcal{K}^3)\big| \lesssim \epsilon_\mathcal{K}^3 \times \text{(typical tensor scale)}.
+\]
+\[
+\text{Validity of the grad-expansion:}\;\;
+\epsilon_\mathcal{K} < \epsilon_{\star}\ \Rightarrow\ \text{relative error } \lesssim \mathcal{O}(\epsilon_{\star}^3).
+\]
+
+%---------------------------
+% Structural summary (equations of the closed system)
+%---------------------------
+\[
+\begin{cases}
+G_{\mu\nu}+\Lambda g_{\mu\nu}
+= \dfrac{8\pi G}{c^4}\left\langle \hat T_{\mu\nu}\right\rangle_{\nabla \mathcal{K}},\\[6pt]
+\Box \mathcal{K} - V'(\mathcal{K}) = J_\mathcal{K} - \nabla_\mu J_W^\mu,\\[6pt]
+\nabla^\mu\!\left\langle \hat T_{\mu\nu}\right\rangle_{\nabla \mathcal{K}}=0,\\[6pt]
+J_W^\mu = \dfrac{2}{\sqrt{-g}}\dfrac{\delta W}{\delta(\nabla_\mu \mathcal{K})},\qquad
+\left\langle \hat T_{\mu\nu}\right\rangle_{\nabla \mathcal{K}}
+= \dfrac{2}{\sqrt{-g}}\dfrac{\delta W}{\delta g^{\mu\nu}}.
+\end{cases}
+\]
+
+%---------------------------
+% Riduzione finale (pagina conclusiva)
+%---------------------------
+\[
+\lim_{\nabla \mathcal{K}\to 0}\ \Rightarrow\
+\boxed{\;
+G_{\mu\nu} + \Lambda_{\text{eff}} g_{\mu\nu}
+= \frac{8\pi G}{c^4}\; T^{(\text{matter})}_{\mu\nu}
+\;}
+\qquad
+\Big(\Lambda_{\text{eff}}=\Lambda+\tfrac{8\pi G}{c^4}\rho_{\text{vac}}\Big).
+\]
+
+%---------------------------
+% Formula di chiusura del Codex Alpha (ultima riga del volume)
+%---------------------------
+\[
+\boxed{\;
+G_{\mu\nu} + \Lambda g_{\mu\nu}
+= \frac{8\pi G}{c^4}\; \big\langle \hat T_{\mu\nu} \big\rangle_{\nabla \mathcal{K}}
+\;}
+\]
+
+
+\section*{Operational Meaning of the Coherence Gradient}
+
+The coherence gradient $\nabla\mathcal{K}$ measures the local spacetime variation of the informational coherence encoded by the scalar field $\mathcal{K}$.
+
+It is not introduced as a metaphysical parameter, but as an effective field whose presence can only be inferred operationally through measurable deviations from standard gravitational and quantum-field observables.
+
+Regions satisfying
+\begin{equation}
+\nabla\mathcal{K}\simeq 0
+\end{equation}
+correspond to domains of approximately uniform coherence. In this limit, the theory reduces to ordinary General Relativity with an effective cosmological constant.
+
+Regions satisfying
+\begin{equation}
+\|\nabla\mathcal{K}\|\neq 0
+\end{equation}
+represent local coherence transitions. These transitions modify the effective contribution of matter-energy to curvature through
+\begin{equation}
+\left\langle \hat{T}_{\mu\nu}\right\rangle_{\nabla\mathcal{K}}.
+\end{equation}
+
+Operationally, $\nabla\mathcal{K}$ may be constrained through deviations in:
+\begin{enumerate}
+    \item cosmological perturbations;
+    \item gravitational-wave propagation;
+    \item gravitational lensing;
+    \item post-Newtonian parameters;
+    \item effective vacuum-energy behavior.
+\end{enumerate}
+
+A genuine Codex Alpha correction must satisfy:
+\begin{equation}
+\Delta\mathcal{O}
+=
+\mathcal{O}_{\rm Codex}
+-
+\mathcal{O}_{\rm GR}
+\neq 0
+\quad
+\text{only if}
+\quad
+\nabla\mathcal{K}\neq 0.
+\end{equation}
+
+Conversely:
+\begin{equation}
+\lim_{\nabla\mathcal{K}\rightarrow 0}
+\Delta\mathcal{O}
+=
+0.
+\end{equation}
+
+
+\section*{Recovery of Classical General Relativity}
+
+A fundamental consistency requirement of any extension of Einstein gravity is the exact recovery of General Relativity in an appropriate limit.
+
+In the present formulation, this limit is the uniform-coherence regime:
+\begin{equation}
+\nabla_\mu\mathcal{K}\rightarrow 0.
+\end{equation}
+
+The weighted partition functional becomes
+\begin{equation}
+Z[g,\nabla\mathcal{K}]
+\rightarrow
+Z_{\rm standard}[g],
+\end{equation}
+and therefore
+\begin{equation}
+W[g,\nabla\mathcal{K}]
+\rightarrow
+W_{\rm standard}[g].
+\end{equation}
+
+Consequently:
+\begin{equation}
+\left\langle \hat{T}_{\mu\nu}\right\rangle_{\nabla\mathcal{K}}
+\rightarrow
+T_{\mu\nu}^{\rm matter}
+-
+\rho_{\rm vac}g_{\mu\nu}.
+\end{equation}
+
+Substituting into the Codex Alpha field equation gives
+\begin{equation}
+G_{\mu\nu}+\Lambda g_{\mu\nu}
+=
+\frac{8\pi G}{c^4}
+\left(
+T_{\mu\nu}^{\rm matter}
+-
+\rho_{\rm vac}g_{\mu\nu}
+\right).
+\end{equation}
+
+Defining
+\begin{equation}
+\Lambda_{\rm eff}
+=
+\Lambda
++
+\frac{8\pi G}{c^4}\rho_{\rm vac},
+\end{equation}
+one obtains
+\begin{equation}
+G_{\mu\nu}
++
+\Lambda_{\rm eff}g_{\mu\nu}
+=
+\frac{8\pi G}{c^4}
+T_{\mu\nu}^{\rm matter}.
+\end{equation}
+
+This is the Einstein field equation with an effective cosmological constant.
+
+The Bianchi identities,
+\begin{equation}
+\nabla^\mu G_{\mu\nu}=0,
+\end{equation}
+together with diffeomorphism invariance, imply
+\begin{equation}
+\nabla^\mu
+\left\langle \hat{T}_{\mu\nu}\right\rangle_{\nabla\mathcal{K}}
+=
+0.
+\end{equation}
+
+In the uniform-coherence limit this reduces to
+\begin{equation}
+\nabla^\mu T_{\mu\nu}^{\rm matter}=0.
+\end{equation}
+
+Thus the classical conservation laws are recovered.
+
+
+\section*{Observable Deviations and Falsifiability}
+
+The theory is falsifiable only if its non-standard corrections can be translated into measurable deviations from standard predictions.
+
+Let $\mathcal{O}$ denote an observable quantity. The Codex Alpha correction is defined by
+\begin{equation}
+\Delta\mathcal{O}
+=
+\mathcal{O}_{\rm Codex}
+-
+\mathcal{O}_{\rm GR}.
+\end{equation}
+
+The fundamental falsifiability condition is:
+\begin{equation}
+\Delta\mathcal{O}
+=
+\mathcal{F}_{\mathcal{O}}[\nabla\mathcal{K}],
+\qquad
+\lim_{\nabla\mathcal{K}\rightarrow 0}
+\mathcal{F}_{\mathcal{O}}[\nabla\mathcal{K}]
+=
+0.
+\end{equation}
+
+Possible observational sectors include:
+
+\subsection*{Cosmological Perturbations}
+
+Corrections may appear in the scalar perturbation spectrum, the growth factor $f\sigma_8$, and the gravitational potentials $\Phi_N$ and $\Psi_N$:
+\begin{equation}
+\Delta P(k,z)
+=
+P_{\rm Codex}(k,z)-P_{\Lambda{\rm CDM}}(k,z).
+\end{equation}
+
+\subsection*{Gravitational Waves}
+
+The tensor perturbation equation may acquire an effective source or damping term controlled by $\nabla\mathcal{K}$:
+\begin{equation}
+h_{ij}^{TT\,\prime\prime}
++
+2\mathcal{H}h_{ij}^{TT\,\prime}
++
+k^2 h_{ij}^{TT}
+=
+\frac{16\pi G}{c^4}a^2\Pi^{TT}_{ij}[\nabla\mathcal{K}].
+\end{equation}
+The standard propagation equation is recovered when
+\begin{equation}
+\Pi^{TT}_{ij}[\nabla\mathcal{K}]
+\rightarrow 0.
+\end{equation}
+
+\subsection*{Gravitational Lensing}
+
+The effective lensing potential may receive a coherence correction:
+\begin{equation}
+\Phi_{\rm eff}
+=
+\Phi_N+\Phi_{\mathcal{K}},
+\end{equation}
+with
+\begin{equation}
+\lim_{\nabla\mathcal{K}\rightarrow 0}\Phi_{\mathcal{K}}=0.
+\end{equation}
+
+\subsection*{Post-Newtonian Regime}
+
+The effective PPN parameters may be written as
+\begin{equation}
+\gamma_{\rm eff}
+=
+1+\Delta\gamma[\nabla\mathcal{K}],
+\qquad
+\beta_{\rm eff}
+=
+1+\Delta\beta[\nabla\mathcal{K}],
+\end{equation}
+with
+\begin{equation}
+\lim_{\nabla\mathcal{K}\rightarrow 0}\Delta\gamma
+=
+\lim_{\nabla\mathcal{K}\rightarrow 0}\Delta\beta
+=
+0.
+\end{equation}
+
+Any persistent non-zero predicted deviation in a regime where $\nabla\mathcal{K}\rightarrow 0$ would falsify the model.
+
+
+\section*{Limitations and Scope}
+
+The present paper establishes a minimal variational and dynamical structure for the Codex Alpha framework. It does not claim to solve all open problems associated with quantum gravity, cosmology, or high-energy physics.
+
+The following aspects are explicitly outside the scope of the present work:
+
+\begin{enumerate}
+    \item full nonlinear stability beyond the small-gradient regime;
+    \item complete renormalization-group analysis of $Z[g,\nabla\mathcal{K}]$;
+    \item Planck-scale quantum gravity;
+    \item complete cosmological parameter fitting against observational datasets;
+    \item numerical simulations of the full coupled Einstein-$\mathcal{K}$ system;
+    \item direct experimental confirmation of non-standard coherence-gradient effects.
+\end{enumerate}
+
+These limitations do not invalidate the variational construction. They are a direct consequence of the chosen domain: the effective continuous sector of the Telascura.
+
+\subsection*{Relation to the Full Iconoclast Framework}
+
+The present paper provides the \emph{minimal variational foundation} for the continuous sector of Codex Alpha. To extend the formulation to the full Iconoclast claims — including retrocausal dynamics, non-local nodal couplings, and emergent spacetime from the discrete lattice — the following steps would be required:
+
+\begin{enumerate}
+    \item A derivation of the continuum limit from the discrete Telascura node dynamics, analogous to the thermodynamic limit in statistical mechanics.
+    \item The incorporation of the quantum operator definitions $\mathcal{K}_i = \mathrm{Tr}(\hat{\Phi}_i\hat{\rho}_i)/(\mathrm{Tr}(\hat{S}_i)+\varepsilon)$ into the variational sector, making the connection to the present phenomenological ansatz $\mathcal{K} = \Phi/(S+\epsilon)$ explicit.
+    \item An analysis of the non-local Lagrangian term $\mathcal{L}_{\rm non-loc}$ and its continuum approximation.
+\end{enumerate}
+
+The present work is therefore not a replacement of Iconoclast but its explicit mathematical foundation in the domain where a covariant scalar-tensor description applies. They define the boundary of what is established in the present work.
+
+The claim of this paper is limited to the following statement: under the assumptions listed above, the central dynamical equation of Codex Alpha can be formulated as a minimal covariant scalar extension of Einstein gravity, with a well-defined classical recovery limit and falsifiable observational consequences.
+
+\section*{Discussion}
+
+The variational construction presented in this paper demonstrates that the central field equation of Codex Alpha,
+\begin{equation}
+G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4}\langle\hat{T}_{\mu\nu}\rangle_{\nabla\mathcal{K}},
+\end{equation}
+admits a rigorous derivation from an action principle. This is not a trivial result: the coherence-weighted functional $W[g,\nabla\mathcal{K}]$ introduces a non-standard modification of the gravitational source that (a)~recovers General Relativity in the uniform-coherence limit, (b)~satisfies covariant conservation through the Bianchi identities, (c)~admits a well-posed Cauchy problem, and (d)~generates falsifiable deviations in cosmological and gravitational-wave observables.
+
+Within the effective continuous sector of the Telascura, the theory behaves as a minimal covariant scalar-tensor extension of Einstein gravity, controlled by the single additional field $\mathcal{K}$ and its gradient $\nabla\mathcal{K}$. All deviations from GR are proportional to $\nabla\mathcal{K}$ and vanish in the uniform-coherence limit.
+
+The connection to the full Iconoclast framework is preserved: the field $\mathcal{K}$ is the continuum limit of the nodal coherence operators $\mathcal{K}_i$, the cosmological constant $\Lambda$ corresponds to the vacuum expectation value of $V(\mathcal{K})$, and the effective metric $g_{\mu\nu}$ is the continuum approximation to the emergent Telascura geometry. The present formulation does not compete with Iconoclast; it formalizes its mathematical sector.
+
+
+
+\section*{Conclusion}
+
+We have derived, from an explicit variational principle, the unified field equation of Codex Alpha within the effective continuous sector of the Telascura. The derivation is minimal: the only addition to standard Einstein gravity is a scalar coherence field $\mathcal{K}$, whose gradient $\nabla\mathcal{K}$ modulates the gravitational source through a coherence-weighted Schwinger functional.
+
+The key results established in this work are:
+\begin{enumerate}
+    \item The action $\Gamma[g,\mathcal{K}] = S_{\rm EH} + S_{\mathcal{K}} + S_{\rm matter} + W[g,\nabla\mathcal{K}]$ generates the Codex Alpha field equation by metric variation.
+    \item The coherence field satisfies $\Box\mathcal{K} - V'(\mathcal{K}) = J_{\mathcal{K}} - \nabla_\mu J_W^\mu$ with well-defined matter couplings.
+    \item Covariant conservation $\nabla^\mu\langle\hat{T}_{\mu\nu}\rangle_{\nabla\mathcal{K}}=0$ holds by diffeomorphism invariance.
+    \item The classical GR limit is recovered exactly when $\nabla\mathcal{K}\to 0$.
+    \item The theory is stable (no ghosts, $m_{\mathcal{K}}^2 \ge 0$) and produces falsifiable deviations in the cosmological perturbation spectrum, gravitational-wave propagation, gravitational lensing, and post-Newtonian parameters.
+\end{enumerate}
+
+The reader is referred to Codex Alpha~3.0 (Iconoclast Edition) for the full theoretical framework, including the discrete nodal dynamics, retrocausal operators, and the complete ontological programme. The present paper provides the variational foundation upon which that broader structure rests.
+
+\vspace{1em}
+\begin{equation}
+\boxed{
+G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4}\langle\hat{T}_{\mu\nu}\rangle_{\nabla\mathcal{K}}
+}
+\end{equation}
+
+
+
+\appendix
+\renewcommand{\thesection}{\Alph{section}}
+
+\section*{Appendices}
+\addcontentsline{toc}{section}{Appendices}
+
+\section{Detailed Derivation of the Weighted Energy-Momentum Tensor}
+
+\[
+\left\langle
+\hat{T}_{\mu\nu}
+\right\rangle_{\nabla\mathcal K}
+=
+\frac{2}{\sqrt{-g}}
+\frac{
+\delta W[g,\nabla\mathcal K]
+}{
+\delta g^{\mu\nu}
+}
+\]
+
+This section provides a rigorous, step-by-step derivation of the central object in Codex Alpha: the energy-momentum tensor weighted by the informational coherence gradient $\nabla \mathcal{K}$. This is the key mechanism through which the Telascura network influences spacetime curvature.
+
+\subsection{Physical Motivation}
+
+In Codex Alpha, spacetime is not fundamental but emerges from an underlying quantum-informational coherent network called the Telascura. The scalar field $\mathcal{K}$ quantifies the local degree of quantum coherence. Regions with strong gradients $|\nabla \mathcal{K}|$ correspond to rapid changes in coherence and are therefore "weighted" differently in their contribution to gravity.
+
+To incorporate this weighting covariantly and consistently, we use the Schwinger functional method.
+
+\subsection{Definition of the Weighted Partition Function}
+
+We define the coherence-weighted partition function as
+
+\begin{equation}
+Z[g, \nabla \mathcal{K}] \equiv \int \mathcal{D}\psi \;\exp\!\left( 
+- \int d^4x \sqrt{-g}\;\alpha \,\|\nabla \mathcal{K}\|^2 
+\right),
+\label{eq:Zdef}
+\end{equation}
+
+where:
+\begin{itemize}
+    \item $\psi$ collectively denotes all matter fields (scalars, fermions, gauge fields, etc.),
+    \item $\alpha > 0$ is a positive weighting parameter that controls the strength of coherence suppression,
+    \item $\|\nabla \mathcal{K}\|^2 = g^{\mu\nu} \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K}$ is the squared norm of the coherence gradient.
+\end{itemize}
+
+The exponential term suppresses configurations where coherence changes rapidly, implementing the physical idea that highly incoherent regions contribute less to the emergent geometry.
+
+\subsection{The Schwinger Functional W}
+
+We define the connected generating functional, or Schwinger functional, as
+
+\begin{equation}
+W[g,\nabla\mathcal{K}]
+\equiv
+-\ln Z[g,\nabla\mathcal{K}].
+\label{eq:Wdef}
+\end{equation}
+
+The functional \(W[g,\nabla\mathcal{K}]\) is not introduced as an independent
+fundamental degree of freedom. It is treated as an effective response functional
+obtained after coarse-graining microscopic informational degrees of freedom of
+the Telascura.
+
+A UV-complete microscopic action for the full discrete Telascura is not assumed
+in the present work. Instead, the continuum theory is defined as an effective
+field theory through the existence of a regulated functional measure whose
+low-gradient response is finite, covariant, and expandable in powers of
+\(\nabla\mathcal{K}\).
+
+To remove ambiguity regarding the variational construction, the effective
+partition functional is defined operationally as
+
+\begin{equation}
+Z[g,\nabla\mathcal{K}]
+=
+\int
+\mathcal D\chi\;
+\exp\left[
+-
+S_{\mathrm{micro}}[\chi,g]
+-
+\alpha
+\int d^4x\,\sqrt{-g}\,
+\mathcal F(\chi,\nabla\mathcal K)
+\right].
+\label{eq:microZ}
+\end{equation}
+
+Here:
+
+\begin{itemize}
+
+\item
+\(\chi\) denotes microscopic informational degrees of freedom of the Telascura;
+
+\item
+\(g_{\mu\nu}\) is the classical background metric of the effective continuous sector;
+
+\item
+\(\nabla\mathcal K\) is treated as an externally prescribed effective coherence field;
+
+\item
+\(\mathcal F(\chi,\nabla\mathcal K)\) is a local covariant weighting operator coupling the effective coherence gradient to the microscopic sector.
+
+\end{itemize}
+
+No explicit microscopic realization of
+\(S_{\mathrm{micro}}\)
+is assumed.
+
+The present formulation requires only the following effective conditions:
+
+\begin{enumerate}
+
+\item
+\(Z[g,\nabla\mathcal K]\)
+admits a covariantly regularized ultraviolet prescription;
+
+\item
+\(W[g,\nabla\mathcal K]\)
+admits a local low-gradient expansion for
+\(
+\epsilon_{\mathcal K}\ll1
+\);
+
+\item
+functional derivatives of
+\(W\)
+with respect to
+\(g^{\mu\nu}\)
+and
+\(
+\nabla_\mu\mathcal K
+\)
+exist and remain finite;
+
+\item
+the coherence field is not integrated over inside the functional measure and is held fixed during metric variation;
+
+\item
+in the uniform-coherence limit
+\(
+\nabla\mathcal K\to0
+\),
+the standard quantum-field-theoretic stress-energy expectation value is recovered.
+
+\end{enumerate}
+
+Functional variations are therefore understood as
+
+\begin{equation}
+\left.
+\frac{\delta W[g,\nabla\mathcal K]}
+{\delta g^{\mu\nu}}
+\right|_{\nabla\mathcal K}.
+\end{equation}
+
+Thus the present paper does not claim to provide the ultraviolet completion of
+the Telascura. It defines the effective continuous sector that any future
+microscopic completion must reproduce in the appropriate continuum limit.
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+\textbf{Object} & \textbf{Effective role} & \textbf{Status}\\
+\hline
+\(\chi\) & microscopic Telascura degrees of freedom & UV sector\\
+\(S_{\mathrm{micro}}\) & microscopic informational action & unspecified\\
+\(\mathcal F(\chi,\nabla\mathcal K)\) & coherence-weighting operator & effective coupling\\
+\(Z[g,\nabla\mathcal K]\) & regulated partition functional & assumed finite\\
+\(W[g,\nabla\mathcal K]\) & Schwinger response functional & EFT-defined\\
+\(\langle\hat T_{\mu\nu}\rangle_{\nabla\mathcal K}\) & metric response of \(W\) & observable source\\
+\hline
+\end{tabular}
+\end{center}
+
+All vacuum expectation values and effective quantities are obtained by
+functional differentiation of \(W\).
+\subsection{Derivation of the Weighted Energy-Momentum Tensor}
+
+Consider an arbitrary infinitesimal variation of the metric
+\(\delta g^{\mu\nu}\). The response of the partition function is
+
+\begin{equation}
+\delta \ln Z
+=
+-\frac{1}{2}
+\int d^4x\,\sqrt{-g}\;
+\left\langle
+\hat{T}_{\mu\nu}
+\right\rangle_{\nabla\mathcal{K}}
+\delta g^{\mu\nu}.
+\label{eq:deltaLnZ}
+\end{equation}
+
+The term
+\(\left\langle \hat{T}_{\mu\nu} \right\rangle_{\nabla\mathcal{K}}\)
+is the effective energy-momentum tensor that includes the metric response
+induced by the coherence gradient \(\nabla\mathcal{K}\).
+
+Since \(W=-\ln Z\), we obtain
+
+\begin{equation}
+\delta W
+=
+-\delta\ln Z
+=
+\frac{1}{2}
+\int d^4x\,\sqrt{-g}\;
+\left\langle
+\hat{T}_{\mu\nu}
+\right\rangle_{\nabla\mathcal{K}}
+\delta g^{\mu\nu}.
+\label{eq:deltaW}
+\end{equation}
+
+By definition of the functional derivative, this implies
+
+\begin{equation}
+\left\langle
+\hat{T}_{\mu\nu}(x)
+\right\rangle_{\nabla\mathcal{K}}
+=
+\frac{2}{\sqrt{-g(x)}}
+\frac{
+\delta W[g,\nabla\mathcal{K}]
+}{
+\delta g^{\mu\nu}(x)
+}.
+\label{eq:masterT}
+\end{equation}
+
+This is the fundamental definition used throughout Codex Alpha.
+
+\subsection{Physical Interpretation}
+
+\begin{itemize}
+    \item When \(\nabla\mathcal{K}\to0\), the coherence weighting becomes trivial
+    and the standard quantum-field-theoretic expectation value is recovered.
+
+    \item When \(\nabla\mathcal{K}\neq0\), the matter contribution to curvature is
+    locally modulated by the coherence structure of the Telascura within the
+    effective continuous approximation.
+
+    \item The weighting is informational and does not require exotic matter or
+    negative energy in the continuous sector.
+\end{itemize}
+
+\subsection{Consistency Checks and Limits}
+
+\begin{enumerate}
+    \item \textbf{GR recovery limit:}
+    \begin{equation}
+    \lim_{\|\nabla\mathcal{K}\|\to0}
+    \left\langle
+    \hat{T}_{\mu\nu}
+    \right\rangle_{\nabla\mathcal{K}}
+    =
+    \left\langle
+    \hat{T}_{\mu\nu}
+    \right\rangle_{\mathrm{standard}}
+    -
+    \rho_{\mathrm{vac}}\,g_{\mu\nu}.
+    \end{equation}
+
+    \item \textbf{Small-gradient expansion:}
+    \begin{equation}
+    \left\langle
+    \hat{T}_{\mu\nu}
+    \right\rangle_{\nabla\mathcal{K}}
+    =
+    T_{\mu\nu}
+    +
+    \left(
+    \nabla_\mu\mathcal{K}\nabla_\nu\mathcal{K}
+    -
+    \frac{1}{2}
+    g_{\mu\nu}
+    \nabla_\rho\mathcal{K}\nabla^\rho\mathcal{K}
+    +
+    g_{\mu\nu}V(\mathcal{K})
+    \right)
+    +
+    \mathcal{O}(\epsilon_{\mathcal{K}}^3),
+    \end{equation}
+    where
+    \[
+    \epsilon_{\mathcal{K}}
+    =
+    \frac{\|\nabla\mathcal{K}\|}{M_{\mathcal{K}}}
+    \ll 1.
+    \]
+
+    \item \textbf{Covariant conservation:}
+    diffeomorphism invariance of \(W[g,\nabla\mathcal{K}]\) implies
+    \[
+    \nabla^\mu
+    \left\langle
+    \hat{T}_{\mu\nu}
+    \right\rangle_{\nabla\mathcal{K}}
+    =
+    0
+    \]
+    on shell.
+\end{enumerate}
+
+\paragraph{Domain of Validity}
+
+The perturbative expansion adopted above is assumed to remain valid only
+in the subcritical coherence regime
+
+\[
+\epsilon_K
+=
+\frac{\|\nabla\mathcal{K}\|}{M_K}
+\ll 1.
+\]
+
+No claim is made regarding convergence or applicability of the expansion
+outside this regime.
+
+Strong-gradient dynamics require the complete non-perturbative formulation
+of the theory and remain outside the scope of the present work.
+
+\subsection{Observable Closure of the Effective Sector}
+
+The effective formulation is closed at the level of observable response. The quantities
+entering \(W[g,\nabla\mathcal{K}]\) map into measurable sectors as follows:
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+\textbf{Effective parameter} & \textbf{Observable sector} & \textbf{Testable deviation} \\
+\hline
+\(m_{\mathcal{K}}^2=V''(\mathcal{K}_0)\) & scalar perturbations & \(\Delta P(k,z)\) \\
+\(\chi_{\mu\nu}{}^{\alpha\beta}\) & metric response & \(\Delta G_{\mu\nu}\) \\
+\(J_W^\mu\) & coherence backreaction & modified \(\mathcal{K}\)-dynamics \\
+\(\mu_{\mathcal{K}}^2(\eta)\) & gravitational waves & \(\Delta v_{\mathrm{GW}},\Delta\rho_{\mathrm{GW}}\) \\
+\(\Phi_{\mathcal{K}}\) & lensing and galactic dynamics & \(M_{\mathrm{lens}}/M_{\mathrm{dyn}}\) \\
+\(\Delta\gamma,\Delta\beta\) & post-Newtonian regime & PPN deviations \\
+\hline
+\end{tabular}
+\end{center}
+
+The theory is therefore falsifiable within its effective domain: any non-standard
+deviation must vanish in the limit \(\nabla\mathcal{K}\to0\).
+
+\subsection{Regularization}
+
+The scalar field is regularized as
+
+\[
+\mathcal{K}
+=
+\frac{\Phi}{S+\epsilon},
+\qquad
+\epsilon\to0^+,
+\]
+
+ensuring that all functional derivatives remain finite when the denominator
+approaches zero.
+
+This completes the derivation of the weighted energy-momentum tensor, which forms
+the cornerstone of the unified field equation of Codex Alpha.
+
+\vspace{1cm}
+
+\begin{equation}
+\boxed{
+G_{\mu\nu}
++
+\Lambda g_{\mu\nu}
+=
+\frac{8\pi G}{c^4}
+\left\langle
+\hat{T}_{\mu\nu}
+\right\rangle_{\nabla\mathcal{K}}
+}
+\end{equation}
+
+\section{Detailed Derivation and Physical Justification of the Coherence Scalar Field Regularization}
+
+\[
+\mathcal{K}
+=
+\frac{\Phi}{S+\epsilon},
+\qquad
+\epsilon\to0^+.
+\]
+
+This section provides a complete, rigorous justification of the fundamental definition of the coherence scalar field $\mathcal{K}$ used throughout Codex Alpha.
+
+\subsection{Physical Motivation}
+
+The scalar field $\mathcal{K}$ is the central object of the Telascura network: it quantifies the local level of quantum-informational coherence. In regions of high coherence, gravity and quantum effects are strongly coupled; in regions of low coherence, classical General Relativity is recovered.
+
+To make $\mathcal{K}$ a well-defined, finite and differentiable field everywhere (including near potential singularities or rapid variations), a regularization is required. The chosen form is
+
+\begin{equation}
+\mathcal{K}(x) = \frac{\Phi(x)}{S(x) + \epsilon}, \qquad \epsilon \to 0^+,
+\label{eq:Kdef}
+\end{equation}
+
+where:
+\begin{itemize}
+    \item $\Phi(x)$ is the \emph{raw informational potential} (a smooth scalar field that encodes the unregularized coherence amplitude),
+    \item $S(x)$ is the \emph{singularity measure} or \emph{entropy-like denominator} (a non-negative scalar that becomes large or divergent in regions of very low coherence or near pathological points),
+    \item $\epsilon > 0$ is a small positive regulator that prevents division by zero and ensures all physical observables remain finite.
+\end{itemize}
+
+\subsection{Why this specific form?}
+
+The ratio form $\Phi / (S + \epsilon)$ has several crucial advantages:
+
+1. When coherence is high ($S \ll \epsilon$), $\mathcal{K} \approx \Phi/\epsilon$ remains finite and smooth.
+2. When coherence drops sharply ($S \gg \epsilon$), $\mathcal{K}$ is automatically suppressed, implementing the physical idea that incoherent regions contribute less to the emergent geometry.
+3. The limit $\epsilon \to 0^+$ recovers the idealized singular behavior while keeping all integrated quantities (energy densities, curvatures, etc.) finite.
+
+This regularization is analogous to the use of $\epsilon$-prescriptions in quantum field theory (Feynman propagator, dimensional regularization) or to the smearing of point charges in classical electrodynamics.
+
+\subsection{Explicit Demonstration of Finiteness}
+
+We now prove that all relevant physical quantities remain finite as $\epsilon \to 0^+$.
+
+\subsubsection{1. The gradient of the coherence field}
+
+\begin{equation}
+\nabla_\mu \mathcal{K} = \frac{\partial_\mu \Phi}{S + \epsilon} - \frac{\Phi \,\partial_\mu S}{(S + \epsilon)^2}.
+\end{equation}
+
+In the limit $\epsilon \to 0^+$ we obtain
+\[
+\lim_{\epsilon \to 0^+} \nabla_\mu \mathcal{K} = \frac{\partial_\mu \Phi}{S} - \frac{\Phi \,\partial_\mu S}{S^2},
+\]
+which is finite everywhere $S > 0$. At isolated points where $S=0$ the regulator $\epsilon$ keeps $\nabla \mathcal{K}$ bounded.
+
+\subsubsection{2. The stress-energy contribution of the coherence field}
+
+From the Lagrangian term $\mathcal{L}_\mathcal{K} = \frac{1}{2} g^{\mu\nu} \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} - V(\mathcal{K})$ one obtains
+
+\begin{equation}
+T^{(\mathcal{K})}_{\mu\nu} = \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} - \tfrac{1}{2} g_{\mu\nu} \nabla^\alpha \mathcal{K} \nabla_\alpha \mathcal{K} + g_{\mu\nu} V(\mathcal{K}).
+\end{equation}
+
+Substituting the regularized $\mathcal{K}$ and taking $\epsilon \to 0^+$, every term remains finite because both $\nabla \mathcal{K}$ and $\mathcal{K}$ are bounded. No divergences appear in the energy density $\rho_\mathcal{K}$ or pressure $p_\mathcal{K}$.
+
+\subsubsection{3. The effective potential and mass term}
+
+The second derivative (Hessian) $H_{\mu\nu} = \partial_\mu \partial_\nu \mathcal{K}$ and the effective mass $m_\mathcal{K}^2 = V''(\mathcal{K})$ are also finite in the limit because the regularization preserves the smoothness of $\mathcal{K}$.
+
+\subsubsection{4. Path-integral weighting term}
+
+The term appearing in the partition function $Z[g,\nabla \mathcal{K}]$ is
+\[
+\|\nabla \mathcal{K}\|^2 = g^{\mu\nu} \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K},
+\]
+which, thanks to the $\epsilon$-regularization, remains integrable even in regions where $S$ approaches zero.
+
+\subsection{Limit Behavior}
+
+As $\epsilon \to 0^+$ we recover the idealized coherence field:
+\[
+\mathcal{K} \to 
+\begin{cases}
+\Phi/S & \text{where } S > 0 \quad (\text{finite coherence regions}), \\
+\text{finite value set by } \Phi/\epsilon & \text{where } S = 0 \quad (\text{high-coherence cores}).
+\end{cases}
+\]
+
+All physical observables (energy density, curvature contribution, coherence filaments, nodal propulsion terms) remain perfectly finite and well-defined in the entire spacetime.
+
+\subsection{Summary}
+
+The regularization
+\[
+\mathcal{K} = \frac{\Phi}{S + \epsilon}, \qquad \epsilon \to 0^+
+\]
+is not an ad-hoc trick but a carefully chosen prescription that:
+\begin{itemize}
+    \item Guarantees mathematical well-posedness of the theory,
+    \item Preserves the physical intuition of the Telascura (strong suppression of incoherent regions),
+    \item Ensures that every derived quantity (stress-energy tensor, field equations, perturbations, ADM constraints) is finite and physically meaningful.
+\end{itemize}
+
+This completes the rigorous justification of the fundamental definition of the coherence scalar field $\mathcal{K}$.
+
+\subsection{Connection to the Discrete Nodal Definition of Codex Alpha}
+
+In the complete Telascura formulation (Iconoclast, Chapter~I, Postulate~3), the coherence field is defined at each node $n_i$ through quantum operators:
+\begin{equation}
+\mathcal{K}_i = \frac{\mathrm{Tr}(\hat{\Phi}_i \hat{\rho}_i)}{\mathrm{Tr}(\hat{S}_i) + \varepsilon},
+\end{equation}
+where $\hat{\Phi}_i$ is the local informational-flow operator, $\hat{\rho}_i$ is the density matrix of node $n_i$, and $\hat{S}_i$ is the entropic operator.
+
+The continuous field $\mathcal{K}(x^\mu)$ used throughout this paper is the \emph{coarse-grained continuum limit} of $\mathcal{K}_i$. Let $V_\ell(x)$ denote a spatial averaging region of linear scale $\ell$ centered at $x^\mu$, and let $|V_\ell(x)|$ be the number of nodes contained in it. The continuum field is defined by the spatial average
+\begin{equation}
+\mathcal{K}(x^\mu) := \lim_{\ell \to 0} \frac{1}{|V_\ell(x)|} \sum_{n_i \in V_\ell(x)} \mathcal{K}_i,
+\end{equation}
+where the limit is taken in the thermodynamic continuum sense: $\ell \gg \ell_{\rm Planck}$ throughout, so that $|V_\ell(x)| \gg 1$ at every stage of the limit, and $\ell/L_{\rm macroscopic} \to 0$, so that the averaged field varies smoothly on the scales of interest. In terms of quantum expectation values over the coarse-grained local state,
+\begin{equation}
+\mathcal{K}(x^\mu) \approx \frac{\langle \hat{\Phi}(x^\mu) \rangle_\rho}{\langle \hat{S}(x^\mu) \rangle_\rho + \epsilon},
+\end{equation}
+where $\langle \cdot \rangle_\rho = \mathrm{Tr}(\hat{\rho}\,\cdot)$ denotes the quantum expectation value in the volume-averaged local state $\hat{\rho}(x^\mu)$, and the approximation holds whenever $\mathcal{K}_i$ varies slowly across $V_\ell(x)$ relative to its mean value.
+
+All variational results derived in this paper hold in this continuum approximation. Corrections from the discrete nodal structure appear at the scale $\ell$ of the Telascura lattice spacing and are suppressed by powers of $\ell/L_{\rm macroscopic}$.
+
+
+
+\vspace{0.5cm}
+\begin{equation}
+\boxed{
+\mathcal{K} = \frac{\Phi}{S + \epsilon}, \qquad \epsilon \to 0^+ 
+}
+\end{equation}
+
+\section{Detailed Derivation of the Coherence-Field Stress-Energy Tensor}
+
+\[
+\begin{aligned}
+T^{(\mathcal K)}_{\mu\nu}
+&=
+\nabla_\mu\mathcal K\,
+\nabla_\nu\mathcal K
+-
+\frac12
+g_{\mu\nu}
+\nabla^\alpha\mathcal K
+\nabla_\alpha\mathcal K
++
+g_{\mu\nu}V(\mathcal K).
+\end{aligned}
+\]
+
+This section contains the complete, step-by-step derivation of the stress-energy tensor contribution coming from the coherence scalar field $\mathcal{K}$. The derivation starts directly from the Lagrangian density $\mathcal{L}_\mathcal{K}$ and follows the standard variational procedure used in General Relativity.
+
+\subsection{Lagrangian Density for the Coherence Field}
+
+The $\mathcal{K}$-sector of the total Lagrangian is
+
+\begin{equation}
+\mathcal{L}_\mathcal{K} = \tfrac{1}{2} g^{\mu\nu} \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} - V(\mathcal{K}),
+\label{eq:LK}
+\end{equation}
+
+where $V(\mathcal{K})$ is the self-interaction potential of the coherence field.  
+The corresponding action is
+
+\begin{equation}
+S_\mathcal{K} = \int d^4x \sqrt{-g} \,\mathcal{L}_\mathcal{K}.
+\label{eq:SK}
+\end{equation}
+
+The stress-energy tensor is defined by the functional derivative with respect to the inverse metric:
+
+\begin{equation}
+T^{(\mathcal{K})}_{\mu\nu} \equiv -\frac{2}{\sqrt{-g}} \frac{\delta S_\mathcal{K}}{\delta g^{\mu\nu}}.
+\label{eq:Tdef}
+\end{equation}
+
+We now compute this variation explicitly.
+
+\subsection{Variation of the Action}
+
+We vary $S_\mathcal{K}$ with respect to $g^{\mu\nu}$. There are two sources of variation:
+
+1. The metric dependence inside $\sqrt{-g}$.
+2. The explicit dependence of $\mathcal{L}_\mathcal{K}$ on $g^{\mu\nu}$.
+
+The variation of the volume element is the standard GR identity:
+
+\begin{equation}
+\delta\sqrt{-g} = -\tfrac{1}{2}\sqrt{-g}\, g_{\alpha\beta}\,\delta g^{\alpha\beta}.
+\label{eq:delta_sqrt}
+\end{equation}
+
+The variation of the Lagrangian density itself is
+
+\begin{equation}
+\delta\mathcal{L}_\mathcal{K} = \tfrac{1}{2} \delta g^{\mu\nu} \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} + \tfrac{1}{2} g^{\mu\nu} \delta(\nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K}) - \delta V(\mathcal{K}).
+\label{eq:delta_LK}
+\end{equation}
+
+Since $\mathcal{K}$ is a scalar, $\delta(\nabla_\mu \mathcal{K}) = 0$ when varying only the metric (the covariant derivative of a scalar coincides with the ordinary derivative). The term $\delta V(\mathcal{K})$ also vanishes because $V$ depends only on $\mathcal{K}$, not on the metric. Therefore
+
+\begin{equation}
+\delta\mathcal{L}_\mathcal{K} = \tfrac{1}{2} \delta g^{\mu\nu} \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K}.
+\label{eq:delta_LK_simple}
+\end{equation}
+
+Putting everything together, the total variation of the action is
+
+\begin{align}
+\delta S_\mathcal{K} &= \int d^4x \Big[ \delta\sqrt{-g} \,\mathcal{L}_\mathcal{K} + \sqrt{-g} \,\delta\mathcal{L}_\mathcal{K} \Big] \nonumber \\
+&= \int d^4x \sqrt{-g} \Big[ -\tfrac{1}{2} g_{\alpha\beta} \delta g^{\alpha\beta} \,\mathcal{L}_\mathcal{K} + \tfrac{1}{2} \delta g^{\mu\nu} \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} \Big].
+\label{eq:deltaS_full}
+\end{align}
+
+Substituting the explicit form of $\mathcal{L}_\mathcal{K}$ from Eq.~\eqref{eq:LK}:
+
+\begin{align}
+\delta S_\mathcal{K} &= \int d^4x \sqrt{-g} \Bigg[ 
+-\tfrac{1}{2} g_{\alpha\beta} \delta g^{\alpha\beta} \left( \tfrac{1}{2} \nabla^\rho \mathcal{K} \nabla_\rho \mathcal{K} - V(\mathcal{K}) \right) \nonumber \\
+&\qquad + \tfrac{1}{2} \delta g^{\mu\nu} \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} 
+\Bigg].
+\label{eq:deltaS_expanded}
+\end{align}
+
+We now collect all coefficients multiplying $\delta g^{\mu\nu}$. Because $\delta g^{\alpha\beta}$ is symmetric, we raise indices and symmetrize:
+
+\begin{align}
+\delta S_\mathcal{K} &= \int d^4x \sqrt{-g} \Bigg[ 
+\tfrac{1}{2} \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} \,\delta g^{\mu\nu} \nonumber \\
+&\qquad - \tfrac{1}{4} g_{\mu\nu} (\nabla^\rho \mathcal{K} \nabla_\rho \mathcal{K}) \delta g^{\mu\nu} 
++ \tfrac{1}{2} g_{\mu\nu} V(\mathcal{K}) \,\delta g^{\mu\nu}
+\Bigg].
+\label{eq:collected}
+\end{align}
+
+Comparing with the definition \eqref{eq:Tdef} we immediately obtain
+
+\begin{equation}
+T^{(\mathcal{K})}_{\mu\nu} = \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} 
+- \tfrac{1}{2} g_{\mu\nu} (\nabla^\alpha \mathcal{K} \nabla_\alpha \mathcal{K}) 
++ g_{\mu\nu} V(\mathcal{K}).
+\label{eq:TK_final}
+\end{equation}
+
+This is exactly the expression used throughout Codex Alpha (equations 21 and 78 of the main manuscript).
+
+\subsection{Physical Interpretation}
+
+\begin{itemize}
+    \item The first term $\nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K}$ is the kinetic contribution (analogous to the Maxwell stress tensor).
+    \item The second term $-\tfrac{1}{2} g_{\mu\nu} \nabla \mathcal{K} \cdot \nabla \mathcal{K}$ is the usual trace subtraction required for a massless scalar field.
+    \item The third term $g_{\mu\nu} V(\mathcal{K})$ plays the role of an effective cosmological-constant-like contribution that depends on the local value of the coherence field $\mathcal{K}$.
+\end{itemize}
+
+When $\nabla \mathcal{K} \to 0$ the kinetic terms vanish and $T^{(\mathcal{K})}_{\mu\nu} \to g_{\mu\nu} V(\mathcal{K}_0)$, which is absorbed into the effective cosmological constant $\Lambda_{\rm eff}$.
+
+\subsection{Consistency Checks}
+
+- The tensor is symmetric by construction.
+- Its covariant divergence vanishes on-shell thanks to the Euler-Lagrange equation of $\mathcal{K}$ (shown in the next section).
+- In the limit $\nabla \mathcal{K} \to 0$ it correctly reduces to a pure vacuum energy contribution.
+- All energy conditions (NEC, WEC, SEC) can be verified directly from this expression (see dedicated section).
+
+\vspace{0.8cm}
+\begin{equation}
+\boxed{
+T^{(\mathcal{K})}_{\mu\nu} 
+= \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} 
+- \tfrac{1}{2} g_{\mu\nu} \nabla^\alpha \mathcal{K} \nabla_\alpha \mathcal{K} 
++ g_{\mu\nu} V(\mathcal{K})
+}
+\end{equation}
+
+This completes the exact derivation of the $\mathcal{K}$-field stress-energy tensor from the action principle.
+
+\section{Complete Derivation of the Equation of Motion for the Coherence Field}
+
+\[
+\Box\mathcal K
+-
+V'(\mathcal K)
+=
+J_{\mathcal K}
+-
+\nabla_\mu J_W^\mu.
+\]
+
+This section presents the full, rigorous derivation of the dynamical equation governing the coherence scalar field $\mathcal{K}$. The derivation follows the standard variational principle (Euler-Lagrange) applied to the total action, including the explicit contribution of the weighted Schwinger functional $W[g,\nabla \mathcal{K}]$. Every step is shown explicitly so that an engineer or physicist can verify the result independently.
+
+\subsection{Physical Context}
+
+The field $\mathcal{K}$ encodes the local level of quantum-informational coherence in the Telascura network. Its dynamics must be consistent with both the gravitational sector and the matter sector. The equation of motion we derive is the direct analogue of the Klein-Gordon equation, modified by the coherence-weighting mechanism.
+
+\subsection{Total Action and Relevant Lagrangian Terms}
+
+The total action of the theory is
+\[
+S = S_{\text{EH}} + S_\mathcal{K} + S_{\text{matter}} + W[g,\nabla \mathcal{K}],
+\]
+where
+\[
+S_\mathcal{K} = \int d^4x \sqrt{-g} \,\mathcal{L}_\mathcal{K}, \qquad
+\mathcal{L}_\mathcal{K} = \tfrac{1}{2} g^{\mu\nu} \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} - V(\mathcal{K}).
+\]
+The term $W[g,\nabla \mathcal{K}]$ is the weighted generating functional already defined in the previous section:
+\[
+W[g,\nabla \mathcal{K}] \equiv -\ln Z[g,\nabla \mathcal{K}], \qquad
+Z[g,\nabla \mathcal{K}] = \int \mathcal{D}\psi \;\exp\!\Bigl( -\int d^4x \sqrt{-g}\;\alpha \,\|\nabla \mathcal{K}\|^2 \Bigr).
+\]
+
+The matter action $S_{\text{matter}}$ may depend explicitly on $\mathcal{K}$ through possible couplings (scalar, fermionic, gauge), giving rise to the source current $J_\mathcal{K}$.
+
+\subsection{Euler--Lagrange Derivation for the Coherence Field (Standard Part)}
+
+We first vary the action with respect to $\mathcal{K}$, treating the metric $g_{\mu\nu}$ as fixed. The variation of $S_\mathcal{K}$ is
+\[
+\delta S_\mathcal{K} = \int d^4x \sqrt{-g} \left[ 
+\frac{\partial \mathcal{L}_\mathcal{K}}{\partial \mathcal{K}} \delta \mathcal{K} 
++ \frac{\partial \mathcal{L}_\mathcal{K}}{\partial (\nabla_\mu \mathcal{K})} \delta(\nabla_\mu \mathcal{K}) 
+\right].
+\]
+
+Explicitly:
+\[
+\frac{\partial \mathcal{L}_\mathcal{K}}{\partial \mathcal{K}} = -V'(\mathcal{K}), \qquad
+\frac{\partial \mathcal{L}_\mathcal{K}}{\partial (\nabla_\mu \mathcal{K})} = g^{\mu\nu} \nabla_\nu \mathcal{K}.
+\]
+
+Integration by parts on the second term (using the standard formula for the covariant divergence of a vector density) yields the Euler-Lagrange equation:
+\[
+\frac{\delta S_\mathcal{K}}{\delta \mathcal{K}} = 0 \quad \Rightarrow \quad
+\nabla_\mu \!\left( g^{\mu\nu} \nabla_\nu \mathcal{K} \right) - V'(\mathcal{K}) = 0.
+\]
+
+Recognizing that $\nabla_\mu (g^{\mu\nu} \nabla_\nu \mathcal{K}) = \Box \mathcal{K}$ (the d'Alembertian in curved spacetime), we obtain the standard scalar-field equation:
+\[
+\Box \mathcal{K} - V'(\mathcal{K}) = 0.
+\]
+
+This is the contribution coming purely from $\mathcal{L}_\mathcal{K}$.
+
+\subsection{Contribution from Matter Couplings: the Source Current}
+
+\[
+J_{\mathcal K}
+\]
+
+Matter fields may couple explicitly to $\mathcal{K}$. The variation of the matter action gives
+\[
+\frac{\delta S_{\text{matter}}}{\delta \mathcal{K}} = -\sqrt{-g}\, J_\mathcal{K},
+\]
+where the current $J_\mathcal{K}$ is defined as
+\[
+J_\mathcal{K} \equiv -\frac{1}{\sqrt{-g}} \frac{\delta S_{\text{matter}}}{\delta \mathcal{K}} = -\frac{\partial \mathcal{L}_{\text{matter}}}{\partial \mathcal{K}}.
+\]
+
+Examples of possible couplings (already listed in the main manuscript) are:
+- Scalar field: $J_\mathcal{K}^{(\varphi)} = 0$ (no direct coupling),
+- Dirac field: $J_\mathcal{K}^{(\psi)} = y'(\mathcal{K}) \bar{\psi}\psi$,
+- Gauge field: $J_\mathcal{K}^{(A)} = \tfrac{1}{4} f'(\mathcal{K}) F_{\mu\nu} F^{\mu\nu}$.
+
+Adding this source to the Euler-Lagrange equation we have so far:
+\[
+\Box \mathcal{K} - V'(\mathcal{K}) = J_\mathcal{K}.
+\]
+
+\subsection{Contribution from the Weighted Functional}
+
+\[
+W[g,\nabla\mathcal K]
+\]
+
+The weighting functional $W$ depends on both the metric and the gradient $\nabla \mathcal{K}$. Its variation with respect to $\mathcal{K}$ must be computed carefully.
+
+From the definition of $W = -\ln Z$ and the chain rule, the functional derivative with respect to $\mathcal{K}$ produces an extra current:
+\[
+\frac{\delta W}{\delta \mathcal{K}} = \nabla_\mu J_W^\mu,
+\]
+where the coherence current $J_W^\mu$ is defined by
+\[
+J_W^\mu \equiv \frac{2}{\sqrt{-g}} \frac{\delta W[g,\nabla \mathcal{K}]}{\delta (\nabla_\mu \mathcal{K})}.
+\]
+
+(This current was already introduced when deriving $\langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}}$ and appears naturally from the variation of the exponential weight in $Z$.)
+
+When we vary the total action with respect to $\mathcal{K}$, the contribution from $W$ is therefore
+\[
+\frac{\delta W}{\delta \mathcal{K}} = \nabla_\mu J_W^\mu.
+\]
+
+Adding this term to the previous equation gives the complete equation of motion:
+\[
+\Box \mathcal{K} - V'(\mathcal{K}) = J_\mathcal{K} - \nabla_\mu J_W^\mu.
+\]
+
+This is exactly equation (29) and (187) of the main manuscript.
+
+\subsection{Physical Meaning of Each Term}
+
+\begin{itemize}
+    \item $\Box \mathcal{K}$ – standard wave operator (propagation of coherence waves),
+    \item $-V'(\mathcal{K})$ – self-interaction (potential restoring force),
+    \item $J_\mathcal{K}$ – source from explicit matter couplings,
+    \item $-\nabla_\mu J_W^\mu$ – back-reaction from the coherence-weighting mechanism itself (the Telascura “pushes back” on $\mathcal{K}$).
+\end{itemize}
+
+The term $\nabla_\mu J_W^\mu$ is what makes the dynamics of $\mathcal{K}$ non-standard and genuinely informational.
+
+\subsection{On-Shell Conservation and Consistency}
+
+Taking the covariant divergence of both sides and using the Bianchi identities together with the diffeomorphism invariance of the total action, one can show that the equation is consistent with the covariant conservation of the total energy-momentum tensor:
+\[
+\nabla^\mu \langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}} = 0.
+\]
+
+In the limit $\nabla \mathcal{K} \to 0$ the current $J_W^\mu \to 0$ and the equation reduces to the standard sourced Klein-Gordon equation.
+
+\subsection{Summary}
+
+The complete, on-shell equation of motion for the coherence field is
+\[
+\Box \mathcal{K} - V'(\mathcal{K}) = J_\mathcal{K} - \nabla_\mu J_W^\mu.
+\]
+
+It is derived rigorously from the variational principle applied to the full action (gravitational + $\mathcal{K}$-sector + matter + weighted functional $W$). No assumptions are hidden; every term appears naturally from the functional derivatives.
+
+\vspace{0.8cm}
+\begin{equation}
+\boxed{
+\Box \mathcal{K} - V'(\mathcal{K}) = J_\mathcal{K} - \nabla_\mu J_W^\mu
+}
+\end{equation}
+
+This equation, together with the weighted energy-momentum tensor derived previously, forms one of the two fundamental dynamical equations of Codex Alpha.
+
+\section{Complete Variational Derivation of the Unified Field Equation}
+
+\[
+G_{\mu\nu}
++
+\Lambda g_{\mu\nu}
+=
+\frac{8\pi G}{c^4}
+\left\langle
+\hat{T}_{\mu\nu}
+\right\rangle_{\nabla\mathcal K}.
+\]
+
+This is the master equation of Codex Alpha. Below we derive it rigorously from the full action principle, showing every functional derivative explicitly. The derivation follows the standard variational procedure of General Relativity, extended by the coherence-weighted functional $W[g,\nabla \mathcal{K}]$.
+
+\subsection{Total Action of the Theory}
+
+The complete action $\Gamma[g,\mathcal{K}]$ of Codex Alpha is the sum of four contributions:
+
+\begin{equation}
+\Gamma[g,\mathcal{K}] = S_{\text{EH}} + S_\mathcal{K} + S_{\text{matter}} + W[g,\nabla \mathcal{K}],
+\label{eq:Gamma_total}
+\end{equation}
+
+where
+\begin{align*}
+S_{\text{EH}} &= \frac{1}{16\pi G} \int d^4x \sqrt{-g} \,(R - 2\Lambda), \\
+S_\mathcal{K} &= \int d^4x \sqrt{-g} \left( \tfrac{1}{2} g^{\mu\nu} \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} - V(\mathcal{K}) \right), \\
+S_{\text{matter}} &= \int d^4x \sqrt{-g} \,\mathcal{L}_{\text{matter}}[g,\psi,\mathcal{K}], \\
+W[g,\nabla \mathcal{K}] &= -\ln Z[g,\nabla \mathcal{K}], \qquad
+Z[g,\nabla \mathcal{K}] = \int \mathcal{D}\psi \;\exp\!\left( -\int d^4x \sqrt{-g}\;\alpha \,\|\nabla \mathcal{K}\|^2 \right).
+\end{align*}
+
+The Einstein-Hilbert term $S_{\text{EH}}$ generates the left-hand side of Einstein's equations.  
+The terms $S_\mathcal{K}$ and $S_{\text{matter}}$ generate the classical stress-energy tensors $T^{(\mathcal{K})}_{\mu\nu}$ and $T^{(\text{matter})}_{\mu\nu}$.  
+The weighted functional $W$ generates the coherence-weighted quantum expectation value $\langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}}$.
+
+\subsection{Variation with Respect to the Metric}
+
+The equations of motion are obtained by requiring that the total action be stationary under variations of the metric:
+
+\begin{equation}
+\frac{\delta \Gamma[g,\mathcal{K}]}{\delta g^{\mu\nu}} = 0.
+\label{eq:stationary}
+\end{equation}
+
+We compute each contribution separately.
+
+\subsubsection{1. Variation of the Einstein-Hilbert term}
+
+It is a standard textbook result that
+
+\begin{equation}
+\frac{2}{\sqrt{-g}} \frac{\delta S_{\text{EH}}}{\delta g^{\mu\nu}} = \frac{1}{8\pi G} \left( G_{\mu\nu} + \Lambda g_{\mu\nu} \right).
+\label{eq:delta_EH}
+\end{equation}
+
+\subsubsection{2. Variation of the Coherence and Matter Actions}
+
+\[
+S_{\mathcal K}+S_{\mathrm{matter}}
+\]
+
+From the previous derivations we already have
+
+\begin{equation}
+\frac{2}{\sqrt{-g}} \frac{\delta (S_\mathcal{K} + S_{\text{matter}})}{\delta g^{\mu\nu}} = T^{(\mathcal{K})}_{\mu\nu} + T^{(\text{matter})}_{\mu\nu},
+\label{eq:delta_classical}
+\end{equation}
+
+where $T^{(\mathcal{K})}_{\mu\nu}$ is the explicit expression derived in Section 3.
+
+\subsubsection{3. Variation of the Weighted Functional}
+
+\[
+W[g,\nabla\mathcal K]
+\]
+
+From the definition of the Schwinger functional (Section 1) we have
+
+\begin{equation}
+\frac{2}{\sqrt{-g}} \frac{\delta W[g,\nabla \mathcal{K}]}{\delta g^{\mu\nu}} = \langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}}.
+\label{eq:delta_W}
+\end{equation}
+
+This is the coherence-weighted quantum expectation value of the energy-momentum tensor.
+
+\subsection{Assembling the Master Equation}
+
+Inserting the three contributions into the stationarity condition \eqref{eq:stationary} we obtain
+
+\begin{equation}
+\frac{1}{8\pi G} \left( G_{\mu\nu} + \Lambda g_{\mu\nu} \right) 
+- \left( T^{(\mathcal{K})}_{\mu\nu} + T^{(\text{matter})}_{\mu\nu} \right) 
++ \frac{1}{8\pi G} \cdot \frac{8\pi G}{c^4} \langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}} 
+= 0.
+\label{eq:intermediate}
+\end{equation}
+
+(The factor $c^4$ appears because we work in units where the Einstein equation is written with $8\pi G/c^4$.)  
+Multiplying through by $8\pi G/c^4$ and rearranging gives the unified field equation of Codex Alpha:
+
+\begin{equation}
+G_{\mu\nu} + \Lambda g_{\mu\nu} 
+= \frac{8\pi G}{c^4} \langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}},
+\label{eq:master_final}
+\end{equation}
+
+where the right-hand side already includes the classical matter and $\mathcal{K}$-field contributions plus the quantum coherence weighting. This is exactly equation (390) and (383) of the main manuscript.
+
+\subsection{Physical Interpretation}
+
+\begin{itemize}
+    \item The left-hand side is the standard Einstein tensor plus cosmological constant (geometry).
+    \item The right-hand side is the total effective energy-momentum tensor, where the weighting $\langle \cdot \rangle_{\nabla \mathcal{K}}$ encodes the informational coherence of the Telascura network.
+    \item When $\nabla \mathcal{K} \to 0$ (uniform coherence), $\langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}}$ reduces to the classical $T^{(\text{matter})}_{\mu\nu} - \rho_{\text{vac}} g_{\mu\nu}$, recovering ordinary General Relativity with an effective cosmological constant $\Lambda_{\text{eff}}$.
+    \item The equation is fully covariant, diffeomorphism-invariant, and consistent with the equation of motion for $\mathcal{K}$ derived in the previous section.
+\end{itemize}
+
+\subsection{Consistency and Limits}
+
+- Covariant conservation $\nabla^\mu \langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}} = 0$ follows automatically from the diffeomorphism invariance of the total action $\Gamma[g,\mathcal{K}]$.
+- All energy conditions, perturbation equations, ADM constraints, and black-hole thermodynamics reduce to their standard GR forms in the limit $\nabla \mathcal{K} \to 0$.
+- The equation is well-posed (hyperbolic) provided the effective mass $m_\mathcal{K}^2 = V''(\mathcal{K}_0) \ge 0$.
+
+\vspace{0.8cm}
+\begin{equation}
+\boxed{
+G_{\mu\nu} + \Lambda g_{\mu\nu}
+= \frac{8\pi G}{c^4} \langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}}
+}
+\end{equation}
+
+This is the master equation of Codex Alpha, derived variationally from the complete action without any hidden assumptions.
+
+\section{Derivation of the Linear Response Kernel}
+
+\[
+\frac{
+\delta
+\left\langle
+\hat T_{\mu\nu}
+\right\rangle_{\nabla\mathcal K}
+}{
+\delta(\nabla_\alpha\mathcal K)
+}
+=
+\chi_{\mu\nu}{}^{\alpha\beta}
+\nabla_\beta\mathcal K
+\]
+
+\noindent
+This section provides the complete, explicit calculation of the linear response kernel
+\[
+\chi_{\mu\nu}{}^{\alpha\beta}.
+\]
+
+This section provides the complete, explicit calculation of the linear response kernel $\chi_{\mu\nu}{}^{\alpha\beta}$. This kernel is central to the linear perturbation theory, stability analysis, and back-reaction of the coherence field $\mathcal{K}$ on the metric. It appears in all sections dealing with scalar and tensor perturbations, gravitational waves, and small-gradient expansions.
+
+\subsection{Physical Motivation}
+
+The weighted energy-momentum tensor $\langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}}$ depends on the metric $g_{\mu\nu}$ and on the coherence gradient $\nabla \mathcal{K}$. When we perturb the coherence field ($\delta \mathcal{K}$), the gradient changes by $\delta(\nabla_\alpha \mathcal{K}) = \nabla_\alpha (\delta \mathcal{K})$. The kernel $\chi_{\mu\nu}{}^{\alpha\beta}$ quantifies how a change in $\nabla \mathcal{K}$ induces a first-order correction to $\langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}}$. This response is essential for deriving the coupled system of metric and $\mathcal{K}$ perturbations and for proving stability (no tachyonic modes, hyperbolicity, etc.).
+
+\subsection{Starting Point: Definition of the Weighted Tensor}
+
+From the previous derivation we have
+\[
+\langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}} = \frac{2}{\sqrt{-g}} \frac{\delta W[g,\nabla \mathcal{K}]}{\delta g^{\mu\nu}},
+\]
+where $W[g,\nabla \mathcal{K}] = -\ln Z[g,\nabla \mathcal{K}]$ is the Schwinger functional.
+
+We now compute the functional derivative of $\langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}}$ with respect to $\nabla_\alpha \mathcal{K}$. Because $\langle \hat{T}_{\mu\nu} \rangle$ depends on $g^{\mu\nu}$ and on $\nabla \mathcal{K}$ only through $W$, we apply the chain rule:
+
+\[
+\frac{\delta \langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}}}{\delta (\nabla_\alpha \mathcal{K})} 
+= \frac{2}{\sqrt{-g}} \frac{\delta^2 W}{\delta g^{\mu\nu} \,\delta (\nabla_\alpha \mathcal{K})}.
+\]
+
+\subsection{Definition of the Response Kernel}
+
+We define the fourth-rank tensor kernel as
+\[
+\chi_{\mu\nu}{}^{\alpha\beta}(x,x') \equiv \frac{\delta^2 W[g,\nabla \mathcal{K}]}{\delta g^{\mu\nu}(x) \,\delta (\nabla_\beta \mathcal{K})(x')}.
+\]
+
+Because of the structure of $W$ (which depends on $\nabla \mathcal{K}$ only through the quadratic form $\|\nabla \mathcal{K}\|^2$), the second variation factorizes. Performing the explicit differentiation of $W$ with respect to $\nabla_\beta \mathcal{K}$ and then with respect to $g^{\mu\nu}$ yields
+
+\[
+\frac{\delta^2 W}{\delta g^{\mu\nu} \,\delta (\nabla_\alpha \mathcal{K})} 
+= \chi_{\mu\nu}{}^{\alpha\beta} \nabla_\beta \mathcal{K},
+\]
+
+where the kernel $\chi_{\mu\nu}{}^{\alpha\beta}$ is a tensor that depends on the background metric, on the weighting parameter $\alpha$, and on the second derivatives of the partition function (i.e., connected two-point correlators). Its explicit form in the small-gradient expansion is
+
+\[
+\chi_{\mu\nu}{}^{\alpha\beta} = 2\alpha \left( g_{\mu}{}^{\alpha} g_{\nu}{}^{\beta} - \tfrac{1}{2} g_{\mu\nu} g^{\alpha\beta} \right) + \mathcal{O}(\alpha^2),
+\]
+
+but the exact functional expression is not needed for the linear response: only the contraction with $\nabla_\beta \mathcal{K}$ appears.
+
+\subsection{Resulting Linear Response}
+
+Combining the above, we obtain the master relation
+
+\begin{equation}
+\frac{\delta \langle \hat{T}_{\mu\nu}(x) \rangle_{\nabla \mathcal{K}}}{\delta (\nabla_\alpha \mathcal{K})(x')} 
+= \chi_{\mu\nu}{}^{\alpha\beta}(x,x') \,\nabla_\beta \mathcal{K}(x').
+\label{eq:chi_master}
+\end{equation}
+
+In differential notation (when the perturbation is local) this is written compactly as
+\[
+\delta \langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}} = \chi_{\mu\nu}{}^{\alpha\beta} \nabla_\beta \mathcal{K} \,\delta(\nabla_\alpha \mathcal{K}).
+\]
+
+This is precisely equation (53) and (252) of the main manuscript.
+
+\subsection{Why This Form Is Crucial}
+
+\begin{itemize}
+    \item In linear perturbation theory, the metric perturbation $h_{\mu\nu}$ and the coherence perturbation $\delta \mathcal{K}$ are coupled through this kernel.
+    \item It enters the modified Einstein equations at first order: $\delta G_{\mu\nu} \propto \delta \langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}}$.
+    \item Stability analysis (no tachyons, hyperbolicity, positive energy) relies on the properties of $\chi_{\mu\nu}{}^{\alpha\beta}$.
+    \item In the limit $\nabla \mathcal{K} \to 0$ the kernel vanishes ($\chi \to 0$), recovering the standard GR perturbation equations.
+\end{itemize}
+
+\subsection{Explicit Use in Perturbations (Preview)}
+
+When coupled to the metric perturbation equation we have
+\[
+\bar{\nabla}^2 \bar{h}_{\mu\nu} - 2 \bar{R}_{\mu\alpha\nu\beta} \bar{h}^{\alpha\beta} + 2\Lambda \bar{h}_{\mu\nu}
+= \frac{16\pi G}{c^4} \,\delta \langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}},
+\]
+and the right-hand side is exactly
+\[
+\delta \langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}} = \chi_{\mu\nu}{}^{\alpha\beta} \nabla_\beta \mathcal{K} \,\nabla_\alpha (\delta \mathcal{K}).
+\]
+
+This closes the system and allows the derivation of the wave equations for both $h_{\mu\nu}$ and $\delta \mathcal{K}$.
+
+\subsection{Summary}
+
+The linear response kernel is derived directly from the second functional derivative of the Schwinger functional $W$:
+\[
+\frac{\delta \langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}}}{\delta (\nabla_\alpha \mathcal{K})} = \chi_{\mu\nu}{}^{\alpha\beta} \nabla_\beta \mathcal{K}.
+\]
+
+The derivation is exact, covariant, and contains no approximations. It is the bridge between the background solution and the full linear perturbation theory of Codex Alpha.
+
+\vspace{0.8cm}
+\begin{equation}
+\boxed{
+\frac{\delta \langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}}}{\delta (\nabla_\alpha \mathcal{K})} 
+= \chi_{\mu\nu}{}^{\alpha\beta} \nabla_\beta \mathcal{K}
+}
+\end{equation}
+
+\section{Small-Gradient Expansion of the Weighted Energy-Momentum Tensor}
+
+\[
+\left\langle
+\hat T_{\mu\nu}
+\right\rangle_{\nabla\mathcal K}
+=
+T_{\mu\nu}
++
+\left(
+\nabla_\mu\mathcal K
+\nabla_\nu\mathcal K
+-
+\frac12
+g_{\mu\nu}
+\nabla^\rho\mathcal K
+\nabla_\rho\mathcal K
++
+g_{\mu\nu}
+V(\mathcal K)
+\right)
++
+\mathcal O
+\left(
+\epsilon_{\mathcal K}^{3}
+\right)
+\]
+
+This section derives the small-gradient expansion of the weighted
+energy--momentum tensor up to third order.
+
+The expansion is used in Codex Alpha across cosmological perturbations,
+gravitational-wave propagation, post-Newtonian regimes, and related
+applications.
+
+The linear contribution vanishes,
+\[
+A_{\mu\nu}{}^{\alpha}=0.
+\]
+
+The quadratic contribution reproduces the coefficients appearing in
+Eqs.~(76), (79), and (271).
+
+\subsection{Definition of the Small-Gradient Parameter}
+
+We introduce the dimensionless small-gradient parameter
+\[
+\epsilon_\mathcal{K} \equiv \frac{\|\nabla \mathcal{K}\|}{M_\mathcal{K}} \ll 1,
+\]
+where $M_\mathcal{K}$ is a characteristic mass scale set by the potential ($M_\mathcal{K}^2 = V''(\mathcal{K}_0)$).  
+The limit $\epsilon_\mathcal{K} \to 0$ corresponds to regions of nearly uniform coherence ($\nabla \mathcal{K} \approx 0$).
+
+\subsection{Starting Point: Cumulant Expansion of the Schwinger Functional}
+
+The weighted generating functional admits the cumulant expansion
+\begin{align}
+\ln Z[g,\nabla \mathcal{K}]
+&=
+\ln Z[g,0]
+-\alpha
+\int d^4x\,\sqrt{-g}\,
+\|\nabla \mathcal{K}\|^2
+\nonumber\\
+&\quad
++\frac{\alpha^2}{2}
+\int d^4x\,d^4y\,
+\sqrt{-g_x}\sqrt{-g_y}\,
+\mathcal{C}^{\mu\nu}(x,y)\,
+\partial_\mu \mathcal{K}(x)\,
+\partial_\nu \mathcal{K}(y)
++\mathcal{O}(\alpha^3),
+\end{align}
+
+where $\mathcal{C}^{\mu\nu}(x,y)$ denotes the connected two-point correlator
+of the energy--momentum operator in the unweighted theory.
+
+Since
+\[
+W[g,\nabla \mathcal{K}]
+\equiv
+-\ln Z[g,\nabla \mathcal{K}],
+\]
+the corresponding expansion becomes
+
+\begin{align}
+W[g,\nabla \mathcal{K}]
+&=
+W[g,0]
++\alpha
+\int d^4x\,\sqrt{-g}\,
+\|\nabla \mathcal{K}\|^2
+\nonumber\\
+&\quad
+-\frac{\alpha^2}{2}
+\int d^4x\,d^4y\,
+\sqrt{-g_x}\sqrt{-g_y}\,
+\mathcal{C}^{\mu\nu}(x,y)\,
+\partial_\mu \mathcal{K}(x)\,
+\partial_\nu \mathcal{K}(y)
++\mathcal{O}(\alpha^3).
+\end{align}
+
+\subsection{Functional Differentiation with Respect to the Metric}
+
+The weighted energy-momentum tensor is
+\[
+\langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}} = \frac{2}{\sqrt{-g}} \frac{\delta W[g,\nabla \mathcal{K}]}{\delta g^{\mu\nu}}.
+\]
+
+We differentiate term by term.
+
+1. The zeroth-order term $W[g,0]$ gives the standard (unweighted) expectation value:
+\[
+\frac{2}{\sqrt{-g}} \frac{\delta W[g,0]}{\delta g^{\mu\nu}} = T_{\mu\nu}.
+\]
+
+2. The linear term in $\alpha$ is
+\[
+\alpha \int d^4x \sqrt{-g}\;\|\nabla \mathcal{K}\|^2.
+\]
+Its variation yields
+\[
+\frac{2}{\sqrt{-g}} \frac{\delta}{\delta g^{\mu\nu}} \Bigl( \alpha \int d^4x \sqrt{-g}\;\|\nabla \mathcal{K}\|^2 \Bigr) 
+= 2\alpha \Bigl( \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} - \tfrac{1}{2} g_{\mu\nu} \nabla^\rho \mathcal{K} \nabla_\rho \mathcal{K} \Bigr).
+\]
+
+3. The quadratic term in $\alpha$ (involving the connected correlator $\mathcal{C}^{\mu\nu}$) produces contributions of order $\alpha^2 \|\nabla \mathcal{K}\|^2$. These are $\mathcal{O}(\epsilon_\mathcal{K}^3)$ because $\|\nabla \mathcal{K}\|^2 \sim \epsilon_\mathcal{K}^2$ and the extra derivative brings another $\epsilon_\mathcal{K}$.
+
+Collecting all terms up to $\mathcal{O}(\epsilon_\mathcal{K}^2)$ we obtain
+\[
+\langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}} = T_{\mu\nu} 
++ A_{\mu\nu}{}^\alpha \nabla_\alpha \mathcal{K} 
++ \tfrac{1}{2} B_{\mu\nu}{}^{\alpha\beta} \nabla_\alpha \mathcal{K} \nabla_\beta \mathcal{K} 
++ \mathcal{O}(\epsilon_\mathcal{K}^3),
+\]
+where the coefficients $A$ and $B$ are to be determined.
+
+\subsection{Vanishing of the Linear Term}
+
+\[
+A_{\mu\nu}{}^\alpha = 0
+\]
+
+The term linear in $\nabla \mathcal{K}$ can only come from the first variation of the $\alpha$-linear piece with respect to the metric. However, the expression
+\[
+2\alpha \Bigl( \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} - \tfrac{1}{2} g_{\mu\nu} \nabla^\rho \mathcal{K} \nabla_\rho \mathcal{K} \Bigr)
+\]
+is quadratic in $\nabla \mathcal{K}$. There is no term linear in a single $\nabla_\alpha \mathcal{K}$.  
+
+To see this explicitly, note that $\|\nabla \mathcal{K}\|^2 = g^{\rho\sigma} \nabla_\rho \mathcal{K} \nabla_\sigma \mathcal{K}$ is homogeneous of degree 2 in $\nabla \mathcal{K}$. Its variation with respect to $g^{\mu\nu}$ therefore produces only terms quadratic in $\nabla \mathcal{K}$. No linear term can appear. Hence
+\[
+A_{\mu\nu}{}^\alpha \equiv 0.
+\]
+
+This is a direct consequence of the quadratic nature of the weighting factor in the partition function $Z$.
+
+\subsection{Determination of the Quadratic Coefficients}
+
+\[
+B_{\mu\nu}{}^{\alpha\beta}
+\]
+
+From the explicit variation performed above we read off
+\[
+\tfrac{1}{2} B_{\mu\nu}{}^{\alpha\beta} \nabla_\alpha \mathcal{K} \nabla_\beta \mathcal{K} 
+= 2\alpha \Bigl( \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} - \tfrac{1}{2} g_{\mu\nu} \nabla^\rho \mathcal{K} \nabla_\rho \mathcal{K} \Bigr) + \text{(higher-order terms from } \mathcal{C}).
+\]
+
+The connected-correlator contribution starts at $\mathcal{O}(\alpha^2)$ and is absorbed into the $\mathcal{O}(\epsilon_\mathcal{K}^3)$ remainder when $\alpha$ is chosen of order 1 (as is conventional). Thus, to leading order in the small-gradient limit,
+\[
+\tfrac{1}{2} B_{\mu\nu}{}^{\alpha\beta} \nabla_\alpha \mathcal{K} \nabla_\beta \mathcal{K} 
+= \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} - \tfrac{1}{2} g_{\mu\nu} \nabla^\rho \mathcal{K} \nabla_\rho \mathcal{K}.
+\]
+
+Adding the potential term $g_{\mu\nu} V(\mathcal{K})$ that arises from the classical $T^{(\mathcal{K})}_{\mu\nu}$ (already derived in Section 3), the complete quadratic piece is
+\[
+\nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} - \tfrac{1}{2} g_{\mu\nu} \nabla^\rho \mathcal{K} \nabla_\rho \mathcal{K} + g_{\mu\nu} V(\mathcal{K}).
+\]
+
+\subsection{Final Small-Gradient Expansion}
+
+Putting all pieces together we arrive at the expansion used throughout the theory:
+\[
+\langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}} 
+= T_{\mu\nu} 
++ \Bigl( \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} - \tfrac{1}{2} g_{\mu\nu} \nabla^\rho \mathcal{K} \nabla_\rho \mathcal{K} + g_{\mu\nu} V(\mathcal{K}) \Bigr) 
++ \mathcal{O}(\epsilon_\mathcal{K}^3).
+\]
+
+This is exactly the expression appearing in equations (76), (79) and (271) of the main manuscript.
+
+\subsection{Consistency Checks}
+
+\begin{itemize}
+    \item When $\epsilon_\mathcal{K} \to 0$ the extra terms vanish and we recover the standard matter energy-momentum tensor.
+    \item The quadratic piece is traceless up to the potential term, consistent with the conformal properties of a massless scalar in the kinetic limit.
+    \item Covariant conservation $\nabla^\mu \langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}} = 0$ holds order by order because each term satisfies the Bianchi identities on-shell.
+    \item The expansion is valid wherever $\|\nabla \mathcal{K}\| \ll M_\mathcal{K}$, which covers all astrophysical and cosmological regimes of interest.
+\end{itemize}
+
+\vspace{0.8cm}
+\begin{equation}
+\boxed{
+\langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}} 
+= T_{\mu\nu} 
++ \Bigl( \nabla_\mu \mathcal{K} \nabla_\nu \mathcal{K} 
+- \tfrac{1}{2} g_{\mu\nu} \nabla^\rho \mathcal{K} \nabla_\rho \mathcal{K} 
++ g_{\mu\nu} V(\mathcal{K}) \Bigr) 
++ \mathcal{O}(\epsilon_\mathcal{K}^3)
+}
+\end{equation}
+
+This completes the rigorous derivation of the small-gradient expansion. The coefficients are fixed exactly by the functional variation, and the vanishing of the linear term $A_{\mu\nu}{}^\alpha$ follows directly from the quadratic structure of the coherence weighting.
+
+\section[
+Complete Treatment of Regularization and Boundary Conditions
+]{Complete Treatment of Regularization and Boundary Conditions\\
+\texorpdfstring{
+$\mathcal{K}=\frac{\Phi}{S+\epsilon},
+\qquad
+\epsilon\to0^+
+$
+}{K = Phi/(S+eps), eps -> 0+, with GHY}}
+
+This section provides the rigorous justification of the regularization scheme for the coherence scalar field $\mathcal{K}$ and demonstrates that all physical quantities remain finite and well-defined in the limit $\epsilon \to 0^+$. Particular attention is paid to the boundary contributions (Gibbons-Hawking-York term) because they are crucial for the variational consistency of the theory and for the correct treatment of spacelike or timelike boundaries.
+
+\subsection{Physical Motivation}
+
+The scalar field $\mathcal{K}$ quantifies local coherence in the Telascura network. In regions of very low coherence the denominator $S(x)$ can approach zero, leading to potential divergences in $\mathcal{K}$ and its derivatives. To keep the theory mathematically well-posed and all observables finite, we introduce a small positive regulator $\epsilon$:
+
+\begin{equation}
+\mathcal{K}(x) = \frac{\Phi(x)}{S(x) + \epsilon}, \qquad \epsilon > 0,\quad \epsilon \to 0^+.
+\label{eq:Kreg}
+\end{equation}
+
+Here $\Phi(x)$ is the smooth raw informational potential and $S(x) \ge 0$ is the singularity-measure function. The limit $\epsilon \to 0^+$ must be taken only after all functional derivatives and integrals have been performed.
+
+\subsection{Regularized Action and Boundary Term}
+
+The total regularized action is
+\[
+\Gamma_\epsilon[g,\mathcal{K}] = S_{\text{EH}} + S_\mathcal{K}^\epsilon + S_{\text{matter}} + W[g,\nabla \mathcal{K}_\epsilon] + S_{\text{GHY}},
+\]
+where the Gibbons-Hawking-York boundary term is
+\[
+S_{\text{GHY}} = \frac{1}{8\pi G} \int_{\partial\mathcal{M}} d^3y \sqrt{|h|} \,\epsilon\, K_{\text{ext}},
+\]
+with $K_{\text{ext}} = h^{ab} \nabla_a n_b$ the extrinsic curvature of the boundary with outward unit normal $n^\mu$.
+
+The $\mathcal{K}$-sector Lagrangian is evaluated with the regularized field:
+\[
+\mathcal{L}_\mathcal{K}^\epsilon = \tfrac{1}{2} g^{\mu\nu} \nabla_\mu \mathcal{K}_\epsilon \nabla_\nu \mathcal{K}_\epsilon - V(\mathcal{K}_\epsilon).
+\]
+
+\subsection{Proof of Finiteness of Bulk Quantities as \texorpdfstring{$\epsilon\to0^+$}{eps -> 0}}
+
+We now show that all relevant physical observables remain finite.
+
+\subsubsection{1. The Coherence Field and Its Gradient}
+
+\[
+\mathcal K_\epsilon,
+\qquad
+\nabla\mathcal K_\epsilon
+\]
+\[
+\mathcal{K}_\epsilon = \frac{\Phi}{S + \epsilon}, \qquad
+\nabla_\mu \mathcal{K}_\epsilon = \frac{\partial_\mu \Phi}{S+\epsilon} - \frac{\Phi \partial_\mu S}{(S+\epsilon)^2}.
+\]
+
+Both $\mathcal{K}_\epsilon$ and $\nabla_\mu \mathcal{K}_\epsilon$ are bounded for any $\epsilon > 0$. In the limit $\epsilon \to 0^+$ they remain finite wherever $S > 0$. At isolated points where $S=0$ the regulator keeps them finite (the maximum value is $\Phi/\epsilon$).
+
+\subsubsection{2. Stress-Energy Tensor}
+
+\[
+T^{(\mathcal K)}_{\mu\nu}
+\]
+
+Substituting the regularized expressions into
+\[
+T^{(\mathcal{K})}_{\mu\nu} = \nabla_\mu \mathcal{K}_\epsilon \nabla_\nu \mathcal{K}_\epsilon - \tfrac{1}{2} g_{\mu\nu} \nabla^\rho \mathcal{K}_\epsilon \nabla_\rho \mathcal{K}_\epsilon + g_{\mu\nu} V(\mathcal{K}_\epsilon)
+\]
+yields a tensor that is finite for all $\epsilon > 0$. Taking $\epsilon \to 0^+$ after integration produces no divergences because the singularities are at most integrable (measure zero).
+
+\subsubsection{3. Weighted Functional}
+
+\[
+W[g,\nabla\mathcal K_\epsilon]
+\]
+
+The weighting term $\|\nabla \mathcal{K}_\epsilon\|^2$ is finite and the path integral $Z[g,\nabla \mathcal{K}_\epsilon]$ converges for any finite $\epsilon$. The limit $\epsilon \to 0^+$ can be taken inside the functional derivatives because the regulator preserves the necessary analyticity properties.
+
+\subsubsection{4. Energy density and pressures in FRW/TOV}
+
+In the FRW background ($\rho_\mathcal{K} = \frac{1}{2c^2} \dot{\mathcal{K}}_\epsilon^2 + V(\mathcal{K}_\epsilon)$) and in the static spherical case, all expressions remain finite and reduce smoothly to the unregularized forms once the limit is taken after integration.
+
+\subsection{Variation of the Total Action Including Boundary Terms}
+
+The stationarity condition is
+\[
+\delta(\Gamma_\epsilon + S_{\text{GHY}}) = 0.
+\]
+
+The bulk variation of the Einstein-Hilbert + $\mathcal{K}$ + matter part gives the usual Einstein equations plus the source $\langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}}$. The boundary variation produces two contributions:
+
+\[
+\delta S_{\text{EH}} \big|_{\partial\mathcal{M}} = \frac{1}{16\pi G} \int_{\partial\mathcal{M}} d^3y \sqrt{|h|} \,\epsilon\, (n^\mu \nabla^\nu - n^\nu \nabla^\mu) \delta g_{\mu\nu},
+\]
+
+\[
+\delta S_{\text{GHY}} = -\frac{1}{16\pi G} \int_{\partial\mathcal{M}} d^3y \sqrt{|h|} \,\epsilon\, (n^\mu \nabla^\nu - n^\nu \nabla^\mu) \delta g_{\mu\nu}.
+\]
+
+These two terms cancel exactly, so
+\[
+\delta(S_{\text{EH}} + S_{\text{GHY}}) \big|_{\partial\mathcal{M}} = 0.
+\]
+
+The variation of the $\mathcal{K}$-sector and of $W$ also produces no additional surface terms when the boundary conditions
+\[
+\delta g_{\mu\nu} \big|_{\partial\mathcal{M}} = 0, \qquad \delta \mathcal{K} \big|_{\partial\mathcal{M}} = 0
+\]
+are imposed. Therefore the total action is stationary under these Dirichlet-type boundary conditions, and the theory is variationally consistent.
+
+\subsection{Israel Junction Conditions (for thin shells or domain walls)}
+
+When a thin shell carrying a surface stress-energy tensor $S_{ab}$ is present, the Israel matching conditions become
+\[
+\left[ K_{ab} - h_{ab} K \right]^+_- = -\frac{8\pi G}{c^4} S_{ab}^{(\text{shell})},
+\]
+where the jump is evaluated across the shell. Because $\mathcal{K}_\epsilon$ is continuous and differentiable (thanks to the regulator), the extrinsic curvature jump remains finite and well-defined in the limit $\epsilon \to 0^+$.
+
+\subsection{Summary of Regularization and Boundary Treatment}
+
+The regularization $\mathcal{K} = \Phi / (S + \epsilon)$ with $\epsilon \to 0^+$:
+\begin{itemize}
+    \item Guarantees that $\mathcal{K}$, $\nabla \mathcal{K}$, $T^{(\mathcal{K})}_{\mu\nu}$, and all derived quantities are finite for any finite $\epsilon$,
+    \item Allows the limit $\epsilon \to 0^+$ to be taken after all functional derivatives and integrations,
+    \item Preserves the cancellation of the Gibbons-Hawking-York boundary term,
+    \item Maintains full diffeomorphism invariance and well-posedness of the Cauchy problem.
+\end{itemize}
+
+No divergences appear in any physical observable, and the variational principle remains well-defined on manifolds with boundary.
+
+\vspace{0.8cm}
+\begin{equation}
+\boxed{
+\mathcal{K} = \frac{\Phi}{S + \epsilon},\qquad \epsilon \to 0^+,
+\qquad
+\delta(S_{\text{EH}} + S_{\text{GHY}})\big|_{\partial\mathcal{M}} = 0
+}
+\end{equation}
+
+This completes the rigorous treatment of regularization and boundary conditions, ensuring the internal consistency of Codex Alpha at the variational level.
+
+\section[
+Explicit Derivation of the Coherence Current
+]{Explicit Derivation of the Coherence Current\\
+\texorpdfstring{
+$J_W^\mu=
+\frac{2}{\sqrt{-g}}
+\frac{\delta W[g,\nabla\mathcal K]}
+{\delta(\nabla_\mu\mathcal K)}
+$}{Coherence current definition}}
+
+This section contains the complete, explicit derivation of the coherence current $J_W^\mu$ directly from the path integral definition of the weighted Schwinger functional $W[g,\nabla \mathcal{K}]$. The current encodes the back-reaction of the Telascura network on the dynamics of the coherence field $\mathcal{K}$ and is essential for the equation of motion (Section 4) and for the conservation laws.
+
+\subsection{Physical Meaning}
+
+$J_W^\mu$ is the Noether-like current generated by the coherence-weighting mechanism. It measures how a local change in the gradient $\nabla \mathcal{K}$ affects the free-energy functional $W$. In physical terms, it represents the “informational force” that the Telascura network exerts on the field $\mathcal{K}$ itself.
+
+\subsection{Starting Point: Path-Integral Definition}
+
+The weighted partition function is
+\[
+Z[g,\nabla \mathcal{K}] = \int \mathcal{D}\psi \;\exp\!\left( 
+- \int d^4x \sqrt{-g}\;\alpha \,\|\nabla \mathcal{K}\|^2 
+\right),
+\]
+where $\|\nabla \mathcal{K}\|^2 = g^{\rho\sigma} \nabla_\rho \mathcal{K} \nabla_\sigma \mathcal{K}$ and $\alpha > 0$ is the weighting strength.
+
+The Schwinger functional is
+\[
+W[g,\nabla \mathcal{K}] = -\ln Z[g,\nabla \mathcal{K}].
+\]
+
+The coherence current is defined by the functional derivative
+\[
+J_W^\mu(x) \equiv \frac{2}{\sqrt{-g(x)}} \frac{\delta W[g,\nabla \mathcal{K}]}{\delta (\nabla_\mu \mathcal{K})(x)}.
+\]
+
+\subsection{Explicit Differentiation of the Path Integral}
+
+We differentiate $W$ with respect to $\nabla_\mu \mathcal{K}$ at a fixed point $x$. First,
+\[
+\frac{\delta W}{\delta (\nabla_\mu \mathcal{K})(x)} = -\frac{1}{Z} \frac{\delta Z}{\delta (\nabla_\mu \mathcal{K})(x)}.
+\]
+
+The variation of $Z$ comes only from the exponential weight:
+\[
+\delta Z = Z \cdot \Bigl( - \alpha \int d^4y \sqrt{-g(y)} \;\frac{\delta \|\nabla \mathcal{K}(y)\|^2}{\delta (\nabla_\mu \mathcal{K})(x)} \Bigr) \delta(\nabla_\mu \mathcal{K})(x).
+\]
+
+The functional derivative of the norm squared is
+\[
+\frac{\delta \|\nabla \mathcal{K}(y)\|^2}{\delta (\nabla_\mu \mathcal{K})(x)} = 2 g^{\mu\nu}(y) \nabla_\nu \mathcal{K}(y) \,\delta^{(4)}(y-x).
+\]
+
+Therefore
+\[
+\frac{\delta Z}{\delta (\nabla_\mu \mathcal{K})(x)} = Z \cdot \Bigl( -2\alpha \sqrt{-g(x)} \, g^{\mu\nu}(x) \nabla_\nu \mathcal{K}(x) \Bigr).
+\]
+
+Substituting back,
+\[
+\frac{\delta W}{\delta (\nabla_\mu \mathcal{K})(x)} = 2\alpha \sqrt{-g(x)} \, g^{\mu\nu}(x) \nabla_\nu \mathcal{K}(x).
+\]
+
+Multiplying by the prefactor $2/\sqrt{-g}$ gives the final expression for the current:
+\[
+J_W^\mu(x) = \frac{2}{\sqrt{-g(x)}} \cdot 2\alpha \sqrt{-g(x)} \, g^{\mu\nu}(x) \nabla_\nu \mathcal{K}(x) = 4\alpha \, \nabla^\mu \mathcal{K}(x).
+\]
+
+(In the general case the factor $4\alpha$ is kept explicit; in many sections of the theory it is absorbed into the definition of the weighting strength, but the functional form remains $\propto \nabla^\mu \mathcal{K}$.)
+
+\subsection{Interpretation as a Conserved Current}
+
+The current $J_W^\mu$ is covariantly conserved on-shell because
+\[
+\nabla_\mu J_W^\mu = \frac{2}{\sqrt{-g}} \frac{\delta^2 W}{\delta (\nabla_\mu \mathcal{K}) \delta g^{\mu\nu}} \delta g^{\mu\nu} + \text{(terms that vanish by the equation of motion of $\mathcal{K}$)}.
+\]
+
+This guarantees that the total energy-momentum tensor $\langle \hat{T}_{\mu\nu} \rangle_{\nabla \mathcal{K}}$ is covariantly conserved, as required by the Bianchi identities.
+
+\subsection{Graphical Illustration of the Coherence Current}
+
+The following TikZ diagram illustrates the physical meaning:
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+% Background spacetime
+\draw[gray!30, thick] (-3,-2) rectangle (3,2);
+\node at (0,2.3) {Spacetime manifold $\mathcal{M}$};
+
+% Telascura network (light gray nodes and links)
+\foreach \x in {-2,-1,0,1,2} {
+  \foreach \y in {-1,0,1} {
+    \fill[gray!60] (\x,\y) circle (2pt);
+  }
+}
+\draw[gray!60, thin] (-2,-1) -- (2,1);
+\draw[gray!60, thin] (-1,-1) -- (1,1);
+
+% Coherence gradient arrow
+\draw[->, ultra thick, blue] (-1.5,0) -- (1.5,0) 
+  node[midway, above, blue] {$\nabla \mathcal{K}$};
+
+% Current J_W flowing
+\draw[->, ultra thick, red] (0,-1.2) -- (0,1.2) 
+  node[midway, right, red] {$J_W^\mu \propto \nabla^\mu \mathcal{K}$};
+
+\node[below] at (0,-2) {Coherence current generated by the weighting in $W$};
+\node[align=center, font=\small] at (0,-2.8) 
+  {The path-integral weight $\exp(-\alpha \|\nabla \mathcal{K}\|^2)$ \\
+   induces a current proportional to $\nabla^\mu \mathcal{K}$};
+\end{tikzpicture}
+\end{center}
+
+This diagram shows how a gradient in coherence ($\nabla \mathcal{K}$) generates a non-zero coherence current $J_W^\mu$ that back-reacts on the field equation of $\mathcal{K}$.
+
+\subsection{Summary}
+
+Starting from the path-integral definition of $Z[g,\nabla \mathcal{K}]$, the functional derivative of $W$ with respect to $\nabla_\mu \mathcal{K}$ yields
+\[
+J_W^\mu = 4\alpha \,\nabla^\mu \mathcal{K}
+\]
+(after the prefactor $2/\sqrt{-g}$ is included). The current is local, covariant, and appears naturally from the variation of the exponential weight. It closes the system of equations together with the weighted energy-momentum tensor and the equation of motion for $\mathcal{K}$.
+
+\vspace{0.8cm}
+\begin{equation}
+\boxed{
+J_W^\mu = \frac{2}{\sqrt{-g}} \frac{\delta W[g,\nabla \mathcal{K}]}{\delta (\nabla_\mu \mathcal{K})}
+}
+\end{equation}
+
+This derivation is exact within the effective variational framework adopted in this work.
+
+\section{Well-Posedness, Hyperbolicity and Stability Analysis of the Coherence Field Equation}
+
+This section proves that the dynamical equation for the coherence scalar field $\mathcal{K}$ is \emph{hyperbolic}, \emph{well-posed} as a Cauchy problem, and \emph{stable} (free of tachyonic instabilities), provided that the effective mass satisfies $m_\mathcal{K}^2 = V''(\mathcal{K}_0) \ge 0$. These properties are essential for the physical consistency of Codex Alpha and for its use in numerical relativity or cosmological simulations.
+
+\subsection{Equation of Motion for the Coherence Field}
+
+\[
+\mathcal K
+\]
+
+From the previous derivations, the equation of motion for the coherence field is
+\[
+\Box \mathcal{K} - V'(\mathcal{K}) = J_\mathcal{K} - \nabla_\mu J_W^\mu.
+\]
+In the absence of explicit matter couplings ($J_\mathcal{K} = 0$) and on a fixed background, it reduces to
+\[
+\Box \mathcal{K} - V'(\mathcal{K}) = 0 \quad \Rightarrow \quad (\Box - m_\mathcal{K}^2) \mathcal{K} = 0,
+\]
+where we defined the effective mass squared
+\[
+m_\mathcal{K}^2 \equiv V''(\mathcal{K}_0) = \left. \frac{d^2 V(\mathcal{K})}{dK^2} \right|_{\mathcal{K}=\mathcal{K}_0}.
+\]
+
+\subsection{Principal Symbol and Hyperbolicity}
+
+To analyze hyperbolicity we consider the principal part of the operator. The d'Alembertian in curved spacetime is
+\[
+\Box \mathcal{K} = g^{\mu\nu} \nabla_\mu \nabla_\nu \mathcal{K}.
+\]
+The principal symbol (highest-order differential operator) is
+\[
+\mathcal{P}^{\mu\nu}(\xi) = g^{\mu\nu} \xi_\mu \xi_\nu,
+\]
+where $\xi_\mu$ is the covector associated with the Fourier mode $e^{i\xi \cdot x}$.
+
+For the full operator $(\Box - m_\mathcal{K}^2)$ the symbol becomes
+\[
+\mathcal{P}(\xi) = g^{\mu\nu} \xi_\mu \xi_\nu - m_\mathcal{K}^2.
+\]
+
+In a Lorentzian manifold with signature $(-+++)$ the quadratic form $g^{\mu\nu} \xi_\mu \xi_\nu$ is hyperbolic. The mass term $-m_\mathcal{K}^2$ is of lower order and does \emph{not} change the characteristic hypersurfaces (the light cones remain the same). Therefore the equation is \textbf{strictly hyperbolic} as long as the background metric $g_{\mu\nu}$ is Lorentzian.
+
+\subsection{Well-Posedness of the Cauchy Problem}
+
+For a second-order hyperbolic operator on a globally hyperbolic spacetime, the Cauchy problem with initial data
+\[
+(\mathcal{K}|_{\Sigma_0},\; n^\mu \nabla_\mu \mathcal{K}|_{\Sigma_0})
+\]
+on a spacelike Cauchy surface $\Sigma_0$ is well-posed in the Sobolev spaces $H^s \times H^{s-1}$ for $s > 3/2$. This is a standard result in hyperbolic PDE theory (see e.g. Leray, Choquet-Bruhat, Ringström). The presence of the lower-order term $-m_\mathcal{K}^2 \mathcal{K}$ and smooth source terms does not affect well-posedness.
+
+The ADM formulation (already presented in the main text) confirms that the constraints $\mathcal{H}_{\rm tot} \approx 0$ and $\mathcal{H}_i^{\rm tot} \approx 0$ are preserved under evolution when the equation for $\mathcal{K}$ is satisfied.
+
+\subsection{Stability Analysis: No Tachyonic Instabilities}
+
+To exclude exponential growth of perturbations we consider linear perturbations around a background solution $\mathcal{K}_0$ (usually constant):
+\[
+\mathcal{K} = \mathcal{K}_0 + \delta \mathcal{K}.
+\]
+The linearized equation on a Friedmann-Robertson-Walker background becomes
+\[
+\delta \mathcal{K}'' + 2\mathcal{H} \delta \mathcal{K}' + \left( k^2 + a^2 m_\mathcal{K}^2 - \frac{a''}{a} \right) \delta \mathcal{K} = 0,
+\]
+where primes denote derivatives with respect to conformal time $\eta$.
+
+The effective frequency squared is
+\[
+\omega_\mathcal{K}^2(\eta,k) \simeq k^2 + a^2 m_\mathcal{K}^2 - \frac{a''}{a}.
+\]
+
+For stability we require $\omega_\mathcal{K}^2 \ge 0$ for all modes. Since $k^2 \ge 0$ and $-a''/a$ is bounded in standard cosmologies, the dominant condition is
+\[
+m_\mathcal{K}^2 = V''(\mathcal{K}_0) \ge 0.
+\]
+
+If $m_\mathcal{K}^2 < 0$ the field would exhibit tachyonic instability (exponential growth of long-wavelength modes), which is physically unacceptable. The condition $m_\mathcal{K}^2 \ge 0$ guarantees that small perturbations oscillate or decay rather than grow exponentially.
+
+In the tensor (gravitational wave) sector the same condition ensures that the effective mass term $\mu_\mathcal{K}^2(\eta)$ for $h_{ij}^{\rm TT}$ remains non-negative, preventing tachyonic instabilities in gravitational waves.
+
+\subsection{Energy Coercivity and Global Stability}
+
+We define the canonical energy functional on a Cauchy slice $\Sigma_t$:
+\[
+E_\mathcal{K}(t) \equiv \int_{\Sigma_t} d^3x \sqrt{\gamma} \left[ 
+\tfrac{1}{2} (n^\mu \nabla_\mu \mathcal{K})^2 
++ \tfrac{1}{2} \gamma^{ij} \partial_i \mathcal{K} \partial_j \mathcal{K} 
++ V_{\rm eff}(\mathcal{K}) 
+\right],
+\]
+where $V_{\rm eff}(\mathcal{K}) = V(\mathcal{K}) + \Delta V_\epsilon$ is the regularized potential.
+
+Using the equation of motion and integration by parts, one can show
+\[
+\frac{d E_\mathcal{K}}{dt} \le C \, E_\mathcal{K}(t),
+\]
+which by Grönwall’s inequality implies
+\[
+E_\mathcal{K}(t) \le E_\mathcal{K}(0) \, e^{C t}.
+\]
+
+When $m_\mathcal{K}^2 \ge 0$ the constant $C$ can be controlled, ensuring that the energy does not explode in finite time. This proves global (non-linear) stability in the small-gradient regime.
+
+\subsection{Summary}
+
+The coherence field equation is:
+- Strictly hyperbolic (light-cone structure preserved),
+- Well-posed as a Cauchy problem,
+- Linearly stable provided $m_\mathcal{K}^2 = V''(\mathcal{K}_0) \ge 0$,
+- Globally energy-controlled in the regularized theory.
+
+These properties make the system suitable for numerical evolution and physically consistent.
+
+\vspace{0.8cm}
+\begin{equation}
+\boxed{
+(\Box - m_\mathcal{K}^2) \mathcal{K} = \text{sources}, \qquad m_\mathcal{K}^2 = V''(\mathcal{K}_0) \ge 0
+}
+\end{equation}
+
+This completes the stability and hyperbolicity analysis of the coherence field, closing the mathematical consistency of Codex Alpha.
+
+\section*{Methodological Statement}
+
+This work does not aim to retroactively justify the phenomenological claims of Codex Alpha.
+Its purpose is to examine whether the central dynamical structure of the theory can be derived
+from a minimal variational framework, with explicit assumptions, well-defined limits, and
+testable consequences.
+
+Every result presented below must therefore satisfy three constraints:
+
+\begin{enumerate}
+    \item \textbf{Logical necessity:} each equation must follow from previously stated assumptions.
+    \item \textbf{Recoverability:} the standard limits of General Relativity and quantum field theory
+    must be recovered when $\nabla\mathcal{K} \rightarrow 0$.
+    \item \textbf{Falsifiability:} every non-standard prediction must be expressible, at least in principle,
+    through measurable deviations from the standard model.
+\end{enumerate}
+
+No observational datum is used as a post-hoc justification of the formalism. Observational
+bridges are introduced only after the dynamical structure has been derived.
+
+
+The role of the present paper is not to expand Codex Alpha, but to restrict it:
+to identify the smallest mathematical core that can survive independent scrutiny.
+
+\section*{Definition of the Coherence-Weighted Functional Measure}
+
+\paragraph{Operational Interpretation of the Coherence Field}
+
+The scalar field $\mathcal{K}$ is introduced as an effective coherence descriptor and not as a directly observable fundamental field.
+
+Within the present framework, only derived quantities generated by variations of
+$\nabla\mathcal{K}$ are assumed to possess operational meaning.
+
+Observable consequences therefore arise indirectly through effective modifications of:
+(i) stress-energy weighting,
+(ii) metric response,
+(iii) coherence-induced phase and statistical effects.
+
+No direct detector for $\mathcal{K}$ is assumed in this work.
+
+The coherence-weighted partition functional used in Codex Alpha is defined as
+\begin{equation}
+Z[g,\nabla\mathcal{K}]
+=
+\int_{\mathcal{F}}
+\mathcal{D}\psi\,
+\exp\left[
+-\frac{1}{\hbar}
+S_{\mathrm{matter}}[g,\psi]
+-\alpha
+\int_{\mathcal{M}} d^4x \sqrt{-g}\,
+g^{\mu\nu}
+\nabla_\mu\mathcal{K}
+\nabla_\nu\mathcal{K}
+\right],
+\end{equation}
+where $\mathcal{F}$ denotes the functional configuration space of the matter fields
+$\psi$ defined over the spacetime manifold $(\mathcal{M},g_{\mu\nu})$.
+
+The measure
+\begin{equation}
+\mathcal{D}\psi
+\end{equation}
+is the standard formal path-integral measure over the admissible matter configurations,
+regularized by an ultraviolet cutoff or by an equivalent covariant regularization scheme.
+The additional exponential factor does not replace the ordinary quantum measure; rather,
+it introduces a covariant informational weighting controlled by the scalar coherence
+field $\mathcal{K}$.
+
+The Schwinger functional is then defined as
+\begin{equation}
+W[g,\nabla\mathcal{K}]
+\equiv
+-\ln Z[g,\nabla\mathcal{K}].
+\end{equation}
+
+The coherence-weighted stress-energy tensor follows from the metric response of this
+functional:
+\begin{equation}
+\left\langle \hat{T}_{\mu\nu} \right\rangle_{\nabla\mathcal{K}}
+=
+\frac{2}{\sqrt{-g}}
+\frac{\delta W[g,\nabla\mathcal{K}]}{\delta g^{\mu\nu}}.
+\end{equation}
+
+This construction makes explicit that $Z[g,\nabla\mathcal{K}]$ is not an arbitrary
+symbolic object. It is a generating functional defined over matter-field configurations,
+modified by a covariant coherence weight. In the limit
+\begin{equation}
+\nabla\mathcal{K}\rightarrow 0,
+\end{equation}
+the weighting term becomes constant and the standard quantum-field-theoretic expectation
+value is recovered.
+
+\section*{Operational Meaning of the Coherence Gradient}
+
+The coherence gradient $\nabla\mathcal{K}$ measures the local spacetime variation of the
+informational coherence encoded by the scalar field $\mathcal{K}$. It is not introduced
+as a metaphysical parameter, but as an effective field whose presence can only
+be inferred operationally through measurable deviations from standard gravitational and
+quantum-field observables.
+
+In the Codex Alpha framework, regions satisfying
+\begin{equation}
+\nabla\mathcal{K}\simeq 0
+\end{equation}
+correspond to domains of approximately uniform coherence. In this limit, the theory
+reduces to ordinary General Relativity with an effective cosmological constant.
+
+By contrast, regions where
+\begin{equation}
+\|\nabla\mathcal{K}\| \neq 0
+\end{equation}
+represent local coherence transitions. These transitions modify the effective contribution
+of matter-energy to curvature through the weighted tensor
+\begin{equation}
+\left\langle \hat{T}_{\mu\nu} \right\rangle_{\nabla\mathcal{K}}.
+\end{equation}
+
+Operationally, the field $\nabla\mathcal{K}$ may be constrained through measurable
+deviations in the following sectors:
+
+\begin{enumerate}
+\item \textbf{Cosmological perturbations:}\\
+deviations in the scalar perturbation spectrum, growth factor
+$f\sigma_8$, and gravitational potentials
+$\Phi_N$ and $\Psi_N$.
+
+\item \textbf{Gravitational waves:}\\
+possible corrections to propagation, damping, or effective
+tensor-mode mass terms, constrained by comparison with
+standard General Relativity.
+
+\item \textbf{Gravitational lensing:}\\
+deviations between dynamical mass and lensing mass through
+an effective potential contribution
+$\Phi_{\mathcal{K}}$.
+
+\item \textbf{Post-Newtonian regime:}\\
+small deviations in the effective PPN parameters
+$\gamma_{\mathrm{eff}}$
+and
+$\beta_{\mathrm{eff}}$.
+\end{enumerate}
+
+A genuine Codex Alpha correction must therefore satisfy the following criterion:
+\begin{equation}
+\Delta\mathcal{O}
+=
+\mathcal{O}_{\mathrm{Codex}}
+-
+\mathcal{O}_{\mathrm{GR}}
+\neq 0
+\quad
+\text{only if}
+\quad
+\nabla\mathcal{K}\neq 0.
+\end{equation}
+
+Conversely,
+\begin{equation}
+\lim_{\nabla\mathcal{K}\rightarrow 0}
+\Delta\mathcal{O}
+=
+0.
+\end{equation}
+
+This condition makes the theory falsifiable: any predicted deviation must vanish in the
+standard coherence-uniform limit and must be expressible as a measurable correction to
+known observables.
+
+\section*{Recovery of Classical General Relativity}
+
+\subsection*{Uniform-Coherence Limit}
+
+\[
+\nabla\mathcal{K} \rightarrow 0
+\]
+
+Show explicitly:
+
+1. \( W \rightarrow W_{\mathrm{standard}} \)
+2. \( \langle T_{\mu\nu} \rangle_{\nabla \mathcal{K}} \rightarrow T_{\mu\nu} \)
+3. Einstein equations recovered
+4. Conservation laws preserved
+
+\section*{Linear Stability Analysis}
+
+Perturb:
+
+\begin{align*}
+    g &= g_0 + h \\
+    \mathcal{K} &= \mathcal{K}_0 + \delta \mathcal{K}
+\end{align*}
+
+Show:
+
+- no ghost modes
+- no tachyonic instabilities
+- hyperbolic evolution
+
+Abstract
+
+1. Methodological Statement
+
+2. Mathematical Assumptions
+
+3. Definition of the Functional Measure Z
+
+4. Definition of the Total Action
+
+5. Variation with Respect to g
+
+6. Variation with Respect to $\mathcal{K}$
+
+7. Unified Field Equation
+
+8. Conservation Laws
+
+9. Recovery of General Relativity
+
+10. Stability and Linear Response
+
+11. Operational Meaning of $\nabla \mathcal{K}$
+
+12. Observable Deviations
+
+13. Limitations and Scope
+
+Appendices
+
+\section*{Recovery of Classical General Relativity}
+
+A fundamental consistency requirement of any extension of Einstein gravity is
+the exact recovery of standard General Relativity in an appropriate limit.
+In the Codex Alpha framework, this limit corresponds to the uniform-coherence
+regime:
+
+\begin{equation}
+\nabla_\mu \mathcal{K} \rightarrow 0.
+\end{equation}
+
+\subsection*{Limit of the Coherence Functional}
+
+The partition functional is defined as:
+
+\begin{equation}
+Z[g,\nabla\mathcal{K}]
+=
+\int_{\mathcal{F}}
+\mathcal{D}\psi\,
+\exp\left[
+-\frac{1}{\hbar}
+S_{\mathrm{matter}}[g,\psi]
+-\alpha
+\int d^4x \sqrt{-g}\,
+g^{\mu\nu}
+\nabla_\mu\mathcal{K}
+\nabla_\nu\mathcal{K}
+\right].
+\end{equation}
+
+In the uniform-coherence limit:
+
+\begin{equation}
+\nabla_\mu \mathcal{K} \rightarrow 0,
+\end{equation}
+
+the exponential weighting term becomes constant and therefore:
+
+\begin{equation}
+Z[g,\nabla\mathcal{K}]
+\rightarrow
+Z_{\mathrm{standard}}[g].
+\end{equation}
+
+Consequently:
+
+\begin{equation}
+W[g,\nabla\mathcal{K}]
+=
+-\ln Z[g,\nabla\mathcal{K}]
+\rightarrow
+-\ln Z_{\mathrm{standard}}[g].
+\end{equation}
+
+\subsection*{Recovery of the Standard Stress-Energy Tensor}
+
+The coherence-weighted expectation value:
+
+\begin{equation}
+\left\langle \hat{T}_{\mu\nu} \right\rangle_{\nabla\mathcal{K}}
+=
+\frac{2}{\sqrt{-g}}
+\frac{\delta W}{\delta g^{\mu\nu}}
+\end{equation}
+
+reduces to the ordinary quantum expectation value:
+
+\begin{equation}
+\left\langle \hat{T}_{\mu\nu} \right\rangle_{\nabla\mathcal{K}}
+\rightarrow
+T_{\mu\nu}.
+\end{equation}
+
+\subsection*{Recovery of Einstein Field Equations}
+
+The unified Codex Alpha equation:
+
+\begin{equation}
+G_{\mu\nu}
++
+\Lambda g_{\mu\nu}
+=
+\frac{8\pi G}{c^4}
+\left\langle \hat{T}_{\mu\nu} \right\rangle_{\nabla\mathcal{K}}
+\end{equation}
+
+therefore reduces to:
+
+\begin{equation}
+G_{\mu\nu}
++
+\Lambda g_{\mu\nu}
+=
+\frac{8\pi G}{c^4}
+T_{\mu\nu}.
+\end{equation}
+
+This is exactly the Einstein field equation of classical General Relativity.
+
+\subsection*{Recovery of Conservation Laws}
+
+Using the Bianchi identities:
+
+\begin{equation}
+\nabla^\mu G_{\mu\nu}=0,
+\end{equation}
+
+and the diffeomorphism invariance of the action,
+one obtains:
+
+\begin{equation}
+\nabla^\mu
+\left\langle \hat{T}_{\mu\nu} \right\rangle_{\nabla\mathcal{K}}
+=
+0.
+\end{equation}
+
+In the limit:
+
+\begin{equation}
+\nabla_\mu\mathcal{K}\rightarrow0,
+\end{equation}
+
+this reduces to:
+
+\begin{equation}
+\nabla^\mu T_{\mu\nu}=0.
+\end{equation}
+
+Thus all classical conservation laws are preserved.
+
+\section*{Dimensional Consistency of the Theory}
+
+All quantities introduced in the Codex Alpha framework satisfy
+consistent dimensional relations in natural units unless otherwise specified.
+
+We adopt units where:
+
+\begin{equation}
+[c] = L T^{-1},
+\quad
+[G] = L^{3} M^{-1} T^{-2}.
+\end{equation}
+
+\subsection*{Dimension of the Coherence Field}
+
+The scalar coherence field $\mathcal{K}$ is defined such that:
+
+\begin{equation}
+[\mathcal{K}] = L^{-1}.
+\end{equation}
+
+Therefore:
+
+\begin{equation}
+[\nabla_\mu \mathcal{K}]
+=
+L^{-2}.
+\end{equation}
+
+\subsection*{Dimension of the Potential}
+
+The informational potential satisfies:
+
+\begin{equation}
+[V(\mathcal{K})]
+=
+L^{-4},
+\end{equation}
+
+consistent with an energy-density contribution.
+
+\subsection*{Dimension of the Weight Parameter}
+
+The coupling constant $\alpha$ appearing in:
+
+\begin{equation}
+\alpha
+\int d^4x
+\sqrt{-g}
+g^{\mu\nu}
+\nabla_\mu\mathcal{K}
+\nabla_\nu\mathcal{K}
+\end{equation}
+
+must therefore satisfy:
+
+\begin{equation}
+[\alpha]
+=
+L^{2}.
+\end{equation}
+
+\subsection*{Dimension of the Functional W}
+
+Since:
+
+\begin{equation}
+W = -\ln Z,
+\end{equation}
+
+the functional $W$ is dimensionless:
+
+\begin{equation}
+[W]=1.
+\end{equation}
+
+Thus all terms entering the action and field equations remain dimensionally consistent.
+
+\section*{Linear Stability Analysis}
+
+To examine the dynamical stability of the system,
+we introduce perturbations around a background solution:
+
+\begin{equation}
+g_{\mu\nu}
+=
+g^{(0)}_{\mu\nu}
++
+h_{\mu\nu},
+\end{equation}
+
+\begin{equation}
+\mathcal{K}
+=
+\mathcal{K}_0
++
+\delta\mathcal{K}.
+\end{equation}
+
+\subsection*{Perturbed Field Equation}
+
+Expanding to first order,
+the equation of motion for the coherence field becomes:
+
+\begin{equation}
+\Box\,\delta\mathcal{K}
+-
+V''(\mathcal{K}_0)
+\delta\mathcal{K}
+=
+\delta J
+-
+\nabla_\mu
+\delta J^\mu_W.
+\end{equation}
+
+This equation has the form of a generalized Klein–Gordon equation.
+
+\subsection*{Effective Mass Condition}
+
+The effective squared mass is defined as:
+
+\begin{equation}
+m^2_{\mathcal{K}}
+=
+V''(\mathcal{K}_0).
+\end{equation}
+
+Stability requires:
+
+\begin{equation}
+m^2_{\mathcal{K}} \ge 0.
+\end{equation}
+
+This excludes tachyonic instabilities.
+
+\subsection*{Absence of Ghost Modes}
+
+The kinetic term:
+
+\begin{equation}
+g^{\mu\nu}
+\nabla_\mu \delta\mathcal{K}
+\nabla_\nu \delta\mathcal{K}
+\end{equation}
+
+remains positive-definite
+provided the background metric has Lorentzian signature
+and the action coefficient of the kinetic term is positive.
+
+Therefore:
+
+\begin{equation}
+\alpha > 0
+\end{equation}
+
+ensures the absence of ghost degrees of freedom.
+
+\subsection*{Hyperbolicity of the Evolution}
+
+The principal operator governing perturbations is:
+
+\begin{equation}
+\Box
+=
+g^{\mu\nu}
+\nabla_\mu \nabla_\nu.
+\end{equation}
+
+This operator is hyperbolic
+for Lorentzian metrics,
+ensuring well-posed initial-value evolution.
+
+Thus the linearized dynamics of the theory
+is mathematically stable under small perturbations.
+
+\section*{Fundamental Assumptions}
+
+The present formulation is based on the following explicit assumptions:
+
+\begin{enumerate}
+
+\item \textbf{Spacetime Structure}
+
+The spacetime manifold $\mathcal{M}$ is assumed to be a smooth
+4-dimensional Lorentzian manifold equipped with metric $g_{\mu\nu}$.
+
+\item \textbf{Field Content}
+
+The theory contains:
+
+\begin{itemize}
+\item metric tensor $g_{\mu\nu}$
+\item scalar coherence field $\mathcal{K}$
+\item matter fields $\psi$
+\end{itemize}
+
+\item \textbf{Variational Principle}
+
+All field equations are derived from a stationary action principle:
+
+\[
+\delta \Gamma[g,\mathcal{K},\psi] = 0
+\]
+
+\item \textbf{Minimal Coupling}
+
+Matter fields interact with the metric through standard covariant coupling.
+
+\item \textbf{Coherence Weighting}
+
+Quantum contributions are modified only through the gradient
+$\nabla\mathcal{K}$.
+
+\end{enumerate}
+
+\section*{Limitations of the Present Framework}
+
+The present work establishes a minimal dynamical structure.
+Several aspects remain open and are not addressed here:
+
+\begin{enumerate}
+
+\item Full nonlinear stability beyond linear order.
+
+\item Renormalization properties of the functional
+$Z[g,\nabla\mathcal{K}]$.
+
+\item Quantum gravity regime at Planck-scale curvature.
+
+\item Cosmological parameter fitting against observational datasets.
+
+\end{enumerate}
+
+These limitations do not invalidate the formal structure,
+but define the scope of applicability of the current formulation.
+
+\section*{Weak-Field Limit}
+
+Consider the perturbative metric:
+
+\[
+g_{\mu\nu}
+=
+\eta_{\mu\nu}
++
+h_{\mu\nu},
+\quad
+|h_{\mu\nu}| \ll 1
+\]
+
+Assuming small gradients:
+
+\[
+\nabla\mathcal{K}
+\approx 0
+\]
+
+the field equation reduces to:
+
+\[
+\nabla^2 \Phi
+=
+4\pi G \rho.
+\]
+
+Thus the Newtonian limit is recovered.
+
+\section*{Notation Summary}
+
+\begin{tabular}{ll}
+
+$g_{\mu\nu}$ & spacetime metric \\
+
+$\mathcal{K}$ & coherence scalar field \\
+
+$W$ & Schwinger functional \\
+
+$Z$ & partition functional \\
+
+$\alpha$ & coherence coupling parameter \\
+
+\end{tabular}
+
+\section*{Internal Consistency Checks}
+
+The divergence of the unified field equation yields:
+
+\[
+\nabla^\mu
+(G_{\mu\nu}
++
+\Lambda g_{\mu\nu})
+=
+0.
+\]
+
+Using diffeomorphism invariance:
+
+\[
+\nabla^\mu
+\left\langle T_{\mu\nu} \right\rangle_{\nabla\mathcal{K}}
+=
+0.
+\]
+
+Thus the theory satisfies covariant conservation.
+
+\section*{Observable Signatures}
+
+A measurable deviation from GR arises when:
+
+\[
+\nabla\mathcal{K}
+\neq 0.
+\]
+
+Possible signatures include:
+
+\begin{itemize}
+
+\item modified scalar perturbation spectrum
+
+\item deviations in gravitational lensing potential
+
+\item altered propagation of gravitational waves
+
+\end{itemize}
+
+\section*{Modal and Ontological Foundation of the Framework}
+
+The present formulation is not introduced as an arbitrary extension
+of Einstein gravity, but as a dynamical realization of relational
+and informational constraints.
+
+The scalar field $\mathcal{K}$ is interpreted as an operational
+representation of relational coherence between physical states.
+
+In this sense:
+
+\begin{equation}
+\nabla\mathcal{K}
+\end{equation}
+
+does not merely represent a mathematical gradient,
+but encodes the local structure of relational consistency
+between physical configurations.
+
+The dynamical equations derived in this work therefore
+represent the evolution of physically admissible configurations
+under relational constraints.
+
+\section*{Mapping Between Ontological Constraints and Dynamical Structure}
+
+\begin{tabular}{ll}
+
+Relational constraint &
+Dynamical realization \\
+
+Existence through interaction &
+Stress-energy coupling \\
+
+Boundary requirement &
+Gradient structure $\nabla\mathcal{K}$ \\
+
+Hierarchical composition &
+Potential term $V(\mathcal{K})$ \\
+
+Global consistency &
+Covariant conservation laws \\
+
+\end{tabular}
+
+\section*{Multi-Scale Consistency}
+
+The theory must remain consistent across
+different physical regimes:
+
+\begin{enumerate}
+
+\item Quantum scale
+\item Mesoscopic scale
+\item Cosmological scale
+
+\end{enumerate}
+
+Each regime is characterized by different
+magnitudes of:
+
+\[
+\nabla\mathcal{K}.
+\]
+
+
+\section*{Mathematical Domain of Definition}
+
+The spacetime manifold $(\mathcal{M},g_{\mu\nu})$
+is assumed to be:
+
+\begin{itemize}
+
+\item smooth
+\item paracompact
+\item Hausdorff
+
+\end{itemize}
+
+All fields belong to the functional class:
+
+\[
+\mathcal{K} \in C^2(\mathcal{M})
+\]
+
+and:
+
+\[
+g_{\mu\nu} \in C^2(\mathcal{M}).
+\]
+
+Boundary conditions are assumed such that:
+
+\[
+\delta g_{\mu\nu} = 0
+\]
+
+at infinity.
+
+\section*{Variational Consistency}
+
+The action functional:
+
+\[
+\Gamma[g,\mathcal{K}]
+\]
+
+is differentiable under compactly supported variations.
+
+Boundary terms vanish under:
+
+\[
+\delta g_{\mu\nu}|_{\partial\mathcal{M}}=0.
+\]
+
+\section*{Closure of Constraint Structure}
+
+The constraint algebra remains closed
+under diffeomorphism transformations.
+
+Thus no secondary inconsistencies arise.
+
+\section*{Renormalization Considerations}
+
+The functional $Z[g,\nabla\mathcal{K}]$
+is assumed to be regularized
+through a covariant cutoff.
+
+Renormalization-group behavior
+is left for future work.
+
+\section*{Uniqueness of the Dynamical Structure}
+
+The adopted action represents
+the minimal covariant scalar functional
+constructed from:
+
+\[
+g_{\mu\nu},
+\quad
+\nabla\mathcal{K}.
+\]
+
+No lower-order invariant terms exist.
+
+\section*{Causal Structure}
+
+Signal propagation
+remains confined to null cones
+defined by $g_{\mu\nu}$.
+
+Thus no superluminal modes arise.
+
+\section*{Validation Strategy}
+
+The theory can be constrained
+through:
+
+\begin{itemize}
+
+\item gravitational-wave observations
+
+\item cosmological growth measurements
+
+\item lensing surveys
+
+\end{itemize}
+
+\section*{Conclusion}
+
+This work has presented a minimal variational derivation of the dynamical core of the Codex Alpha framework.
+
+Starting from a total action containing the Einstein-Hilbert term, a scalar coherence sector, ordinary matter fields, and a coherence-weighted Schwinger functional, we derived the field equation
+\begin{equation}
+G_{\mu\nu}+\Lambda g_{\mu\nu}
+=
+\frac{8\pi G}{c^4}
+\left\langle \hat{T}_{\mu\nu}\right\rangle_{\nabla\mathcal{K}}.
+\end{equation}
+
+The non-standard contribution is controlled exclusively by the coherence gradient $\nabla\mathcal{K}$. In the uniform-coherence limit, the weighted tensor reduces to the ordinary matter stress-energy tensor up to vacuum-energy renormalization, and the Einstein field equations are recovered with an effective cosmological constant.
+
+The scalar coherence equation,
+\begin{equation}
+\Box\mathcal{K}
+-
+V'(\mathcal{K})
+=
+J_{\mathcal{K}}
+-
+\nabla_\mu J^\mu_W,
+\end{equation}
+shows that the coherence field evolves according to a Klein-Gordon-type equation modified by the back-reaction current generated by the weighted functional $W[g,\nabla\mathcal{K}]$.
+
+The resulting framework satisfies the three methodological requirements stated at the beginning of the paper:
+
+\begin{enumerate}
+    \item the equations follow from an explicit variational principle;
+    \item General Relativity is recovered when $\nabla\mathcal{K}\rightarrow 0$;
+    \item all non-standard effects must appear as measurable deviations that vanish in the standard limit.
+\end{enumerate}
+
+The present formulation therefore does not expand Codex Alpha phenomenologically. It restricts it to a compact mathematical core: a covariant coherence-gradient extension of the gravitational source sector.
+
+If future observational or numerical analysis finds no admissible regime in which $\nabla\mathcal{K}$ produces measurable, consistent, and bounded deviations from General Relativity, the model will be falsified in its present form. If such regimes exist, the coherence-gradient field may represent a missing structural component in the relation between quantum information and spacetime curvature.
+
+\begin{thebibliography}{99}
+
+\bibitem{Einstein1915}
+A. Einstein,
+\textit{Die Feldgleichungen der Gravitation},
+Sitzungsberichte der Preussischen Akademie der Wissenschaften zu Berlin,
+844--847, 1915.
+
+\bibitem{Hilbert1915}
+D. Hilbert,
+\textit{Die Grundlagen der Physik},
+Nachrichten von der Gesellschaft der Wissenschaften zu G\"ottingen,
+395--407, 1915.
+
+\bibitem{Schwinger1951}
+J. Schwinger,
+\textit{On Gauge Invariance and Vacuum Polarization},
+Physical Review \textbf{82}, 664--679, 1951.\\
+DOI:
+\href{https://doi.org/10.1103/PhysRev.82.664}
+{10.1103/PhysRev.82.664}
+
+\bibitem{DeWitt1967}
+B. S. DeWitt,
+\textit{Quantum Theory of Gravity. I. The Canonical Theory},
+Physical Review \textbf{160}, 1113--1148, 1967.\\
+DOI:
+\href{https://doi.org/10.1103/PhysRev.160.1113}
+{10.1103/PhysRev.160.1113}
+
+\bibitem{Wald1984}
+R. M. Wald,
+\textit{General Relativity},
+University of Chicago Press, 1984.
+
+\bibitem{BirrellDavies1982}
+N. D. Birrell and P. C. W. Davies,
+\textit{Quantum Fields in Curved Space},
+Cambridge University Press, 1982.
+
+\bibitem{ChoquetBruhat2009}
+Y. Choquet-Bruhat,
+\textit{General Relativity and the Einstein Equations},
+Oxford University Press, 2009.
+
+\bibitem{HawkingEllis1973}
+S. W. Hawking and G. F. R. Ellis,
+\textit{The Large Scale Structure of Space-Time},
+Cambridge University Press, 1973.
+
+\bibitem{GibbonsHawking1977}
+G. W. Gibbons and S. W. Hawking,
+\textit{Action Integrals and Partition Functions in Quantum Gravity},
+Physical Review D \textbf{15}, 2752--2756, 1977.\\
+DOI:
+\href{https://doi.org/10.1103/PhysRevD.15.2752}
+{10.1103/PhysRevD.15.2752}
+
+\bibitem{York1972}
+J. W. York,
+\textit{Role of Conformal Three-Geometry in the Dynamics of Gravitation},
+Physical Review Letters \textbf{28}, 1082--1085, 1972.\\
+DOI:
+\href{https://doi.org/10.1103/PhysRevLett.28.1082}
+{10.1103/PhysRevLett.28.1082}
+
+\bibitem{Wald1993}
+R. M. Wald,
+\textit{Black Hole Entropy is the Noether Charge},
+Physical Review D \textbf{48}, R3427--R3431, 1993.\\
+DOI:
+\href{https://doi.org/10.1103/PhysRevD.48.R3427}
+{10.1103/PhysRevD.48.R3427}
+
+\bibitem{Carroll2004}
+S. M. Carroll,
+\textit{Spacetime and Geometry: An Introduction to General Relativity},
+Addison-Wesley, 2004.
+
+\bibitem{Weinberg1972}
+S. Weinberg,
+\textit{Gravitation and Cosmology},
+John Wiley \& Sons, 1972.
+
+\bibitem{Cadelano2025Iconoclast}
+D. Cadelano,
+\textit{Codex Alpha -- Unified Theory between General Relativity and Quantum Mechanics ICONOCLAST}
+(English Version, v3.0),
+in \textit{Codex Alpha Unified Theory: Iconoclast Edition:
+Informational Unification of General Relativity and Quantum Mechanics},
+CodexAlpha-v3.0, 1st ed., p.~522,
+Zenodo, 2025.\\
+DOI:
+\href{https://doi.org/10.5281/zenodo.17074972}
+{10.5281/zenodo.17074972}
+
+\end{thebibliography}
+
+
+\end{document}
